@@ -1,0 +1,26 @@
+IG_UI_RU = {
+	IGUI_VehicleNameFirstTrailer = "Autotsar GNV 300",
+	IGUI_VehicleNameSecondTrailer = "Autotsar GNV 600",
+	IGUI_VehicleNameHomeTrailer = "Autotsar iLYA-1990",
+	IGUI_VehicleNameKbacTrailer = "Autotsar KBAC",
+
+    IGUI_VehiclePartCounter = "Контейнер",
+    IGUI_VehiclePartFridge = "Холодильник",
+    IGUI_VehiclePartOven = "Плита",
+
+    IGUI_VehiclePartfridge = "Холодильник",
+    IGUI_VehiclePartstove = "Плита",
+
+    IGUI_VehiclePartRoofrack = "Багажник для крыши",
+
+    IGUI_VehiclePartTV = "Телевизор",
+    IGUI_VehiclePartMattress = "Матрас",
+    IGUI_VehiclePartGunRack = "Оружейная стойка",
+	IGUI_VehiclePart500FuelTruckTank = "Цистерна бензина",
+
+    IGUI_PlayerText_CanNotSleepInMovingCar_Mattress = "Остановите машину перед тем, как засыпать",
+
+    IGUI_Sleep_NotTiredEnough_Mattress = "Я не чувствую усталости для того чтобы спать",
+
+}
+

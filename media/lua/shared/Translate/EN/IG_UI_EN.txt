@@ -1,0 +1,8 @@
+IG_UI_EN = {
+	IGUI_VehicleNameFirstTrailer = "Autotsar GNV 300",
+	IGUI_VehicleNameSecondTrailer = "Autotsar GNV 600",
+	IGUI_VehicleNameHomeTrailer = "Autotsar iLYA-1990",
+	IGUI_VehicleNameKbacTrailer = "Autotsar KBAC",
+	IGUI_VehiclePart500FuelTruckTank = "Fuel Tank",
+}
+

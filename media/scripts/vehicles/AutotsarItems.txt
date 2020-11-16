@@ -1,0 +1,54 @@
+module Base
+{
+	item FirstTrailerTrunk 
+	{
+		Weight	=	50,
+        Type	=	Normal,
+        DisplayName	= Small Trailer Trunk,
+        Icon	=	media/ui/CarTrunk,
+        MaxCapacity = 250,
+        ConditionAffectsCapacity = true,
+        ConditionMax = 100,
+        ChanceToSpawnDamaged = 30,
+        MechanicsItem = TRUE,
+	}
+	
+	item SecondTrailerTrunk 
+	{
+		Weight	=	50,
+        Type	=	Normal,
+        DisplayName	= Big Trailer Trunk,
+        Icon	=	media/ui/CarTrunk,
+        MaxCapacity = 500,
+        ConditionAffectsCapacity = true,
+        ConditionMax = 100,
+        ChanceToSpawnDamaged = 30,
+        MechanicsItem = TRUE,
+	}
+	
+	item FrontCarDoor777
+    {
+        Weight	=	10.0,
+        Type	=	Normal,
+        DisplayName	=	Front window frame,
+        Icon	=	CarDoorFront,
+        VehicleType =   1,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+    }
+
+    item RearCarDoor777
+    {
+        Weight	=	10.0,
+        Type	=	Normal,
+        DisplayName	=	Rear window frame,
+        Icon	=	CarDoorRear,
+        VehicleType =   1,
+        ChanceToSpawnDamaged = 20,
+        ConditionMax = 100,
+        MechanicsItem = TRUE,
+    }
+	
+	
+}
