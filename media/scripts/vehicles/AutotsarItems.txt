@@ -26,29 +26,4 @@ module Base
         MechanicsItem = TRUE,
 	}
 	
-	item FrontCarDoor777
-    {
-        Weight	=	10.0,
-        Type	=	Normal,
-        DisplayName	=	Front window frame,
-        Icon	=	CarDoorFront,
-        VehicleType =   1,
-        ChanceToSpawnDamaged = 20,
-        ConditionMax = 100,
-        MechanicsItem = TRUE,
-    }
-
-    item RearCarDoor777
-    {
-        Weight	=	10.0,
-        Type	=	Normal,
-        DisplayName	=	Rear window frame,
-        Icon	=	CarDoorRear,
-        VehicleType =   1,
-        ChanceToSpawnDamaged = 20,
-        ConditionMax = 100,
-        MechanicsItem = TRUE,
-    }
-	
-	
 }
