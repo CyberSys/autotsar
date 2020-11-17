@@ -4,5 +4,7 @@ ContextMenu_RU = {
 	ContextMenu_PainNoSleep_Mattress = "Слишком сильная боль, чтобы спать на матрасе."
 	ContextMenu_PanicNoSleep_Mattress = "Слишком паникую, чтобы спать на матрасе."
 	ContextMenu_NoSleepTooEarly_Mattress = "Не могу снова заснуть на матрасе.<br>Попробую позднее",
+	ContextMenu_Close_trunk = "Закрыть багажник",
+	ContextMenu_Open_trunk = "Открыть багажник",
 } 
 

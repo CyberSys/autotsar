@@ -1,0 +1,37 @@
+module Tsarcraft
+{
+
+	imports
+	{
+		Base
+	}
+    /************************Normal************************/
+
+	item Mov_SteelFridge
+	{
+		Type			= Moveable,
+		Icon			= default,
+		Weight          	= 40,
+		DisplayName		= Moveable,
+		WorldObjectSprite	= appliances_refrigeration_01_8,
+	}
+	
+	item Mov_PlaneFridge
+	{
+		Type			= Moveable,
+		Icon			= default,
+		Weight          	= 40,
+		DisplayName		= Moveable,
+		WorldObjectSprite	= appliances_refrigeration_01_28,
+	}
+	
+	item Mov_ModernOven
+	{
+		Type			= Moveable,
+		Icon			= default,
+		Weight          	= 20,
+		DisplayName		= Moveable,
+		WorldObjectSprite	= appliances_cooking_01_13,
+	}
+	
+}

@@ -1,0 +1,15 @@
+module Tsarcraft
+{
+	imports
+	{
+		Base
+	}
+	
+    recipe 1DO REF
+    {
+        Mov_SteelFridge/Mov_PlaneFridge,
+
+        Result:SFCarFridge,
+        Time:20,
+    }
+}

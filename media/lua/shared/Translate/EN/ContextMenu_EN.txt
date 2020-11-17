@@ -1,0 +1,4 @@
+ContextMenu_EN = {
+	ContextMenu_Close_trunk = "Close trunk",
+	ContextMenu_Open_trunk = "Open trunk",
+}
