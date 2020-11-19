@@ -1,0 +1,7 @@
+Recipe_RU = {
+	/* Created by PZTranslationAssistant */
+	/* Datetime: Wed Nov 18 21:44:14 MSK 2020 */
+
+	Recipe_Make_a_oven_for_camper = "Создать плиту для кемпера",
+	Recipe_Make_a_refrigerator_for_camper = "Создать холодильник для кемпера",
+}

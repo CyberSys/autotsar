@@ -1,0 +1,7 @@
+Recipe_EN = {
+	/* Created by PZTranslationAssistant */
+	/* Datetime: Wed Nov 18 21:44:02 MSK 2020 */
+
+	Recipe_Make_a_oven_for_camper = "Make a oven for camper",
+	Recipe_Make_a_refrigerator_for_camper = "Make a refrigerator for camper",
+}

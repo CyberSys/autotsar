@@ -1,0 +1,16 @@
+Items_RU = {
+	/* Created by PZTranslationAssistant */
+	/* Datetime: Wed Nov 18 21:44:14 MSK 2020 */
+
+	DisplayName_Blue_Fridge = "’олодильник: синий",
+	DisplayName_Green_Fridge = "’олодильник: зелЄный",
+	DisplayName_Green_Oven = "Ёлектроплита: зелЄна€",
+	DisplayName_Grey_Oven = "Ёлектроплита: сера€",
+	DisplayName_Industrial_Oven = "Ёлектроплита: промышленна€",
+	DisplayName_Modern_Oven = "Ёлектродуховой шкаф: большой современный",
+	DisplayName_Plane_Fridge = "’олодильник: простой",
+	DisplayName_Red_Fridge = "’олодильник: красный",
+	DisplayName_Red_Oven = "Ёлектроплита: красна€",
+	DisplayName_Steel_Fridge = "’олодильник: стальной",
+	DisplayName_White_Fridge = "’олодильник: белый",
+}
