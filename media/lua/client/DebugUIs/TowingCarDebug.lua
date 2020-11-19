@@ -109,12 +109,12 @@ debugScenarios.AiteronScenario_Towing = {
 		inv:AddItem(car:createVehicleKey());
 		
 		local car2 = addVehicleDebug("Base.ModernCar", IsoDirections.S, nil, getCell():getGridSquare(10592, 9345, 0));
-		car2:repair();
+		--car2:repair();
 		car2:setColor(0.7, 2, 0.4);
 		inv:AddItem(car2:createVehicleKey());
 		
 		local car3 = addVehicleDebug("Base.HomeTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9340, 0));
-		car3:repair();
+		--car3:repair();
 		car3:setColor(0.1, 2, 0.2);
 		inv:AddItem(car3:createVehicleKey());
 		
@@ -124,7 +124,7 @@ debugScenarios.AiteronScenario_Towing = {
 		inv:AddItem(car4:createVehicleKey());
 		
 		local car5 = addVehicleDebug("Base.SecondTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9355, 0));
-		car5:repair();
+		--car5:repair();
 		car5:setColor(0.1, 2, 0.4);
 				
 		local car6 = addVehicleDebug("Base.ModernCar", IsoDirections.S, nil, getCell():getGridSquare(10592, 9360, 0));
@@ -133,7 +133,7 @@ debugScenarios.AiteronScenario_Towing = {
 		inv:AddItem(car6:createVehicleKey());
 				
 		local car7 = addVehicleDebug("Base.FirstTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9365, 0));
-		car7:repair();
+		--car7:repair();
 		car7:setColor(0.1, 2, 0.6);
 		
 		local car7 = addVehicleDebug("Base.ModernCar", IsoDirections.S, nil, getCell():getGridSquare(10592, 9360, 0));

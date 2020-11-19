@@ -115,19 +115,21 @@ module Base
 		part TruckBed
 		{
 			area = TruckBed,
+			category = bodywork,
 			itemType = Base.SecondTrailerTrunk,
+			repairMechanic = true,
 			specificItem = false,
 
 			container
 			{
 				capacity = 500,
 				conditionAffectsCapacity = true,
-				test = Vehicles.ContainerAccess.GloveBox,
+				test = Vehicles.ContainerAccess.TruckBedOpen,
 			}
 
 			lua
 			{
-				create = Vasehicles.Create.Default,
+				create = Vehicles.Create.Default,
 			}
 		}
 

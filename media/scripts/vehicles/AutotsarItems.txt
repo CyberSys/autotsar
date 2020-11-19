@@ -9,7 +9,7 @@ module Base
         MaxCapacity = 250,
         ConditionAffectsCapacity = true,
         ConditionMax = 100,
-        ChanceToSpawnDamaged = 30,
+        ChanceToSpawnDamaged = 80,
         MechanicsItem = TRUE,
 	}
 	
@@ -22,7 +22,7 @@ module Base
         MaxCapacity = 500,
         ConditionAffectsCapacity = true,
         ConditionMax = 100,
-        ChanceToSpawnDamaged = 30,
+        ChanceToSpawnDamaged = 80,
         MechanicsItem = TRUE,
 	}
 	
