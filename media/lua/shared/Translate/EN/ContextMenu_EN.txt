@@ -1,4 +1,14 @@
 ContextMenu_EN = {
 	ContextMenu_Close_trunk = "Close trunk",
 	ContextMenu_Open_trunk = "Open trunk",
+	ContextMenu_Sleep_Mattress = "Sleep on the mattress.",
+	ContextMenu_PainNoSleep_Mattress = "Experiencing too much pain to sleep on the mattress."
+	ContextMenu_PanicNoSleep_Mattress = "Too panicked to sleep on the mattress."
+	ContextMenu_NoSleepTooEarly_Mattress = "Can't get back to sleep on the mattress.<br>Try again later.",
+	
+	ContextMenu_Add_Gasoline_To_Gasoline_Storage_Tank = "Add Gasoline To Gasoline Storage Tank",
+	ContextMenu_Remove_Gasoline_From_Gasoline_Storage_Tank = "Remove Gasoline From Gasoline Storage Tank",
+	ContextMenu_Fill_Gasoline_Storage_Tank_From_Pump = "Fill Gasoline Storage Tank From Pump",
+	ContextMenu_Fill_Gasoline_Storage_Tank_From_Fuel_Truck = "Fill Gasoline Storage Tank From Fuel Truck",
+	ContextMenu_Remove_Gasoline_From_Fuel_Truck = "Remove Gasoline From Fuel Truck",
 }

@@ -1,0 +1,54 @@
+module tsarcraft
+{
+	imports
+	{
+		Base
+	}
+
+/************************Camper Van Parts************************/
+
+    item CarCounter
+    {
+        Weight	=	15.0,
+        Type	=	Normal,
+        DisplayName	=	Counter,
+        Icon	=	media/ui/Container_Cabinet,
+        MaxCapacity = 10,
+		ConditionMax = 100,
+        MechanicsItem = TRUE,
+    }
+
+    item CarFridge
+    {
+        Weight	=	15.0,
+        Type	=	Normal,
+        DisplayName	=	Fridge,
+        Icon	=	media/ui/Container_Fridge,
+        MaxCapacity = 10,
+		ConditionMax = 100,
+        MechanicsItem = TRUE,
+    }
+
+    item CarOven
+    {
+        Weight	=	15.0,
+        Type	=	Normal,
+        DisplayName	=	Oven,
+        Icon	=	media/ui/Container_Oven,
+        MaxCapacity = 10,
+		ConditionMax = 100,
+        MechanicsItem = TRUE,
+    }
+	
+	item GunRack
+    {
+        Weight	=	10,
+        Type	=	Normal,
+        MaxCapacity	=	10,
+        DisplayName	=	Gun Rack,
+        Icon	=	media/ui/Container_Shelf,
+		ConditionMax = 100,
+        MechanicsItem = TRUE,
+    }
+
+}

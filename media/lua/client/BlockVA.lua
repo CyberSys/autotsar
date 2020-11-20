@@ -1,7 +1,15 @@
-function vehicle_additions_sleep()
-	if getActivatedMods():contains("vehicle_additions") 
-			or ActiveMods.getById("currentGame"):isModActive("vehicle_additions") then
+function vehicle_additions_off()
+	
+	if getActivatedMods():contains("vehicle_additions") then
+		print("TSARCRAFT SLEEP")
 		toggleModActive(getModInfoByID("vehicle_additions"), false)
+	end
+end
+
+function vehicle_additions_sleep()
+	
+	if ActiveMods.getById("currentGame"):isModActive("vehicle_additions") then
+		print("TSARCRAFT OFF")
 		ActiveMods.getById("currentGame"):removeMod("vehicle_additions")
 		saveGame()
 		arr = getLatestSave()
@@ -10,4 +18,6 @@ function vehicle_additions_sleep()
 	end
 end
 
-Events.OnGameBoot.Add(vehicle_additions_sleep)
+Events.OnGameBoot.Add(vehicle_additions_off)
+
+Events.OnGameStart.Add(vehicle_additions_sleep)

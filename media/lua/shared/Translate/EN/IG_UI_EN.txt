@@ -4,5 +4,26 @@ IG_UI_EN = {
 	IGUI_VehicleNameHomeTrailer = "Autotsar iLYA-1990",
 	IGUI_VehicleNameKbacTrailer = "Autotsar KBAC",
 	IGUI_VehiclePart500FuelTruckTank = "Fuel Tank",
+	
+	IGUI_VehiclePartCounter = "Counter",
+    IGUI_VehiclePartFridge = "Fridge",
+    IGUI_VehiclePartOven = "Oven",
+
+    IGUI_VehiclePartfridge = "Fridge",
+    IGUI_VehiclePartstove = "Oven",
+
+    IGUI_VehiclePartRoofrack = "Roof Rack",
+
+    IGUI_VehiclePartTV = "Television",
+    IGUI_VehiclePartMattress = "Mattress",
+    IGUI_VehiclePartGunRack = "Gun Rack",
+
+    IGUI_PlayerText_CanNotSleepInMovingCar_Mattress = "Stop the car first to sleep in the mattress.",
+    IGUI_Sleep_NotTiredEnough_Mattress = "Not tired enough to sleep in the mattress yet.",
+	
+	IGUI_Turn_Oven_On = "Turn Oven On", 
+	IGUI_Turn_Oven_Off = "Turn Oven Off",
+	
+	
 }
 

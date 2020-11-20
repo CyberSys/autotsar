@@ -21,6 +21,8 @@ IG_UI_RU = {
     IGUI_PlayerText_CanNotSleepInMovingCar_Mattress = "Остановите машину перед тем, как засыпать",
 
     IGUI_Sleep_NotTiredEnough_Mattress = "Я не чувствую усталости для того чтобы спать",
-
+	
+	IGUI_Turn_Oven_On = "Включить плиту", 
+	IGUI_Turn_Oven_Off = "Выключить плиту",
 }
 

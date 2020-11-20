@@ -6,5 +6,11 @@ ContextMenu_RU = {
 	ContextMenu_NoSleepTooEarly_Mattress = "Не могу снова заснуть на матрасе.<br>Попробую позднее",
 	ContextMenu_Close_trunk = "Закрыть багажник",
 	ContextMenu_Open_trunk = "Открыть багажник",
+	
+	ContextMenu_Add_Gasoline_To_Gasoline_Storage_Tank = "Заправить цистерну бензином",
+	ContextMenu_Remove_Gasoline_From_Gasoline_Storage_Tank = "Слить бензин из цистерны",
+	ContextMenu_Fill_Gasoline_Storage_Tank_From_Pump = "Заполнить цистерну с помощью насоса",
+	ContextMenu_Fill_Gasoline_Storage_Tank_From_Fuel_Truck = "Заполнить цистерну с бензовоза",
+	ContextMenu_Remove_Gasoline_From_Fuel_Truck = "Слить из бензовоза",
 } 
 
