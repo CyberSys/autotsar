@@ -543,11 +543,11 @@ module Base
 			}
 		}
 
-		template = Fridge/part/Fridge,
-		template = Mattress,
-		template = Fridge/part/Oven,
-		template = TV,
-		template = GunRack,
+		template = TCFridge/part/Fridge,
+		template = TCMattress,
+		template = TCFridge/part/Oven,
+		template = TCTV,
+		template = TCGunRack,
 		template = Radio,
 
 		area TruckBed

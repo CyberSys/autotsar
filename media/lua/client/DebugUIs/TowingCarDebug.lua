@@ -104,9 +104,9 @@ debugScenarios.AiteronScenario_Towing = {
 		getPlayer():getKnownRecipes():add("Basic Mechanics"); getPlayer():getKnownRecipes():add("Intermediate Mechanics"); getPlayer():getKnownRecipes():add("Advanced Mechanics");
 		
 		-- car
-		local car = addVehicleDebug("Base.KbacTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9335, 0));
+		local car = addVehicleDebug("Base.KbacTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9330, 0));
 		--car:repair();
-		inv:AddItem(car:createVehicleKey());
+		--inv:AddItem(car:createVehicleKey());
 		
 		local car2 = addVehicleDebug("Base.ModernCar", IsoDirections.S, nil, getCell():getGridSquare(10592, 9345, 0));
 		--car2:repair();

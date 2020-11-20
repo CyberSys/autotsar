@@ -7,7 +7,6 @@ VehicleDistributions.AutotsarTrailer = {
 	{
 		rolls = 1,
 		items = {
-			"TowingCar.TowBar", 1000,
 			"LugWrench", 5,
 			"TirePump", 5,
 			"NormalTire2", 5,
@@ -87,8 +86,37 @@ VehicleDistributions.AutotsarKbac = {
 	{
 		rolls = 1,
 		items = {
-			"TowingCar.TowBar", 101,
 			"Base.EmptyPetrolCan", 101,
+			"LugWrench", 5,
+			"TirePump", 5,
+			"NormalTire2", 5,
+			"Jack", 5,
+			"Wrench", 5,
+			"Screwdriver", 5,
+			"CarBattery2", 5,
+			"FirstAidKit", 5,
+			"DuctTape", 3,
+			"Twine", 3,
+			"Tarp", 3,
+			"EmptySandbag", 3,
+			"LeadPipe", 1,
+			"MetalPipe", 1,
+			"PipeWrench", 1,
+			"BaseballBat", 1,
+			"CorpseMale", 0.01,
+			"CorpseFemale", 0.01,
+			"Crisps",5,
+			"Crisps2", 5,
+			"Crisps3", 5,
+			"Crisps4", 5,
+			"Cereal", 5,
+			"Dogfood", 5,
+			"TVDinner",5,
+			"TinnedSoup", 5,
+			"TinnedBeans", 5,
+			"CannedCornedBeef", 2,
+			"Macandcheese", 2,
+			"CannedChili", 2,
 			}
 	}
 }

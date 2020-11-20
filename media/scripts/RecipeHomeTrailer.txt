@@ -7,13 +7,12 @@ module tsarcraft
 	
     recipe Make a refrigerator for camper
     {
-        MovWhiteFridge/MovBlueFridge/MovSteelFridge/MovGreenFridge/MovPlaneFridge/MovRedFridge,
+        MovWhiteFridge/MovBlueFridge/MovSteelFridge/MovGreenFridge/MovPlainFridge/MovRedFridge,
 		BlowTorch=5,
 		WeldingRods=5,
         keep WeldingMask,
 		keep Hammer,
 		keep Saw,
-		keep Mattress,
 		
 		Result:SFCarFridge,
 		Time:1000.0,
@@ -32,7 +31,6 @@ module tsarcraft
         keep WeldingMask,
 		keep Hammer,
 		keep Saw,
-		keep Mattress,
 				
 		Result:SFCarOven,
 		Time:1000.0,

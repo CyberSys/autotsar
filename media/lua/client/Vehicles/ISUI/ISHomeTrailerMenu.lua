@@ -1,4 +1,8 @@
+require('Vehicles/ISUI/Oven_Mattress_RadialMenu')
+require('Vehicles/ISUI/Mattress_ISVehicleMenu')
+require('Vehicles/ISUI/RadioTv_ISVehicleMechanics')
 require('TowingCar/TowingUI')
+
 
 local old_ISVehicleMenu_showRadialMenu = ISVehicleMenu.showRadialMenu
 

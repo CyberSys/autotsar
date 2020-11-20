@@ -1,5 +1,5 @@
 name=Autotsar Trailers
 poster=poster.png
-require=vehicle_additions,TowingCar
+require=TowingCar
 id=autotsartrailers
 description=Trailers of your dreams
