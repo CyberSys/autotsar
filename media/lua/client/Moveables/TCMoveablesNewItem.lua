@@ -62,7 +62,7 @@ function TCOnObjectAboutToBeRemoved(object)
 			for i=0, allItems:size()-1 do
 				local oldItem = allItems:get(i)
 				if oldItem:getWorldSprite() == worldSpriteName then
-					print("TC: add")
+					--print("TC: add")
 					playerInv:Remove(oldItem)
 					playerInv:AddItem("tsarcraft." .. newItem);
 					return

@@ -3,7 +3,7 @@ function Vehicles.Create.Radio(vehicle, part)
 	local invItem = VehicleUtils.createPartInventoryItem(part);
 
 	local text2 = invItem:getType()
-	print( text2 )
+	--print( text2 )
 	--getPlayer():Say( text2, 1.0, 1.0, 0.0, UIFont.Dialogue, 30.0, "radio" )
 
 	deviceData:setIsTwoWay( invItem:getDeviceData():getIsTwoWay() )

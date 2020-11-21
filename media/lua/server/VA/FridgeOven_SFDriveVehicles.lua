@@ -78,7 +78,7 @@ end
 --
 
 function Vehicles.Update.Fridge(vehicle, part, elapsedMinutes)
-	print("UPDATE FRIDGE?")
+	--print("UPDATE FRIDGE?")
 
 	if part:getInventoryItem() and part:getItemContainer() and part:getModData().coolerActive then
 		local batteryChange = -0.000050;
@@ -115,20 +115,20 @@ function Vehicles.Update.Fridge(vehicle, part, elapsedMinutes)
 end
 
 function Vehicles.Update.Oven(vehicle, part, elapsedMinutes)
-	print("UPDATE OVEN SERVER?")
+	--print("UPDATE OVEN SERVER?")
 	local id = vehicle:getId()
 	part = vehicle:getPartById("Oven")
-	print(part:getItemContainer():isActive())
+	--print(part:getItemContainer():isActive())
 	if isClient() then
-		print("Trying to update client oven")
+		--print("Trying to update client oven")
 		sendClientCommand(getPlayer(), 'SFDrive', 'updateCarOven', { id = vehicle:getId() })
 	elseif isServer() then
-		print("Trying to update server oven")
+		--print("Trying to update server oven")
 		sendServerCommand('SFDrive', 'updateCarOven', { id = id, elapsedMinutes = elapsedMinutes, batteryChange = batteryChange })
 	else
 	if part:getInventoryItem() and part:getItemContainer() and part:getItemContainer():isActive() then
 		local currentTemp = part:getItemContainer():getTemprature()
-		print(tostring(currentTemp))
+		--print(tostring(currentTemp))
 		local maxTemp = 2.0
 
 		if currentTemp < maxTemp then
@@ -140,7 +140,7 @@ function Vehicles.Update.Oven(vehicle, part, elapsedMinutes)
 
 	if part:getInventoryItem() and part:getItemContainer() and not part:getItemContainer():isActive() then
 		local currentTemp = part:getItemContainer():getTemprature()
-		print(tostring(currentTemp))
+		--print(tostring(currentTemp))
 		local minTemp = 1.0
 
 		if currentTemp > minTemp then
@@ -164,12 +164,12 @@ function Vehicles.Use.Oven(vehicle, cont, player)
 		if cont:isActive() then
 			cont:setActive(false)
 			player:getEmitter():playSound("PZ_Switch")
-			print("Oven Off")
+			--print("Oven Off")
 		elseif vehicle:getBatteryCharge() > 0.00005 then
 			cont:setActive(true)
 			VehicleUtils.chargeBattery(vehicle, -0.00005)
 			player:getEmitter():playSound("PZ_Switch")
-			print("Oven On")
+			--print("Oven On")
 		end
 	end
 end

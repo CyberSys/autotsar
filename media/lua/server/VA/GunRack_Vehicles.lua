@@ -3,7 +3,7 @@ require 'Vehicles/Vehicles'
 function Vehicles.Create.PoliceGunRack(vehicle, part)
 	local ranger = true
 	local skin = vehicle:getSkinIndex()
-	print("SKIN INDEX " .. tostring(skin))
+	--print("SKIN INDEX " .. tostring(skin))
 	if skin > 0 then
 		ranger = false
 	end

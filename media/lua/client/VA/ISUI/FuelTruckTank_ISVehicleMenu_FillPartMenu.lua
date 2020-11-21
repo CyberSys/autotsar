@@ -61,7 +61,7 @@ function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)
 		end	
 
 		if not vehicle:isEngineStarted() and part:isContainer() and part:getContainerContentType() == "Gasoline" then
-			print("Room")
+			--print("Room")
 			
 			
 			--local square = ISVehiclePartMenu.getNearbyFuelPump(vehicle)
@@ -94,16 +94,16 @@ function FindVehicleGas(playerObj, playerVehicle)
 		for i=1,vehicle:getPartCount() do
 			local part = vehicle:getPartByIndex(i-1)	
 			if part:isContainer() and part:getContainerContentType() == "Gasoline Storage" and part:getContainerContentAmount() > 0 and vehicle ~= playerVehicle then
-				print("FUEL")
+				--print("FUEL")
 				local square = vehicle:getSquare()
 					x = math.abs(vehicle:getX()-playerObj:getX())
 					y = math.abs(vehicle:getY()-playerObj:getY())
 					if x <radius and y<radius then
 					--if playerObj:distTo(vehicle) < 10 then
 						-- We've found fuel storage
-						print("FUEL")
-						print(tostring(vehicle:getX()))
-						print(tostring(vehicle:getY()))
+						--print("FUEL")
+						--print(tostring(vehicle:getX()))
+						--print(tostring(vehicle:getY()))
 						--return true
 						return part
 					end

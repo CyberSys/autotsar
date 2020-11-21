@@ -31,12 +31,12 @@ end
 function Commands.updateCarOven(player, args)
 	local vehicle = getVehicleById(args.id)
 	local part = vehicle:getPartById("Oven")
-	print("Update Oven Client")
-	print(part:getItemContainer():isActive())
+	--print("Update Oven Client")
+	--print(part:getItemContainer():isActive())
 	if part:getInventoryItem() and part:getItemContainer() and part:getItemContainer():isActive() then
 		local currentTemp = part:getItemContainer():getTemprature()
 		local maxTemp = 2.0
-		print(currentTemp)
+		--print(currentTemp)
 		if currentTemp < maxTemp then
 			part:getItemContainer():setCustomTemperature(currentTemp + 0.05)
 		elseif currentTemp > maxTemp then
@@ -47,7 +47,7 @@ function Commands.updateCarOven(player, args)
 	if part:getInventoryItem() and part:getItemContainer() and not part:getItemContainer():isActive() then
 		local currentTemp = part:getItemContainer():getTemprature()
 		local minTemp = 1.0
-		print(currentTemp)
+		--print(currentTemp)
 
 		if currentTemp > minTemp then
 			part:getItemContainer():setCustomTemperature(currentTemp - 0.05)
@@ -104,7 +104,7 @@ Events.OnServerCommand.Add(function(module, command, args)
 end)
 
 function carOven()
-	print("OVEN ON/OF")
+	--print("OVEN ON/OF")
 	local chr = getPlayer()
 	local vehicle = chr:getVehicle()
 	local cont = vehicle:getPartById("Oven"):getItemContainer()
@@ -112,11 +112,11 @@ function carOven()
 	if cont:isActive() then
 		cont:setActive(false)
 		chr:getEmitter():playSound("PZ_Switch")
-		print("Oven Off")
+		--print("Oven Off")
 	elseif vehicle:getBatteryCharge() > 0.00005 then
 		cont:setActive(true)
 		VehicleUtils.chargeBattery(vehicle, -0.00005)
 		chr:getEmitter():playSound("PZ_Switch")
-		print("Oven On")
+		--print("Oven On")
 	end
 end

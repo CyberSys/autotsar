@@ -29,7 +29,7 @@ function Commands.updateCarFridge(player, args)
 end
 
 function Commands.updateCarOven(player, args)
-	print("update oven server?")
+	--print("update oven server?")
 	local vehicle = getVehicleById(args.id)
 	local part = vehicle:getPartById("Oven")
 
