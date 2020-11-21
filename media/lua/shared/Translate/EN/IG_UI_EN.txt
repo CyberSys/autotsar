@@ -18,8 +18,8 @@ IG_UI_EN = {
     IGUI_VehiclePartMattress = "Mattress",
     IGUI_VehiclePartGunRack = "Gun Rack",
 
-    IGUI_PlayerText_CanNotSleepInMovingCar_Mattress = "Stop the car first to sleep in the mattress.",
-    IGUI_Sleep_NotTiredEnough_Mattress = "Not tired enough to sleep in the mattress yet.",
+    IGUI_PlayerText_CanNotSleepInMovingCar_Mattress = "Stop the car first<br>to sleep in the mattress.",
+    IGUI_Sleep_NotTiredEnough_Mattress = "Not tired enough to sleep<br>in the mattress yet.",
 	
 	IGUI_Turn_Oven_On = "Turn Oven On", 
 	IGUI_Turn_Oven_Off = "Turn Oven Off",
