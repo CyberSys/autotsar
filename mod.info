@@ -1,5 +1,5 @@
-name=Autotsar Trailers
+name=Autotsar Trailers Test
 poster=poster.png
 require=TowingCar
-id=autotsartrailers
-description=Trailers of your dreams
+id=autotsartrailers_test
+description=Trailers of your dreams v.1.10

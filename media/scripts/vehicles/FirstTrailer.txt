@@ -51,11 +51,12 @@ module Base
 		wheelFriction = 1.5f,
 		frontEndHealth = 150,
 		rearEndHealth = 150,
+		seats = 2,
 
 		wheel FrontLeft
 		{
 			front = true,
-			offset = 0.5368 -0.2474 0.9211,
+			offset = 0.5368 -0.2632 0.7632,
 			radius = 0.10f,
 			width = 0.1f,
 		}
@@ -63,23 +64,7 @@ module Base
 		wheel FrontRight
 		{
 			front = true,
-			offset = -0.5211 -0.2474 0.9211,
-			radius = 0.10f,
-			width = 0.1f,
-		}
-
-		wheel RearLeft
-		{
-			front = false,
-			offset = 0.5368 -0.2474 0.5842,
-			radius = 0.10f,
-			width = 0.1f,
-		}
-
-		wheel RearRight
-		{
-			front = false,
-			offset = -0.5211 -0.2474 0.5842,
+			offset = -0.5158 -0.2632 0.7632,
 			radius = 0.10f,
 			width = 0.1f,
 		}
@@ -91,25 +76,14 @@ module Base
 
 		area TireFrontLeft
 		{
-			xywh = 0.6684 0.1579 0.4737 0.4737,
+			xywh = 0.6684 0.0000 0.4737 0.4737,
 		}
 
 		area TireFrontRight
 		{
-			xywh = -0.6684 0.1263 0.4737 0.4737,
+			xywh = -0.6684 0.0000 0.4737 0.4737,
 		}
 
-		area TireRearLeft
-		{
-			xywh = 0.6684 -0.1579 0.4737 0.4737,
-		}
-
-		area TireRearRight
-		{
-			xywh = -0.6684 -0.1526 0.4737 0.4737,
-		}
-
-		template = Tire,
 		template = Brake,
 
 		part TruckBed
@@ -164,7 +138,10 @@ module Base
 				recipes = Intermediate Mechanics,
 			}
 		}
-
+		
+		template = Tire/part/TireFrontLeft,
+		template = Tire/part/TireFrontRight,
+		
 		physics box
 		{
 			offset = 0.1632 0.2526 0.8316,

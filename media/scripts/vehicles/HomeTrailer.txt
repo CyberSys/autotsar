@@ -61,7 +61,7 @@ module Base
 		wheel FrontLeft
 		{
 			front = true,
-			offset = 0.6105 -0.2368 0.4579,
+			offset = 0.6105 -0.3000 0.2684,
 			radius = 0.10f,
 			width = 0.1f,
 		}
@@ -69,48 +69,23 @@ module Base
 		wheel FrontRight
 		{
 			front = true,
-			offset = -0.6053 -0.2368 0.4579,
-			radius = 0.10f,
-			width = 0.1f,
-		}
-
-		wheel RearLeft
-		{
-			front = false,
-			offset = 0.6105 -0.2368 0.1263,
-			radius = 0.10f,
-			width = 0.1f,
-		}
-
-		wheel RearRight
-		{
-			front = false,
-			offset = -0.6053 -0.2368 0.1263,
+			offset = -0.6053 -0.3000 0.2684,
 			radius = 0.10f,
 			width = 0.1f,
 		}
 
 		area TireFrontLeft
 		{
-			xywh = 0.6684 0.1579 0.4737 0.4737,
+			xywh = 0.7684 0.0316 0.4737 0.4737,
 		}
 
 		area TireFrontRight
 		{
-			xywh = -0.6684 0.1263 0.4737 0.4737,
+			xywh = -0.7632 0.0158 0.4737 0.4737,
 		}
 
-		area TireRearLeft
-		{
-			xywh = 0.6684 -0.1579 0.4737 0.4737,
-		}
-
-		area TireRearRight
-		{
-			xywh = -0.6684 -0.1526 0.4737 0.4737,
-		}
-
-		template = Tire,
+		template = Tire/part/TireFrontLeft,
+		template = Tire/part/TireFrontRight,
 		template = Brake,
 
 		part Brake*
