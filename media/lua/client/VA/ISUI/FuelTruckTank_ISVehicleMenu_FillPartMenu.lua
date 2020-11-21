@@ -19,19 +19,30 @@ function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)
 					context:addOption(getText("ContextMenu_Add_Gasoline_To_Gasoline_Storage_Tank"), playerObj,ISVehiclePartMenu.onAddGasoline, part)
 				end
 			end
-			if ISVehiclePartMenu.getGasCanNotFull(playerObj, typeToItem) and part:getContainerContentAmount() > 0 then
-				if slice then
-					slice:addSlice(getText("ContextMenu_Remove_Gasoline_From_Gasoline_Storage_Tank"), getTexture("Item_Petrol"), ISVehiclePartMenu.onTakeGasoline, playerObj, part)
-				else
-					context:addOption(getText("ContextMenu_Remove_Gasoline_From_Gasoline_Storage_Tank"), playerObj, ISVehiclePartMenu.onTakeGasoline, part)
+			if part:getContainerContentAmount() > 0 then
+				if ISVehiclePartMenu.getGasCanNotFull(playerObj, typeToItem) then
+					if slice then
+						slice:addSlice(getText("ContextMenu_Remove_Gasoline_From_Gasoline_Storage_Tank"), getTexture("Item_Petrol"), ISVehiclePartMenu.onTakeGasoline, playerObj, part)
+					else
+						context:addOption(getText("ContextMenu_Remove_Gasoline_From_Gasoline_Storage_Tank"), playerObj, ISVehiclePartMenu.onTakeGasoline, part)
+					end
+				else 
+					if slice then
+					else
+						context:addOption(getText("ContextMenu_For_get_Gasoline_Need_Gas_Can"), nil, nil, nil)
+					end
 				end
 			end
 			local square = ISVehiclePartMenu.getNearbyFuelPump(vehicle)
 			if square and ((SandboxVars.AllowExteriorGenerator and square:haveElectricity()) or (SandboxVars.ElecShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.ElecShutModifier)) then
+				--print("1 +")
 				if square and part:getContainerContentAmount() < part:getContainerCapacity() then
+					--print("2 +")
 					if slice then
-						slice:addSlice(getText("ContextMenu_Fill_Gasoline_Storage_Tank_From_Pump"), getTexture("Item_Petrol"), ISVehiclePartMenu.onPumpGasoline, playerObj, part)
+						--print("3 +")
+						slice:addSlice(getText("ContextMenu_Fill_Gasoline_Storage_Tank_From_Pump"), getTexture("media/ui/vehicles/vehicle_refuel_from_pump.png"), ISVehiclePartMenu.onPumpGasoline, playerObj, part)
 					else
+						--print("4 +")
 						context:addOption(getText("ContextMenu_Fill_Gasoline_Storage_Tank_From_Pump"), playerObj, ISVehiclePartMenu.onPumpGasoline, part)
 					end
 				end
@@ -41,7 +52,7 @@ function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)
 			if fuel_truck_source and fuel_truck_source:getContainerContentAmount() > 0 and part:getContainerContentAmount() < part:getContainerCapacity() then
 				--if square and part:getContainerContentAmount() < part:getContainerCapacity() then
 					if slice then
-						slice:addSlice(getText("ContextMenu_Fill_Gasoline_Storage_Tank_From_Fuel_Truck"), getTexture("Item_Petrol"), ISVehiclePartMenu.onPumpGasolineFromTruck, playerObj, part, fuel_truck_source)
+						slice:addSlice(getText("ContextMenu_Fill_Gasoline_Storage_Tank_From_Fuel_Truck"), getTexture("media/ui/vehicles/vehicle_gas_hose.png"), ISVehiclePartMenu.onPumpGasolineFromTruck, playerObj, part, fuel_truck_source)
 					else
 						context:addOption(getText("ContextMenu_Fill_Gasoline_Storage_Tank_From_Fuel_Truck"), playerObj, ISVehiclePartMenu.onPumpGasolineFromTruck, part, fuel_truck_source)
 					end
@@ -57,7 +68,7 @@ function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)
 			if fuel_truck_source and fuel_truck_source:getContainerContentAmount() > 0 and part:getContainerContentAmount() < part:getContainerCapacity() then
 				--if square and part:getContainerContentAmount() < part:getContainerCapacity() then
 					if slice then
-						slice:addSlice(getText("ContextMenu_Remove_Gasoline_From_Fuel_Truck"), getTexture("Item_Petrol"), ISVehiclePartMenu.onPumpGasolineFromTruck, playerObj, part, fuel_truck_source)
+						slice:addSlice(getText("ContextMenu_Remove_Gasoline_From_Fuel_Truck"), getTexture("media/ui/vehicles/vehicle_gas_hose.png"), ISVehiclePartMenu.onPumpGasolineFromTruck, playerObj, part, fuel_truck_source)
 					else
 						context:addOption(getText("ContextMenu_Remove_Gasoline_From_Fuel_Truck"), playerObj, ISVehiclePartMenu.onPumpGasolineFromTruck, part, fuel_truck_source)
 					end
@@ -72,7 +83,7 @@ function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)
 end
 
 function FindVehicleGas(playerObj, playerVehicle)
-	print("TEST")
+	--print("TEST")
 	local radius = 10
 	local player = getPlayer()
 	local cell = playerObj:getCell()

@@ -7,10 +7,12 @@ ContextMenu_RU = {
 	ContextMenu_Close_trunk = "Закрыть багажник",
 	ContextMenu_Open_trunk = "Открыть багажник",
 	
-	ContextMenu_Add_Gasoline_To_Gasoline_Storage_Tank = "Заправить цистерну бензином",
+	ContextMenu_Add_Gasoline_To_Gasoline_Storage_Tank = "Залить бензин в цистерну",
 	ContextMenu_Remove_Gasoline_From_Gasoline_Storage_Tank = "Слить бензин из цистерны",
-	ContextMenu_Fill_Gasoline_Storage_Tank_From_Pump = "Заполнить цистерну с помощью насоса",
-	ContextMenu_Fill_Gasoline_Storage_Tank_From_Fuel_Truck = "Заполнить цистерну с бензовоза",
-	ContextMenu_Remove_Gasoline_From_Fuel_Truck = "Слить из бензовоза",
+	ContextMenu_Fill_Gasoline_Storage_Tank_From_Pump = "Заправить цистерну от колонки",
+	ContextMenu_Fill_Gasoline_Storage_Tank_From_Fuel_Truck = "Заправить цистерну",
+	ContextMenu_Remove_Gasoline_From_Fuel_Truck = "Заправиться из цистерны",
+	
+	ContextMenu_For_get_Gasoline_Need_Gas_Can = "Нужна пустая канистра",
 } 
 

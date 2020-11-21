@@ -5,7 +5,7 @@ module Base
 		part Counter
 		{
 			area = SeatRearRight,
-			itemType = tsarcraft.CarCounter,
+			itemType = filcher.SFCarCounter,
 			container
 			{
 				capacity = 15,
@@ -55,7 +55,7 @@ module Base
 		{
 			area = SeatRearRight,
 			specificItem = false,
-			itemType = tsarcraft.CarOven,
+			itemType = filcher.SFCarOven,
 			container
 			{
 				capacity = 20,
@@ -106,7 +106,7 @@ module Base
 		{
 			area = SeatRearRight,
 			specificItem = false,
-			itemType = tsarcraft.CarFridge,
+			itemType = filcher.SFCarFridge,
 			container
 			{
 				capacity = 20,

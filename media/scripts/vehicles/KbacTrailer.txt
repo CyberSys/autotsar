@@ -51,7 +51,6 @@ module Base
 			texture = Vehicles/vehicle_trailer_jb,
 		}
 
-
 		textureRust = Vehicles/vehicle_trailer_kbac_rust,
 		extents = 0.8737 0.6421 0.9368,
 		mass = 400,
@@ -146,6 +145,11 @@ module Base
 			}
 		}
 
+		area GasTank
+		{
+			xywh = 0.0000 -0.8105 1.7474 0.4842,
+		}
+		template = GasTank,
 		template = 500FuelTruckTank,
 
 		physics box

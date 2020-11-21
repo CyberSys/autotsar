@@ -4,9 +4,9 @@ module Base
 	{
 		part 500FuelTruckTank
 		{
-			area = TruckBed,
+			area = GasTank,
 			category = gastank,
-			itemType = tsarcraft.500Tank;,
+			itemType = 500Tank,
 			mechanicRequireKey = false,
 			repairMechanic = true,
 			container

@@ -1,4 +1,4 @@
-module tsarcraft
+module filcher
 {
 	imports
 	{
@@ -7,7 +7,7 @@ module tsarcraft
 
 /************************Camper Van Parts************************/
 
-    item CarCounter
+    item SFCarCounter
     {
         Weight	=	15.0,
         Type	=	Normal,
@@ -18,35 +18,26 @@ module tsarcraft
         MechanicsItem = TRUE,
     }
 
-    item CarFridge
+    item SFCarFridge
     {
-        Weight	=	15.0,
+        Weight	=	20.0,
         Type	=	Normal,
-        DisplayName	=	Fridge,
+        DisplayName	= Compact Fridge,
+		Tooltip = Tooltip_Compact_Fridge,
         Icon	=	media/ui/Container_Fridge,
         MaxCapacity = 10,
 		ConditionMax = 100,
         MechanicsItem = TRUE,
     }
 
-    item CarOven
+    item SFCarOven
     {
         Weight	=	15.0,
         Type	=	Normal,
-        DisplayName	=	Oven,
+        DisplayName	= Compact Oven,
+		Tooltip = Tooltip_Compact_Oven,
         Icon	=	media/ui/Container_Oven,
         MaxCapacity = 10,
-		ConditionMax = 100,
-        MechanicsItem = TRUE,
-    }
-	
-	item GunRack
-    {
-        Weight	=	10,
-        Type	=	Normal,
-        MaxCapacity	=	10,
-        DisplayName	=	Gun Rack,
-        Icon	=	media/ui/Container_Shelf,
 		ConditionMax = 100,
         MechanicsItem = TRUE,
     }

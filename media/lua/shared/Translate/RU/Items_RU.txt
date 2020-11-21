@@ -13,4 +13,7 @@ Items_RU = {
 	DisplayName_Red_Oven = "Электроплита: красная",
 	DisplayName_Steel_Fridge = "Холодильник: стальной",
 	DisplayName_White_Fridge = "Холодильник: белый",
+	
+	DisplayName_Compact_Fridge = "Компактный холодильник".
+	DisplayName_Compact_Oven = "Компактная плита",
 }

@@ -5,11 +5,11 @@ module Base
 		part GunRack
 		{
 			area = SeatFrontRight,
-			itemType = tsarcraft.GunRack,
-		    	specificItem = false,
+			itemType = GunRack,
+		    specificItem = false,
 			container
 			{
-				capacity = 10,
+				capacity = 20,
 				test = Vehicles.ContainerAccess.GloveBox,
 			}
 			lua

@@ -1,4 +1,0 @@
-ItemName_RU = {
-	filcher.SFCarOven = "Плита",
-	filcher.SFCarFridge = "Холодильник",
-}
