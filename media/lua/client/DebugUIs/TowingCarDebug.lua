@@ -21,7 +21,7 @@ debugScenarios.AiteronScenario_Towing = {
 		SandboxVars.StartMonth = 7;
 		SandboxVars.StartDay = 9;
 		SandboxVars.StartTime = 2;
-		SandboxVars.VehicleEasyUse = true;
+		SandboxVars.VehicleEasyUse = false;
 		SandboxVars.WaterShutModifier = 14;
 		SandboxVars.ElecShutModifier = 14;
 		SandboxVars.WaterShut = 2;
@@ -113,10 +113,10 @@ debugScenarios.AiteronScenario_Towing = {
 		car2:setColor(0.7, 2, 0.4);
 		inv:AddItem(car2:createVehicleKey());
 		
-		local car3 = addVehicleDebug("Base.BigMaxTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9339, 0));
+		local car3 = addVehicleDebug("Base.HomeTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9339, 0));
 		--car3:repair();
 		--car3:setColor(0.1, 2, 0.2);
-		inv:AddItem(car3:createVehicleKey());
+		--inv:AddItem(car3:createVehicleKey());
 		
 		--local car4 = addVehicleDebug("Base.AutoTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9350, 0));
 		--car4:repair();
