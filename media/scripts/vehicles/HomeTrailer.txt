@@ -61,7 +61,7 @@ module Base
 		wheel FrontLeft
 		{
 			front = true,
-			offset = 0.6105 -0.3000 0.2684,
+			offset = 0.6105 -0.3000 0.2632,
 			radius = 0.10f,
 			width = 0.1f,
 		}
@@ -69,7 +69,7 @@ module Base
 		wheel FrontRight
 		{
 			front = true,
-			offset = -0.6053 -0.3000 0.2684,
+			offset = -0.6053 -0.3000 0.2632,
 			radius = 0.10f,
 			width = 0.1f,
 		}

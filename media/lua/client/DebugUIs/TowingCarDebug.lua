@@ -108,7 +108,7 @@ debugScenarios.AiteronScenario_Towing = {
 		--car:repair();
 		--inv:AddItem(car:createVehicleKey());
 		
-		local car2 = addVehicleDebug("Base.ModernCar", IsoDirections.S, nil, getCell():getGridSquare(10592, 9345, 0));
+		local car2 = addVehicleDebug("Base.86bounder", IsoDirections.S, nil, getCell():getGridSquare(10592, 9346, 0));
 		--car2:repair();
 		car2:setColor(0.7, 2, 0.4);
 		inv:AddItem(car2:createVehicleKey());

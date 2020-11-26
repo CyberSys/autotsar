@@ -1,0 +1,29 @@
+IG_UI_PL = {
+	IGUI_VehicleNameFirstTrailer = "Autotsar GNV 250",
+	IGUI_VehicleNameSecondTrailer = "Autotsar GNV 500",
+	IGUI_VehicleNameHomeTrailer = "Autotsar iLYA-1990",
+	IGUI_VehicleNameKbacTrailer = "Autotsar KBAC",
+	IGUI_VehiclePart500FuelTruckTank = "Zbiornik przyczepy",
+	
+	IGUI_VehiclePartCounter = "Lada",
+    IGUI_VehiclePartFridge = "Lodówka",
+    IGUI_VehiclePartOven = "Piekarnik",
+
+    IGUI_VehiclePartfridge = "Lodówka",
+    IGUI_VehiclePartstove = "Piekarnik",
+
+    IGUI_VehiclePartRoofrack = "Baga¿nik dachowy",
+
+    IGUI_VehiclePartTV = "Telewizor",
+    IGUI_VehiclePartMattress = "Matecar",
+    IGUI_VehiclePartGunRack = "Stojak na broñ",
+
+    IGUI_PlayerText_CanNotSleepInMovingCar_Mattress = "Aby spaæ na materacu,<br>zatrzymaj pojazd.",
+    IGUI_Sleep_NotTiredEnough_Mattress = "Poziom zmêczenia jest za niski,<br>aby pójœæ spaæ.",
+	
+	IGUI_Turn_Oven_On = "W³¹cz piekarnik", 
+	IGUI_Turn_Oven_Off = "Wy³¹cz piekarnik",
+	
+	
+}
+
