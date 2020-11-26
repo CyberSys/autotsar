@@ -7,25 +7,12 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 
 	old_ISVehicleMenu_showRadialMenu(playerObj)
 
-	-- local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-	-- if isPaused then return end
-
 	local vehicle = playerObj:getVehicle()
 	if vehicle ~= nil then
 		local menu = getPlayerRadialMenu(playerObj:getPlayerNum())
-		if menu:isReallyVisible() then
-			if menu.joyfocus then
-				setJoypadFocus(playerObj:getPlayerNum(), nil)
-			end
-			menu:undisplay()
-			return
-		end
-
-		menu:setX(getPlayerScreenLeft(playerObj:getPlayerNum()) + getPlayerScreenWidth(playerObj:getPlayerNum()) / 2 - menu:getWidth() / 2)
-		menu:setY(getPlayerScreenTop(playerObj:getPlayerNum()) + getPlayerScreenHeight(playerObj:getPlayerNum()) / 2 - menu:getHeight() / 2)
 		
 		local seat = vehicle:getSeat(playerObj)
-		if seat == 1 and string.match(vehicle:getScript():getName(), "HomeTrailer") then
+		if string.match(vehicle:getScript():getName(), "HomeTrailer") and seat == 1 then
 			--print("AUTOTSAR: ACTION IS -4")
 
 			if vehicle:isEngineRunning() then
@@ -76,14 +63,9 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 				menu:addSlice(getText("ContextMenu_Close_trunk"), getTexture("media/ui/vehicles/vehicle_open_home_trunk.png"), ISVehicleMenu.onToggleTrunkLocked, playerObj)
 			end
 		end
-			
+
 		menu:addToUIManager()
 
-		-- if JoypadState.players[playerObj:getPlayerNum()+1] then
-			-- menu:setHideWhenButtonReleased(Joypad.DPadUp)
-			-- setJoypadFocus(playerObj:getPlayerNum(), menu)
-			-- playerObj:setJoypadIgnoreAimUntilCentered(true)
-		-- end
 	end
 end
 

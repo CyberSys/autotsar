@@ -62,42 +62,43 @@ module Base
 				test = Vehicles.ContainerAccess.Counter,
 			}
 		    	table install
-            		{
-                		items
-                		{
-                    			1
-                    			{
-                        			type = Base.Screwdriver,
-                        			count = 1,
-                        			keep = true,
-						equip = primary,
-                    			}
-                		}
-                		time = 300,
-                		skills = Mechanics:1,
-                		recipes = Basic Mechanics,
-                		test = Vehicles.InstallTest.Default,
-            		}
-            		table uninstall
-            		{
-                		items
-                		{
-                    			1
-                    			{
-                        			type = Base.Screwdriver,
-                        			count = 1,
-                        			keep = true,
-						equip = primary,
-                    			}
-                		}
-                		time = 300,
-                		skills = Mechanics:1,
-                		recipes = Basic Mechanics,
-                		test = Vehicles.UninstallTest.Default,
-            		}
+				{
+					items
+					{
+							1
+							{
+								type = Base.Screwdriver,
+								count = 1,
+								keep = true,
+								equip = primary,
+							}
+					}
+					time = 300,
+					skills = Mechanics:1,
+					recipes = Basic Mechanics,
+					test = Vehicles.InstallTest.Default,
+				}
+				table uninstall
+				{
+					items
+					{
+							1
+							{
+								type = Base.Screwdriver,
+								count = 1,
+								keep = true,
+					equip = primary,
+							}
+					}
+					time = 300,
+					skills = Mechanics:1,
+					recipes = Basic Mechanics,
+					test = Vehicles.UninstallTest.Default,
+				}
 			lua
 			{
 				create = Vehicles.Create.Oven,
+				init = Vehicles.Init.Oven,
 				update = Vehicles.Update.Oven,
 			}
 		}
@@ -113,42 +114,43 @@ module Base
 				test = Vehicles.ContainerAccess.Counter,
 			}
 		    	table install
-            		{
-                		items
-                		{
-                    			1
-                    			{
-                        		type = Base.Screwdriver,
-                        		count = 1,
-                        		keep = true,
+				{
+					items
+					{
+							1
+							{
+							type = Base.Screwdriver,
+							count = 1,
+							keep = true,
+							equip = primary,
+							}
+					}
+					time = 300,
+					skills = Mechanics:1,
+					recipes = Basic Mechanics,
+					test = Vehicles.InstallTest.Default,
+				}
+				table uninstall
+				{
+					items
+					{
+							1
+							{
+								type = Base.Screwdriver,
+								count = 1,
+								keep = true,
 					equip = primary,
-                    			}
-                		}
-                	time = 300,
-                	skills = Mechanics:1,
-                	recipes = Basic Mechanics,
-                	test = Vehicles.InstallTest.Default,
-            		}
-            		table uninstall
-            		{
-                		items
-                		{
-                    			1
-                    			{
-                        			type = Base.Screwdriver,
-                        			count = 1,
-                        			keep = true,
-						equip = primary,
-                    			}
-                		}
-                		time = 300,
-                		skills = Mechanics:1,
-                		recipes = Basic Mechanics,
-                		test = Vehicles.UninstallTest.Default,
-            		}
+							}
+					}
+					time = 300,
+					skills = Mechanics:1,
+					recipes = Basic Mechanics,
+					test = Vehicles.UninstallTest.Default,
+				}
 			lua
 			{
 				create = Vehicles.Create.Fridge,
+				init = Vehicles.Init.Fridge,
 				update = Vehicles.Update.Fridge,
 			}
 		}
