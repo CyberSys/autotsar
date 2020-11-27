@@ -1,0 +1,4 @@
+Recipes_DE = {
+	Recipe_Make_a_oven_for_camper = "Einen Herd fur den Wohnwagen herstellen",
+	Recipe_Make_a_refrigerator_for_camper = "Einen Kuhlschrank fur den Wohnwagen herstellen",
+}
