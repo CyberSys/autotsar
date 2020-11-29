@@ -87,7 +87,9 @@ module Base
 		template = Tire/part/TireFrontRight,
 		template = Brake,
 
-		part TruckBed
+		template = Trunk/part/TruckBed,
+
+		part TruckBed*
 		{
 			area = TruckBed,
 			category = bodywork,
@@ -98,7 +100,6 @@ module Base
 			container
 			{
 				capacity = 500,
-				conditionAffectsCapacity = true,
 				test = Vehicles.ContainerAccess.TruckBedOpen,
 			}
 

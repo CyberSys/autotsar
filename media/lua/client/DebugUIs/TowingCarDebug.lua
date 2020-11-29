@@ -104,33 +104,33 @@ debugScenarios.AiteronScenario_Towing = {
 		getPlayer():getKnownRecipes():add("Basic Mechanics"); getPlayer():getKnownRecipes():add("Intermediate Mechanics"); getPlayer():getKnownRecipes():add("Advanced Mechanics");
 		
 		-- car
-		--local car = addVehicleDebug("Base.AutoTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9330, 0));
+		local car = addVehicleDebug("Base.FirstTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9330, 0));
 		--car:repair();
 		--inv:AddItem(car:createVehicleKey());
 		
-		local car2 = addVehicleDebug("Base.86bounder", IsoDirections.S, nil, getCell():getGridSquare(10592, 9346, 0));
+		local car2 = addVehicleDebug("Base.SecondTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9346, 0));
 		--car2:repair();
-		car2:setColor(0.7, 2, 0.4);
+		--car2:setColor(0.7, 2, 0.4);
 		inv:AddItem(car2:createVehicleKey());
 		
-		local car3 = addVehicleDebug("Base.HomeTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9339, 0));
+		local car3 = addVehicleDebug("Base.FirstTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9339, 0));
 		--car3:repair();
 		--car3:setColor(0.1, 2, 0.2);
 		--inv:AddItem(car3:createVehicleKey());
 		
-		--local car4 = addVehicleDebug("Base.AutoTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9350, 0));
+		local car4 = addVehicleDebug("Base.SecondTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9350, 0));
 		--car4:repair();
 		--car4:setColor(0.7, 2, 0.4);
 		--inv:AddItem(car4:createVehicleKey());
 		
-		--local car5 = addVehicleDebug("Base.SecondTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9355, 0));
+		local car5 = addVehicleDebug("Base.FirstTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9355, 0));
 		--car5:repair();
 		--car5:setColor(0.1, 2, 0.4);
 				
-		local car6 = addVehicleDebug("Base.ModernCar", IsoDirections.S, nil, getCell():getGridSquare(10592, 9360, 0));
+		local car6 = addVehicleDebug("Base.SecondTrailer", IsoDirections.S, nil, getCell():getGridSquare(10592, 9360, 0));
 		--car6:repair();
-		car6:setColor(0.1, 2, 0.5);
-		inv:AddItem(car6:createVehicleKey());
+		--car6:setColor(0.1, 2, 0.5);
+		--inv:AddItem(car6:createVehicleKey());
 				
 		local car7 = addVehicleDebug("Base.ModernCar", IsoDirections.S, nil, getCell():getGridSquare(10592, 9365, 0));
 		--car7:repair();
