@@ -86,20 +86,20 @@ module Base
 
 		template = Tire/part/TireFrontLeft,
 		template = Tire/part/TireFrontRight,
-		template = Brake,
 
-		part Brake*
+		part TireFrontLeft
 		{
 			table install
 			{
-				skills = Mechanics:6,
-				recipes = Intermediate Mechanics,
+				requireInstalled = SuspensionFrontLeft,
 			}
+		}
 
-			table uninstall
+		part TireFrontRight
+		{
+			table install
 			{
-				skills = Mechanics:6,
-				recipes = Intermediate Mechanics,
+				requireInstalled = SuspensionFrontRight,
 			}
 		}
 

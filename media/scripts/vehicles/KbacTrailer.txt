@@ -135,6 +135,10 @@ module Base
 			{
 				file = KbacWheelR,
 			}
+			table install
+			{
+				requireInstalled = SuspensionFrontLeft,
+			}
 		}
 
 		part TireFrontRight
@@ -142,6 +146,10 @@ module Base
 			model InflatedTirePlusWheel
 			{
 				file = KbacWheelL,
+			}
+			table install
+			{
+				requireInstalled = SuspensionFrontLeft,
 			}
 		}
 

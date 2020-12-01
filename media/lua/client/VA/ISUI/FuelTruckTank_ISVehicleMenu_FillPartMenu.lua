@@ -1,16 +1,28 @@
-local old_ISVehicleMenu_FillPartMenu = ISVehicleMenu.FillPartMenu
+if not LiqudTanker then LiqudTanker = {} end
 
-function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)
-	--local what = IsoObjectPicker():PickVehicle(2,2)
-	
+LiqudTanker.LiquidTypes = {
+	["Water"] = true,
+	["Gasoline"] = true,
+}
+
+
+
+
+
+if not LiqudTanker.old_ISVehicleMenu_FillPartMenu then
+	LiqudTanker.old_ISVehicleMenu_FillPartMenu = ISVehicleMenu.FillPartMenu
+end
+
+function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)	
 	local playerObj = getSpecificPlayer(playerIndex);
 	local typeToItem = VehicleUtils.getItems(playerIndex)
 	
 	local fuel_truck_source = FindVehicleGas(playerObj, vehicle)
 	
-	
 	for i=1,vehicle:getPartCount() do
 		local part = vehicle:getPartByIndex(i-1)		
+		
+		-- Gasoline storage
 		if part:isContainer() and part:getContainerContentType() == "Gasoline Storage" then
 			if typeToItem["Base.PetrolCan"] and part:getContainerContentAmount() < part:getContainerCapacity() then
 				if slice then
@@ -57,14 +69,23 @@ function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)
 						context:addOption(getText("ContextMenu_Fill_Gasoline_Storage_Tank_From_Fuel_Truck"), playerObj, ISVehiclePartMenu.onPumpGasolineFromTruck, part, fuel_truck_source)
 					end
 				--end
-			end			
+			end	
 		end	
 
+		-- Any liquid storage
+		if part:isContainer() and part:getContainerContentType() 
+				and string.match(part:getContainerContentType(), "Storage")
+				and LiqudTanker.LiquidTypes[string.match(part:getContainerContentType(), "%a+")] then 
+			if slice then
+				slice:addSlice("Empty tanker")
+			else
+				context:addOption("Empty tanker")
+			end
+		end
+
+
+		-- Fuel vehicle from tanker
 		if not vehicle:isEngineStarted() and part:isContainer() and part:getContainerContentType() == "Gasoline" then
-			--print("Room")
-			
-			
-			--local square = ISVehiclePartMenu.getNearbyFuelPump(vehicle)
 			if fuel_truck_source and fuel_truck_source:getContainerContentAmount() > 0 and part:getContainerContentAmount() < part:getContainerCapacity() then
 				--if square and part:getContainerContentAmount() < part:getContainerCapacity() then
 					if slice then
@@ -79,12 +100,12 @@ function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)
 
 		
 	end
-	old_ISVehicleMenu_FillPartMenu(playerIndex, context, slice, vehicle)
+	LiqudTanker.old_ISVehicleMenu_FillPartMenu(playerIndex, context, slice, vehicle)
 end
 
 function FindVehicleGas(playerObj, playerVehicle)
 	--print("TEST")
-	local radius = 10
+	local radius = 5
 	local player = getPlayer()
 	local cell = playerObj:getCell()
 	local vehicleList = cell:getVehicles()

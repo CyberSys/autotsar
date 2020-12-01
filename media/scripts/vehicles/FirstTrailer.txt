@@ -83,8 +83,6 @@ module Base
 		{
 			xywh = -0.6684 0.0000 0.4737 0.4737,
 		}
-
-		template = Brake,
 		
 		template = Trunk/part/TruckBed,
 		
@@ -107,22 +105,7 @@ module Base
 				create = Vehicles.Create.Default,
 			}
 		}
-
-		part Brake*
-		{
-			table install
-			{
-				skills = Mechanics:6,
-				recipes = Intermediate Mechanics,
-			}
-
-			table uninstall
-			{
-				skills = Mechanics:6,
-				recipes = Intermediate Mechanics,
-			}
-		}
-
+		
 		template = Suspension,
 
 		part Suspension*
@@ -143,6 +126,22 @@ module Base
 		template = Tire/part/TireFrontLeft,
 		template = Tire/part/TireFrontRight,
 		
+		part TireFrontLeft
+		{
+			table install
+			{
+				requireInstalled = SuspensionFrontLeft,
+			}
+		}
+
+		part TireFrontRight
+		{
+			table install
+			{
+				requireInstalled = SuspensionFrontRight,
+			}
+		}
+
 		physics box
 		{
 			offset = 0.1632 0.2526 0.8316,
