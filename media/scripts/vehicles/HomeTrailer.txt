@@ -103,7 +103,8 @@ module Base
 			}
 		}
 
-		template = Suspension,
+		template = Suspension/part/SuspensionFrontLeft,
+		template = Suspension/part/SuspensionFrontRight,
 
 		part Suspension*
 		{
