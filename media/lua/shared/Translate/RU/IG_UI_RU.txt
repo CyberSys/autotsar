@@ -1,8 +1,8 @@
 IG_UI_RU = {
-	IGUI_VehicleNameFirstTrailer = "Autotsar GNV 250",
-	IGUI_VehicleNameSecondTrailer = "Autotsar GNV 500",
-	IGUI_VehicleNameHomeTrailer = "Autotsar iLYA-1990",
-	IGUI_VehicleNameKbacTrailer = "Autotsar KBAC",
+	IGUI_VehicleNameTrailerFirst = "Autotsar GNV 250",
+	IGUI_VehicleNameTrailerSecond = "Autotsar GNV 500",
+	IGUI_VehicleNameTrailerHome = "Autotsar iLYA-1990",
+	IGUI_VehicleNameTrailerKbac = "Autotsar KBAC",
 
     IGUI_VehiclePartCounter = "Контейнер",
     IGUI_VehiclePartFridge = "Холодильник",

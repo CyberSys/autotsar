@@ -2,7 +2,7 @@ module Base
 {
 	fixing Fix Trailer Trunk Welding
 		{
-		   Require : FirstTrailerTrunk;SecondTrailerTrunk,
+		   Require : TrailerFirstTrunk;TrailerSecondTrunk,
 		   GlobalItem : BlowTorch=5,
 		   ConditionModifier : 1.2,
 

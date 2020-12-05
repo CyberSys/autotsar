@@ -10,6 +10,7 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 	
 	setSandbox = function()
 		SandboxVars.MaxFogIntensity = 3;	-- low fog
+		SandboxVars.VehicleStoryChance = 6;
 		SandboxVars.Helicopter = 1;	-- never helicopter
 		SandboxVars.Zombies = 2; -- 5 = no zombies, 1 = insane (then 2 = low, 3 normal, 4 high..)
 		SandboxVars.StarterKit = false;
@@ -80,27 +81,30 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 
 		-- Items
 		playerObj:getInventory():AddItem("TowingCar.TowBar");
-		playerObj:getInventory():AddItem("TowingCar.Wrench");
-		playerObj:getInventory():AddItem("TowingCar.LugWrench");
-		playerObj:getInventory():AddItem("TowingCar.Screwdriver");
-		playerObj:getInventory():AddItem("TowingCar.Jack");
-		playerObj:getInventory():AddItem("TowingCar.EmptyPetrolCan");
+		playerObj:getInventory():AddItem("Base.Wrench");
+		playerObj:getInventory():AddItem("Base.LugWrench");
+		playerObj:getInventory():AddItem("Base.Screwdriver");
+		playerObj:getInventory():AddItem("Base.Jack");
+		playerObj:getInventory():AddItem("Base.EmptyPetrolCan");
+		playerObj:getInventory():AddItem("Base.PotOfSoupRecipe");
+		playerObj:getInventory():AddItem("Base.PotOfSoupRecipe");
 
 		-- Trailers
 		local vehY = 5785.5
 		local vehX = 3671
 		local yShift = 3.2
 
-		addVehicleDebug("Base.FirstTrailer", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY, 0));
-		addVehicleDebug("Base.SecondTrailer", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*1, 0));
-		addVehicleDebug("Base.HomeTrailer", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*2, 0));
-		addVehicleDebug("Base.KbacTrailer", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*3, 0));
+		addVehicleDebug("Base.TrailerFirst", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY, 0));
+		addVehicleDebug("Base.TrailerSecond", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*1, 0));
+		local car = addVehicleDebug("Base.TrailerHome", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*2, 0));
+		inv:AddItem(car:createVehicleKey());
+		addVehicleDebug("Base.TrailerKbac", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*3, 0));
 		addVehicleDebug("Base.Trailer", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*4, 0));
 		addVehicleDebug("Base.TrailerCover", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*5, 0));
 		addVehicleDebug("Base.TrailerAdvert", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*6, 0));
 	
 		-- Cars
-		local car = addVehicleDebug("Base.PickUpTruckMccoy", IsoDirections.W, nil, getCell():getGridSquare(3685.5, 5789, 0));
+		car = addVehicleDebug("Base.PickUpTruckMccoy", IsoDirections.W, nil, getCell():getGridSquare(3685.5, 5789, 0));
 		car:repair();
 		inv:AddItem(car:createVehicleKey());			
 	end

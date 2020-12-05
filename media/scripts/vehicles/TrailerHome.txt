@@ -1,13 +1,13 @@
 module Base
 {
-	model HomeTrailerBase
+	model TrailerHomeBase
     {
         mesh = vehicles/Vehicles_hometrailer,
         shader = vehicle_multiuv,
         invertX = FALSE,
         scale = 0.0045,
     }
-	vehicle HomeTrailer
+	vehicle TrailerHome
 	{
 		mechanicType = 1,
 		offRoadEfficiency = 2,
@@ -16,7 +16,7 @@ module Base
 
 		model
 		{
-			file = HomeTrailerBase,
+			file = TrailerHomeBase,
 			scale = 1.9000,
 			offset = 0.0000 0.4053 -0.2579,
 		}
@@ -249,15 +249,15 @@ module Base
 		}
 
 		template = Windshield/part/Windshield,
+		template = Windshield/part/WindshieldRear,
+		template = Window/part/WindowFrontLeft,
+		template = Window/part/WindowFrontRight,
+		template = Window/part/WindowRearLeft,
+		template = Window/part/WindowRearRight,
 
 		part WindowFrontLeft
 		{
-			parent = DoorFrontLeft,
-			area = SeatFrontLeft,
-			itemType = Base.FrontWindow,
-			category = door,
-			mechanicRequireKey = true,
-
+			mechanicRequireKey = false,
 			window
 			{
 				openable = false,
@@ -265,57 +265,18 @@ module Base
 
 			table install
 			{
-				items
-				{
-					1
-					{
-						type = Base.Screwdriver,
-						count = 1,
-						keep = true,
-						equip = primary,
-					}
-				}
-
-				time = 300,
-				skills = Mechanics:3,
-				recipes = Basic Mechanics,
-				test = Vehicles.InstallTest.Default,
-				complete = Vehicles.InstallComplete.Window,
+				requireInstalled = ,
 			}
 
 			table uninstall
 			{
-				items
-				{
-					1
-					{
-						type = Base.Screwdriver,
-						count = 1,
-						keep = true,
-						equip = primary,
-					}
-				}
-
-				time = 300,
-				skills = Mechanics:3,
-				recipes = Basic Mechanics,
-				test = Vehicles.UninstallTest.Default,
-			}
-
-			lua
-			{
-				create = Vehicles.Create.Window,
+				requireInstalled = ,
 			}
 		}
 
 		part WindowFrontRight
 		{
-			parent = DoorFrontRight,
-			area = SeatFrontRight,
-			itemType = Base.FrontWindow,
-			category = door,
-			mechanicRequireKey = true,
-
+			mechanicRequireKey = false,
 			window
 			{
 				openable = false,
@@ -323,166 +284,64 @@ module Base
 
 			table install
 			{
-				items
-				{
-					1
-					{
-						type = Base.Screwdriver,
-						count = 1,
-						keep = true,
-						equip = primary,
-					}
-				}
-
-				time = 300,
-				skills = Mechanics:3,
-				recipes = Basic Mechanics,
-				test = Vehicles.InstallTest.Default,
-				complete = Vehicles.InstallComplete.Window,
+				requireInstalled = ,
 			}
 
 			table uninstall
 			{
-				items
-				{
-					1
-					{
-						type = Base.Screwdriver,
-						count = 1,
-						keep = true,
-						equip = primary,
-					}
-				}
-
-				time = 300,
-				skills = Mechanics:3,
-				recipes = Basic Mechanics,
-				test = Vehicles.UninstallTest.Default,
-			}
-
-			lua
-			{
-				create = Vehicles.Create.Window,
+				requireInstalled = ,
 			}
 		}
 
 		part WindowRearLeft
 		{
-			parent = DoorRearLeft,
-			area = SeatRearLeft,
-			itemType = Base.RearWindow,
-			category = door,
-			mechanicRequireKey = true,
-
+			mechanicRequireKey = false,
 			window
 			{
-				openable = true,
+				openable = false,
 			}
 
 			table install
 			{
-				items
-				{
-					1
-					{
-						type = Base.Screwdriver,
-						count = 1,
-						keep = true,
-						equip = primary,
-					}
-				}
-
-				time = 300,
-				skills = Mechanics:3,
-				recipes = Basic Mechanics,
-				test = Vehicles.InstallTest.Default,
-				complete = Vehicles.InstallComplete.Window,
+				requireInstalled = ,
 			}
 
 			table uninstall
 			{
-				items
-				{
-					1
-					{
-						type = Base.Screwdriver,
-						count = 1,
-						keep = true,
-						equip = primary,
-					}
-				}
-
-				time = 300,
-				skills = Mechanics:3,
-				recipes = Basic Mechanics,
-				test = Vehicles.UninstallTest.Default,
-			}
-
-			lua
-			{
-				create = Vehicles.Create.Window,
+				requireInstalled = ,
 			}
 		}
 
 		part WindowRearRight
 		{
-			area = SeatRearRight,
-			itemType = Base.RearWindow,
-			category = door,
-			mechanicRequireKey = true,
-
+			mechanicRequireKey = false,
 			window
 			{
-				openable = true,
+				openable = false,
 			}
 
 			table install
 			{
-				items
-				{
-					1
-					{
-						type = Base.Screwdriver,
-						count = 1,
-						keep = true,
-						equip = primary,
-					}
-				}
-
-				time = 300,
-				skills = Mechanics:3,
-				recipes = Basic Mechanics,
-				test = Vehicles.InstallTest.Default,
-				complete = Vehicles.InstallComplete.Window,
+				requireInstalled = ,
 			}
 
 			table uninstall
 			{
-				items
-				{
-					1
-					{
-						type = Base.Screwdriver,
-						count = 1,
-						keep = true,
-						equip = primary,
-					}
-				}
-
-				time = 300,
-				skills = Mechanics:3,
-				recipes = Basic Mechanics,
-				test = Vehicles.UninstallTest.Default,
-			}
-
-			lua
-			{
-				create = Vehicles.Create.Window,
+				requireInstalled = ,
 			}
 		}
 
-		template = Windshield/part/WindshieldRear,
+
 		template = Door/part/DoorRearRight,
+		
+		part DoorRearRight
+		{
+			table uninstall
+			{
+				requireInstalled = ,
+			}
+		}
+		
 		template = Seat/part/SeatFrontRight,
 		template = Seat/part/SeatMiddleRight,
 		template = Seat/part/SeatMiddleLeft,
@@ -519,9 +378,9 @@ module Base
 			}
 		}
 
-		template = Fridge/part/Fridge,
-		template = Mattress,
 		template = Fridge/part/Oven,
+		template = Mattress,
+		template = Fridge/part/Fridge,
 		template = TV,
 		template = GunRack,
 		template = Radio,

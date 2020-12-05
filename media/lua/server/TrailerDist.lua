@@ -1,8 +1,181 @@
 require "Vehicles/VehicleDistributions"
 
-local distributionTable = VehicleDistributions[1]
-
 VehicleDistributions.AutotsarTrailer = {
+	
+	TrailerTrunk = {
+		rolls = 3,
+		items = {
+			"Hammer", 17,
+			"NailsBox", 15,
+			"NailsBox", 15,
+			"Plank", 5,
+			"Plank", 5,
+			"Plank", 5,
+			"Plank", 5,
+			"Screwdriver", 5,
+			"Saw", 10,
+			"DuctTape", 2,
+			"Glue", 2,
+			"Twine", 2,
+			"Woodglue", 10,
+			"BookCarpentry1", 4,
+			"BookCarpentry2", 3,
+			"BookCarpentry3", 2,
+			"BookCarpentry4", 1,
+			"BookCarpentry5", 0.6,
+			"Screwdriver", 1,
+		}
+	},
+	
+	Fridge = {
+		rolls = 1,
+		items = {
+			"Milk", 103,
+			"Milk", 103,
+			"BeefJerky", 103,
+			"Bread", 12,
+			"Carrots", 12,
+			"Steak", 13,
+			"MeatPatty", 13,
+			"Chicken", 13,
+			"Ham", 3,
+			"Salmon", 3,
+			"Cheese", 2,
+			"Watermelon", 2,
+			"Broccoli", 2,
+			"Pie", 3,
+			"PopBottle", 3,
+			"PopBottle", 3,
+			"Butter", 3,
+			"EggCarton", 2,
+			"EggCarton", 2,
+			"Apple", 2,
+			"Orange", 2,
+			"Banana", 2,
+			"farming.RedRadish", 2,
+			"farming.Strewberrie", 2,
+			"Cherry", 2,
+			"farming.Tomato", 2,
+			"farming.Cabbage", 2,
+			"Lettuce", 3,
+			"Pickles", 3,
+			"BellPepper", 3,
+			"Peach", 3,
+			"CakeSlice", 3,
+			"Mustard", 2,
+			"Ketchup", 2,
+			"Processedcheese", 2,
+			"Corndog", 2,
+			"PorkChop", 3,
+			"MuttonChop", 3,
+			"Onion", 3,
+			"Lemon", 3,
+			"WaterBottleFull", 3,
+			"WaterBottleFull", 3,
+			"WaterBottleFull", 3,
+			"Wine", 2,
+			"Corn", 4,
+			"Eggplant", 4,
+			"Leek", 4,
+			"Grapes", 4,
+			"farming.Bacon", 4,
+			"farming.MayonnaiseFull", 2,
+			"farming.RemouladeFull", 0.5,
+			"Worm", 0.3,
+			"Avocado", 3,
+			"Pineapple", 3,
+			"Zucchini", 3,
+			"Tofu", 2,
+			"Yoghurt", 3,
+			"JuiceBox", 1,
+			"BeerCan", 1,
+			"BeerCan", 1,
+			"BeerCan", 1,
+			"BeerBottle", 1,
+		}
+	},
+	
+	Oven = {
+		rolls = 1,
+		items = {
+			"Hammer", 17,
+			"NailsBox", 15,
+			"NailsBox", 15,
+			"Plank", 5,
+			"Plank", 5,
+			"Plank", 5,
+			"Plank", 5,
+			"Screwdriver", 5,
+			"Saw", 10,
+			"DuctTape", 2,
+			"Glue", 2,
+			"Twine", 2,
+			"Woodglue", 10,
+			"BookCarpentry1", 4,
+			"BookCarpentry2", 3,
+			"BookCarpentry3", 2,
+			"BookCarpentry4", 1,
+			"BookCarpentry5", 0.6,
+			"Screwdriver", 1,
+		}
+	},
+	
+	GunRack = {
+		rolls = 1,
+		items = {
+			"Pills", 1,
+			"PillsBeta", 1,
+			"PillsAntiDep", 1,
+			"PillsSleepingTablets", 1,
+			"PillsVitamins", 1,
+			"Antibiotics", 1,
+			"Bandage", 1,
+			"Bandage", 1,
+			"Bandaid", 1,
+			"Bandaid", 1,
+			"FirstAidKit", 1,
+			"Tweezers", 1,
+			"Disinfectant", 1,
+			"AlcoholWipes", 1,
+			"SutureNeedle", 1,
+			"Scalpel", 0.005,
+			"Pistol", 1,
+			"Revolver_Short", 1,
+			"DoubleBarrelShotgun", 1,
+			"ShotgunShells", 1,
+			"Bullets9mm", 1,
+			"Bullets38", 1,
+			"BaseballBat", 1,
+			"Cigarettes", 1,
+			"Cigarettes", 1,
+			"Axe", 0.8,
+			"Newspaper", 0.2,
+			"Magazine", 0.2,
+			"FishingMag1", 0.2,
+			"FishingMag2", 0.2,
+			"HuntingMag1", 0.2,
+			"HuntingMag2", 0.2,
+			"HuntingMag3", 0.2,
+			"HerbalistMag", 0.2,
+			"CookingMag1", 0.2,
+			"CookingMag2", 0.2,
+			"ElectronicsMag1", 0.2,
+			"ElectronicsMag2", 0.2,
+			"ElectronicsMag3", 0.2,
+			"ElectronicsMag4", 0.2,
+			"ElectronicsMag5", 0.2,
+			"MechanicMag1", 0.2,
+			"MechanicMag2", 0.2,
+			"MechanicMag3", 0.2,
+			"EngineerMagazine1", 0.2,
+			"EngineerMagazine2", 0.2,
+			"MetalworkMag1", 0.2,
+			"MetalworkMag2", 0.2,
+			"MetalworkMag3", 0.2,
+			"MetalworkMag4", 0.2,
+		}
+	},
+	
 	TruckBed =
 	{
 		rolls = 1,
@@ -82,6 +255,7 @@ VehicleDistributions.AutotsarTrailer = {
 }
 
 VehicleDistributions.AutotsarKbac = {
+	
 	TruckBed =
 	{
 		rolls = 1,
@@ -121,24 +295,36 @@ VehicleDistributions.AutotsarKbac = {
 	}
 }
 
+local distributionTable = VehicleDistributions[1]
 
+distributionTable["TrailerHome"] = {
+	Normal = VehicleDistributions.AutotsarTrailer,
+	Specific = { VehicleDistributions.Groceries, VehicleDistributions.Fisherman, VehicleDistributions.Carpenter, VehicleDistributions.Farmer, VehicleDistributions.Electrician, VehicleDistributions.MetalWelder, VehicleDistributions.ConstructionWorker, VehicleDistributions.Painter, VehicleDistributions.TowBar},
+	}
 
-distributionTable["FirstTrailer"] = {
-		Normal = VehicleDistributions.AutotsarTrailer,
-		Specific = { VehicleDistributions.Groceries, VehicleDistributions.Fisherman, VehicleDistributions.Carpenter, VehicleDistributions.Farmer, VehicleDistributions.Electrician, VehicleDistributions.MetalWelder, VehicleDistributions.ConstructionWorker, VehicleDistributions.Painter, VehicleDistributions.TowBar},
+distributionTable["TrailerFirst"] = {
+	Normal = VehicleDistributions.AutotsarTrailer,
+	Specific = { VehicleDistributions.Groceries, VehicleDistributions.Fisherman, VehicleDistributions.Carpenter, VehicleDistributions.Farmer, VehicleDistributions.Electrician, VehicleDistributions.MetalWelder, VehicleDistributions.ConstructionWorker, VehicleDistributions.Painter, VehicleDistributions.TowBar},
 }
 
-distributionTable["SecondTrailer"] = {
-		Normal = VehicleDistributions.AutotsarTrailer,
-		Specific = { VehicleDistributions.Groceries, VehicleDistributions.Fisherman, VehicleDistributions.Carpenter, VehicleDistributions.Farmer, VehicleDistributions.Electrician, VehicleDistributions.MetalWelder, VehicleDistributions.ConstructionWorker, VehicleDistributions.Painter, VehicleDistributions.TowBar},
+distributionTable["TrailerSecond"] = {
+	Normal = VehicleDistributions.AutotsarTrailer,
+	Specific = { VehicleDistributions.Groceries, VehicleDistributions.Fisherman, VehicleDistributions.Carpenter, VehicleDistributions.Farmer, VehicleDistributions.Electrician, VehicleDistributions.MetalWelder, VehicleDistributions.ConstructionWorker, VehicleDistributions.Painter, VehicleDistributions.TowBar},
 }
 
-distributionTable["HomeTrailer"] = {
-		Normal = VehicleDistributions.AutotsarTrailer,
-		Specific = { VehicleDistributions.Groceries, VehicleDistributions.Fisherman, VehicleDistributions.Carpenter, VehicleDistributions.Farmer, VehicleDistributions.Electrician, VehicleDistributions.MetalWelder, VehicleDistributions.ConstructionWorker, VehicleDistributions.Painter, VehicleDistributions.TowBar},
+distributionTable["TrailerKbac"] = {
+	Normal = VehicleDistributions.AutotsarKbac,
 }
 
-distributionTable["KbacTrailer"] = {
-		Normal = VehicleDistributions.AutotsarKbac,
+distributionTable["Trailer"] = {
+	Normal = VehicleDistributions.AutotsarTrailer,
+	Specific = { VehicleDistributions.Groceries, VehicleDistributions.Fisherman, VehicleDistributions.Carpenter, VehicleDistributions.Farmer, VehicleDistributions.Electrician, VehicleDistributions.MetalWelder, VehicleDistributions.ConstructionWorker, VehicleDistributions.Painter, VehicleDistributions.TowBar},
 }
 
+distributionTable["TrailerCover"] = {
+	Normal = VehicleDistributions.AutotsarTrailer,
+	Specific = { VehicleDistributions.Groceries, VehicleDistributions.Fisherman, VehicleDistributions.Carpenter, VehicleDistributions.Farmer, VehicleDistributions.Electrician, VehicleDistributions.MetalWelder, VehicleDistributions.ConstructionWorker, VehicleDistributions.Painter, VehicleDistributions.TowBar},
+}
+	
+
+table.insert(VehicleDistributions, 1, distributionTable);
