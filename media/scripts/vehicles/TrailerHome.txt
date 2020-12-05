@@ -255,7 +255,27 @@ module Base
 		template = Window/part/WindowRearLeft,
 		template = Window/part/WindowRearRight,
 
-		part WindowFrontLeft
+		part WindowFrontLeft*
+		{
+			area = SeatMiddleLeft,
+			mechanicRequireKey = false,
+			window
+			{
+				openable = false,
+			}
+
+			table install
+			{
+				requireInstalled = ,
+			}
+
+			table uninstall
+			{
+				requireInstalled = ,
+			}
+		}
+
+		part WindowFrontRight*
 		{
 			mechanicRequireKey = false,
 			window
@@ -274,8 +294,9 @@ module Base
 			}
 		}
 
-		part WindowFrontRight
+		part WindowRearLeft*
 		{
+			area = SeatMiddleLeft,
 			mechanicRequireKey = false,
 			window
 			{
@@ -293,7 +314,7 @@ module Base
 			}
 		}
 
-		part WindowRearLeft
+		part WindowRearRight*
 		{
 			mechanicRequireKey = false,
 			window
@@ -311,34 +332,14 @@ module Base
 				requireInstalled = ,
 			}
 		}
-
-		part WindowRearRight
-		{
-			mechanicRequireKey = false,
-			window
-			{
-				openable = false,
-			}
-
-			table install
-			{
-				requireInstalled = ,
-			}
-
-			table uninstall
-			{
-				requireInstalled = ,
-			}
-		}
-
 
 		template = Door/part/DoorRearRight,
 		
-		part DoorRearRight
+		part DoorRearRight*
 		{
 			table uninstall
 			{
-				requireInstalled = ,
+				requireUninstalled = ,
 			}
 		}
 		
