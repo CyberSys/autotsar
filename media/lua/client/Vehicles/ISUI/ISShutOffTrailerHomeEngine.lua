@@ -1,32 +1,32 @@
 require "TimedActions/ISBaseTimedAction"
 
-ISShutOffHomeTrailerEngine = ISBaseTimedAction:derive("ISShutOffHomeTrailerEngine")
+ISShutOffTrailerHomeEngine = ISBaseTimedAction:derive("ISShutOffTrailerHomeEngine")
 
-function ISShutOffHomeTrailerEngine:isValid()
+function ISShutOffTrailerHomeEngine:isValid()
 	local vehicle = self.character:getVehicle()
 	return vehicle ~= nil and
 		vehicle:isEngineRunning()
 end
 
-function ISShutOffHomeTrailerEngine:update()
+function ISShutOffTrailerHomeEngine:update()
 	self:forceComplete()
 end
 
-function ISShutOffHomeTrailerEngine:start()
+function ISShutOffTrailerHomeEngine:start()
 end
 
-function ISShutOffHomeTrailerEngine:stop()
+function ISShutOffTrailerHomeEngine:stop()
 	ISBaseTimedAction.stop(self)
 end
 
-function ISShutOffHomeTrailerEngine:perform()
+function ISShutOffTrailerHomeEngine:perform()
 	local vehicle = self.character:getVehicle()
 	vehicle:shutOff()
 	-- needed to remove from queue / start next.
 	ISBaseTimedAction.perform(self)
 end
 
-function ISShutOffHomeTrailerEngine:new(character)
+function ISShutOffTrailerHomeEngine:new(character)
 	local o = {}
 	setmetatable(o, self)
 	self.__index = self

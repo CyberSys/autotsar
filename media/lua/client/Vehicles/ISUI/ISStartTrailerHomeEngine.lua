@@ -1,8 +1,8 @@
 require "TimedActions/ISBaseTimedAction"
 
-ISStartHomeTrailerEngine = ISBaseTimedAction:derive("ISStartHomeTrailerEngine")
+ISStartTrailerHomeEngine = ISBaseTimedAction:derive("ISStartTrailerHomeEngine")
 
-function ISStartHomeTrailerEngine:isValid()
+function ISStartTrailerHomeEngine:isValid()
 	local vehicle = self.character:getVehicle()
 	return vehicle ~= nil and
 --		vehicle:isEngineWorking() and
@@ -11,18 +11,18 @@ function ISStartHomeTrailerEngine:isValid()
 		not vehicle:isEngineStarted()
 end
 
-function ISStartHomeTrailerEngine:update()
+function ISStartTrailerHomeEngine:update()
 	self:forceComplete()
 end
 
-function ISStartHomeTrailerEngine:start()
+function ISStartTrailerHomeEngine:start()
 end
 
-function ISStartHomeTrailerEngine:stop()
+function ISStartTrailerHomeEngine:stop()
 	ISBaseTimedAction.stop(self)
 end
 
-function ISStartHomeTrailerEngine:perform()
+function ISStartTrailerHomeEngine:perform()
 	local vehicle = self.character:getVehicle()
 	local haveKey = false;
 	if self.character:getInventory():haveThisKeyId(vehicle:getKeyId()) then
@@ -33,7 +33,7 @@ function ISStartHomeTrailerEngine:perform()
 	ISBaseTimedAction.perform(self)
 end
 
-function ISStartHomeTrailerEngine:new(character)
+function ISStartTrailerHomeEngine:new(character)
 	local o = {}
 	setmetatable(o, self)
 	self.__index = self

@@ -1,6 +1,6 @@
 module Base
 {
-	model SecondTrailerBase
+	model TrailerSecondBase
     {
         mesh = vehicles/Vehicles_btrailer,
         shader = vehicle_multiuv,
@@ -16,7 +16,7 @@ module Base
 
 		model
 		{
-			file = SecondTrailerBase,
+			file = TrailerSecondBase,
 			scale = 1.9000,
 			offset = 0.0000 0.4263 -0.7526,
 		}
@@ -85,7 +85,22 @@ module Base
 
 		template = Tire/part/TireFrontLeft,
 		template = Tire/part/TireFrontRight,
-		template = Brake,
+		
+		part TireFrontLeft
+		{
+			table install
+			{
+				requireInstalled = SuspensionFrontLeft,
+			}
+		}
+
+		part TireFrontRight
+		{
+			table install
+			{
+				requireInstalled = SuspensionFrontRight,
+			}
+		}
 
 		template = Trunk/part/TruckBed,
 
@@ -93,7 +108,7 @@ module Base
 		{
 			area = TruckBed,
 			category = bodywork,
-			itemType = Base.SecondTrailerTrunk,
+			itemType = Base.TrailerSecondTrunk,
 			repairMechanic = true,
 			specificItem = false,
 
@@ -109,22 +124,8 @@ module Base
 			}
 		}
 
-		part Brake*
-		{
-			table install
-			{
-				skills = Mechanics:6,
-				recipes = Intermediate Mechanics,
-			}
-
-			table uninstall
-			{
-				skills = Mechanics:6,
-				recipes = Intermediate Mechanics,
-			}
-		}
-
-		template = Suspension,
+		template = Suspension/part/SuspensionFrontLeft,
+		template = Suspension/part/SuspensionFrontRight,
 
 		part Suspension*
 		{

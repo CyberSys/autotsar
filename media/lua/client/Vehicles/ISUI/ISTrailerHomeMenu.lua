@@ -12,11 +12,11 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 		local menu = getPlayerRadialMenu(playerObj:getPlayerNum())
 		
 		local seat = vehicle:getSeat(playerObj)
-		if string.match(vehicle:getScript():getName(), "HomeTrailer") and seat == 1 then
+		if string.match(vehicle:getScript():getName(), "TrailerHome") and seat == 1 then
 			--print("AUTOTSAR: ACTION IS -4")
 
 			if vehicle:isEngineRunning() then
-				menu:addSlice(getText("ContextMenu_VehicleShutOff"), getTexture("media/ui/vehicles/vehicle_ignitionOFF.png"), ISVehicleMenu.onShutOffHomeTrailerEngine, playerObj)
+				menu:addSlice(getText("ContextMenu_VehicleShutOff"), getTexture("media/ui/vehicles/vehicle_ignitionOFF.png"), ISVehicleMenu.onShutOffTrailerHomeEngine, playerObj)
 				--print("AUTOTSAR: ACTION IS -2")
 			else
 				if vehicle:isEngineStarted() then
@@ -26,15 +26,15 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 					--print("AUTOTSAR: ACTION IS 0")
 					if (SandboxVars.VehicleEasyUse) then
 						--print("AUTOTSAR: ACTION IS 1")
-						menu:addSlice(getText("ContextMenu_VehicleStartEngine"), getTexture("media/ui/vehicles/vehicle_ignitionON.png"), ISVehicleMenu.onStartHomeTrailerEngine, playerObj)
+						menu:addSlice(getText("ContextMenu_VehicleStartEngine"), getTexture("media/ui/vehicles/vehicle_ignitionON.png"), ISVehicleMenu.onStartTrailerHomeEngine, playerObj)
 					elseif not vehicle:isHotwired() and (playerObj:getInventory():haveThisKeyId(vehicle:getKeyId()) or vehicle:isKeysInIgnition()) then
 						--print("AUTOTSAR: ACTION IS 2")
-						menu:addSlice(getText("ContextMenu_VehicleStartEngine"), getTexture("media/ui/vehicles/vehicle_ignitionON.png"), ISVehicleMenu.onStartHomeTrailerEngine, playerObj)
+						menu:addSlice(getText("ContextMenu_VehicleStartEngine"), getTexture("media/ui/vehicles/vehicle_ignitionON.png"), ISVehicleMenu.onStartTrailerHomeEngine, playerObj)
 					elseif not vehicle:isHotwired() and ((playerObj:getPerkLevel(Perks.Electricity) >= 1 and playerObj:getPerkLevel(Perks.Mechanics) >= 2) or playerObj:HasTrait("Burglar"))then
 	--					menu:addSlice("Hotwire Vehicle", getTexture("media/ui/vehicles/vehicle_ignitionON.png"), ISVehicleMenu.onHotwire, playerObj)
 					elseif vehicle:isHotwired() then
 						--print("AUTOTSAR: ACTION IS 3")
-						menu:addSlice(getText("ContextMenu_VehicleStartEngine"), getTexture("media/ui/vehicles/vehicle_ignitionON.png"), ISVehicleMenu.onStartHomeTrailerEngine, playerObj)
+						menu:addSlice(getText("ContextMenu_VehicleStartEngine"), getTexture("media/ui/vehicles/vehicle_ignitionON.png"), ISVehicleMenu.onStartTrailerHomeEngine, playerObj)
 					else
 	--					menu:addSlice("You need keys or\nelectricity level 1 and\nmechanic level 2\nto hotwire", getTexture("media/ui/vehicles/vehicle_ignitionOFF.png"), nil, playerObj)
 					end
@@ -50,7 +50,7 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 				--print("TSARCRAFT: hotwire")
 				if ((playerObj:getPerkLevel(Perks.Electricity) >= 1 and playerObj:getPerkLevel(Perks.Mechanics) >= 2) or playerObj:HasTrait("Burglar")) then
 					--print("TSARCRAFT: 1 hotwire")
-					menu:addSlice(getText("ContextMenu_VehicleHotwire"), getTexture("media/ui/vehicles/vehicle_ignitionON.png"), ISVehicleMenu.onHotwireHomeTrailer, playerObj)
+					menu:addSlice(getText("ContextMenu_VehicleHotwire"), getTexture("media/ui/vehicles/vehicle_ignitionON.png"), ISVehicleMenu.onHotwireTrailerHome, playerObj)
 				else
 					--print("TSARCRAFT: 2 hotwire")
 					menu:addSlice(getText("ContextMenu_VehicleHotwireSkill"), getTexture("media/ui/vehicles/vehicle_ignitionOFF.png"), nil, playerObj)
@@ -69,15 +69,15 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 	end
 end
 
-function ISVehicleMenu.onStartHomeTrailerEngine(playerObj)
-	ISTimedActionQueue.add(ISStartHomeTrailerEngine:new(playerObj))
+function ISVehicleMenu.onStartTrailerHomeEngine(playerObj)
+	ISTimedActionQueue.add(ISStartTrailerHomeEngine:new(playerObj))
 end
 
-function ISVehicleMenu.onShutOffHomeTrailerEngine(playerObj)
-	ISTimedActionQueue.add(ISShutOffHomeTrailerEngine:new(playerObj))
+function ISVehicleMenu.onShutOffTrailerHomeEngine(playerObj)
+	ISTimedActionQueue.add(ISShutOffTrailerHomeEngine:new(playerObj))
 end
 
-function ISVehicleMenu.onHotwireHomeTrailer(playerObj)
-	ISTimedActionQueue.add(ISHotwireHomeTrailer:new(playerObj))
+function ISVehicleMenu.onHotwireTrailerHome(playerObj)
+	ISTimedActionQueue.add(ISHotwireTrailerHome:new(playerObj))
 end
 

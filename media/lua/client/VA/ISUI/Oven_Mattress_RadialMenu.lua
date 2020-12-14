@@ -1,4 +1,4 @@
-require('Vehicles/ISUI/ISHomeTrailerMenu')
+require('Vehicles/ISUI/ISTrailerHomeMenu')
 
 
 local old_ISVehicleMenu_showRadialMenu = ISVehicleMenu.showRadialMenu

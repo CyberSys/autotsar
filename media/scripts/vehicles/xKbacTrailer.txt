@@ -1,6 +1,6 @@
 module Base
 {
-	model KbacTrailerBase
+	model TrailerKbacBase
     {
         mesh = vehicles/Vehicles_kbac,
         shader = vehicle_norandom_multiuv,
@@ -29,7 +29,7 @@ module Base
 
 		model
 		{
-			file = KbacTrailerBase,
+			file = TrailerKbacBase,
 			scale = 1.9000,
 			offset = 0.0000 0.3947 -0.6579,
 		}
@@ -122,7 +122,7 @@ module Base
 
 			lua
 			{
-				create = Vasehicles.Create.Default,
+				create = Vehicles.Create.Default,
 			}
 		}
 
@@ -135,6 +135,10 @@ module Base
 			{
 				file = KbacWheelR,
 			}
+			table install
+			{
+				requireInstalled = SuspensionFrontLeft,
+			}
 		}
 
 		part TireFrontRight
@@ -142,6 +146,10 @@ module Base
 			model InflatedTirePlusWheel
 			{
 				file = KbacWheelL,
+			}
+			table install
+			{
+				requireInstalled = SuspensionFrontLeft,
 			}
 		}
 
