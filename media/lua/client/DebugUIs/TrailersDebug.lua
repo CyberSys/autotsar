@@ -19,15 +19,15 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 
 	onStart = function()
 		-- climate
-		local clim = getClimateManager();
-		local w = clim:getWeatherPeriod();
-		if w:isRunning() then
-			clim:stopWeatherAndThunder();
-		end
+		-- local clim = getClimateManager();
+		-- local w = clim:getWeatherPeriod();
+		-- if w:isRunning() then
+			-- clim:stopWeatherAndThunder();
+		-- end
 		-- remove fog
-		local var = clim:getClimateFloat(5);
-		var:setEnableOverride(true);
-		var:setOverride(0, 1);
+		-- local var = clim:getClimateFloat(5);
+		-- var:setEnableOverride(true);
+		-- var:setOverride(0, 1);
 		--------------------------------
 
 		-- Player
@@ -36,7 +36,7 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 		local visual = playerObj:getHumanVisual();
 
 		playerObj:setGhostMode(true);
-		playerObj:setGodMod(true)
+		-- playerObj:setGodMod(true)
 		
 		playerObj:clearWornItems();
 		playerObj:getInventory():clear();

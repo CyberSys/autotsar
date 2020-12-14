@@ -147,6 +147,7 @@ module Base
 		}
 
 		template = PassengerSeat6,
+		template = PassengerCompartment,
 
 		passenger FrontLeft
 		{
