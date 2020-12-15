@@ -110,6 +110,14 @@ module Base
 		}
 
 		template = GasTank,
+		
+		part GasTank
+		{
+			container
+			{
+				capacity = 20,
+			}
+		}
 
 		physics box
 		{

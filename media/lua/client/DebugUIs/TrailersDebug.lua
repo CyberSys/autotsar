@@ -1,6 +1,6 @@
-if debugScenarios == nil then
+-- if debugScenarios == nil then
 	debugScenarios = {}
-end
+-- end
 
 
 debugScenarios.IBrRusScenario_TowingTrailer = {

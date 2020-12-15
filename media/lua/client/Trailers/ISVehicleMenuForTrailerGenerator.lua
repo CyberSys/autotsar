@@ -87,11 +87,19 @@ function ISContextMenu:updateOption(id, name, target, onSelect, param1, param2, 
 	return option;
 end
 
-function ISContextMenu:removeOption(id)
-	table.insert(self.optionPool, self.options[self.numOptions - 1])
-    self.options[id] =  nil;
-    -- self.numOptions = self.numOptions -1;
-	-- self:calcHeight()
+function ISContextMenu:removeOption(option)
+	if option then
+		table.insert(self.optionPool, self.options[option.id])
+		self.options[option.id] =  nil;
+		for i = option.id, self.numOptions - 1 do
+			self.options[i] = self.options[i+1]
+			if self.options[i] then
+				self.options[i].id = i
+			end
+		end
+		self.numOptions = self.numOptions - 1;
+		self:calcHeight()
+	end
 end
 
 
@@ -100,12 +108,11 @@ ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, conte
 	local playerInv = playerObj:getInventory()
 	local generator = trailer:getModData()["generatorObject"]
 	if generator then
-		local remove_options = context:getOptionFromName(getText("ContextMenu_GeneratorInfo"))
 		local old_options = context:getOptionFromName(getText("ContextMenu_GeneratorInfo"))
 		if old_options then 
 			if not generator:isActivated() then
 				local old_option_unplug = context:getOptionFromName(getText("ContextMenu_GeneratorUnplug"))
-				context:updateOption(old_option_unplug.id, getText("ContextMenu_GeneratorUnplug"), old_option_unplug.target, ISVehicleMenuForTrailerGenerator.generatorUnplug, playerObj, trailer)
+				context:updateOption(old_option_unplug.id, getText("ContextMenu_GeneratorUnplug"), old_option_unplug.target,ISVehicleMenuForTrailerGenerator.generatorUnplug, playerObj, trailer)
 			end
 		else 
 			local option = context:addOptionOnTop(getText("ContextMenu_GeneratorInfo"), worldobjects, ISWorldObjectContextMenu.onInfoGenerator, generator, player);
@@ -131,7 +138,7 @@ ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, conte
 						option.toolTip = tooltip;
 					end
 				end
-				local option = context:addOptionOnTop(getText("ContextMenu_GeneratorUnplug"), worldobjects, ISWorldObjectContextMenu.onPlugGenerator, generator, player, false);
+				local option = context:addOptionOnTop(getText("ContextMenu_GeneratorUnplug"), worldobjects, ISWorldObjectContextMenu.generatorUnplug, playerObj, trailer);
 				if generator:getFuel() > 0 then
 					option = context:addOptionOnTop(getText("ContextMenu_Turn_On"), worldobjects, ISWorldObjectContextMenu.onActivateGenerator, true, generator, player);
 					local doStats = playerObj:DistToSquared(generator:getX() + 0.5, generator:getY() + 0.5) < 2 * 2
@@ -145,6 +152,10 @@ ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, conte
 				end
 			end
 		end
+		context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleSiphonGas")))
+		context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleRefuelFromPump")))
+		context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleAddGas")))
+		context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleMechanics")))
 	else
 		context:addOptionOnTop(getText("ContextMenu_GeneratorPlug"), nil, ISVehicleMenuForTrailerGenerator.generatorPlug, playerObj, trailer)
 	end
