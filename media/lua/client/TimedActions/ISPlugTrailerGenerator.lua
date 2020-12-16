@@ -20,12 +20,12 @@ function ISPlugTrailerGenerator:update()
 end
 
 function ISPlugTrailerGenerator:start()
-	local fuelAmount = self.trailer:getPartById("GasTank"):getContainerContentAmount()
+	local fuelAmount = self.trailer:getPartById("GasTank"):getContainerContentAmount()/self.trailer:getPartById("GasTank"):getContainerCapacity() * 100
 	self.trailer:setMass(10000)
 	self.generator = IsoGenerator.new(InventoryItemFactory.CreateItem("Base.Generator"), getCell(), self.trailer:getSquare())
 	self.generator:setSprite("appliances_misc_01_10")
 	self.generator:setFuel(fuelAmount)
-	self.generator:setCondition(30)
+	self.generator:setCondition(self.trailer:getPartById("Engine"):getCondition())
 	self.trailer:getModData()["generatorObject"] = generator
 	self:setActionAnim("Loot")
 	self.character:SetVariable("LootPosition", "Low")
@@ -33,6 +33,7 @@ end
 
 function ISPlugTrailerGenerator:stop()
 	self.generator:remove()
+	self.trailer:setMass(1000)
     ISBaseTimedAction.stop(self);
 end
 

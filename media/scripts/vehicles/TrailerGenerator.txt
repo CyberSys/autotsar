@@ -11,7 +11,7 @@ module Base
 	{
 		mechanicType = 1,
 		offRoadEfficiency = 0.8,
-		engineRepairLevel = 4,
+		engineRepairLevel = 5,
 		playerDamageProtection = 0.8,
 
 		model
@@ -110,13 +110,36 @@ module Base
 		}
 
 		template = GasTank,
-		
-		part GasTank
+
+		part GasTank*
 		{
+			category = nodisplay1,
+
 			container
 			{
 				capacity = 20,
+				contentType = Gasoline,
+				conditionAffectsCapacity = true,
 			}
+
+			lua
+			{
+				create = Vehicles.Create.GasTank,
+				update = Trailers.Update.GeneratorGasTank,
+				checkEngine = Vehicles.CheckEngine.GasTank,
+			}
+		}
+
+		area Engine
+		{
+			xywh = 0.0000 -0.8056 0.8667 0.4778,
+		}
+
+		template = Engine,
+
+		part Engine
+		{
+			category = nodisplay1,
 		}
 
 		physics box
@@ -150,27 +173,5 @@ module Base
 			offset = 0.0000 0.0000 -0.4889,
 			rotate = 0.0000 0.0000 0.0000,
 		}
-	}
-	vehicle TrailerGeneratorBurnt
-	{
-		model
-		{
-			file = TrailerGeneratorBase,
-			scale = 1.9000,
-			offset = 0.0000 0.3947 -0.6579,
-		}
-
-		spawnOffsetY = 0.19392952,
-
-		skin
-		{
-			texture = Vehicles/gen,
-		}
-
-		extents = 0.9011 0.6593 2.5055,
-		mass = 5000,
-		centerOfMassOffset = 0.0000 0.3297 0.0000,
-		physicsChassisShape = 0.9011 0.6593 2.5055,
-
 	}
 }

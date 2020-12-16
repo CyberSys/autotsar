@@ -31,7 +31,6 @@ end
 
 function ISUnplugTrailerGenerator:perform()
     self.generator:setConnected(false);
-	self.trailer:getPartById("GasTank"):setContainerContentAmount(self.generator:getFuel())
 	self.generator:remove()
 	self.trailer:setMass(1000)
 	self.trailer:getModData()["generatorObject"] = nil
