@@ -113,8 +113,11 @@ module Base
 
 		part GasTank*
 		{
-			category = nodisplay1,
-
+			category = Generator,
+			itemType = Autotsar.GeneratorGasTank,
+			mechanicRequireKey = false,
+			specificItem = false,
+			
 			container
 			{
 				capacity = 20,
@@ -128,6 +131,32 @@ module Base
 				update = Trailers.Update.GeneratorGasTank,
 				checkEngine = Vehicles.CheckEngine.GasTank,
 			}
+			table uninstall
+			{
+				items
+				{
+					1
+					{
+						type = Base.Screwdriver,
+						count = 1,
+						keep = true,
+						equip = secondary,
+					}
+					2
+					{
+						type = Base.Wrench,
+						count = 1,
+						keep = true,
+						equip = primary,
+					}
+				}
+				time = 500,
+				skills = Mechanics:5,
+				recipes = Basic Mechanics;Generator,
+				test = Vehicles.UninstallTest.Default,
+				requireEmpty = true,
+				complete = Trailers.UninstallComplete.GeneratorGasTank,
+			}
 		}
 
 		area Engine
@@ -139,7 +168,9 @@ module Base
 
 		part Engine
 		{
-			category = nodisplay1,
+			category = Generator,
+			mechanicRequireKey = false,
+			
 		}
 
 		physics box

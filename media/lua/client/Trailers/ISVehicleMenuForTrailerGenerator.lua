@@ -110,11 +110,23 @@ ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, conte
 	if generator then
 		local old_options = context:getOptionFromName(getText("ContextMenu_GeneratorInfo"))
 		if old_options then 
+			--print("CLICK on GEN")
 			if not generator:isActivated() then
 				local old_option_update = context:getOptionFromName(getText("ContextMenu_GeneratorUnplug"))
-				context:updateOption(old_option_update.id, old_option_update.name, old_option_update.target, ISVehicleMenuForTrailerGenerator.generatorUnplug, playerObj, trailer)
+				-- if generator:getCondition() > 1 then
+				if old_option_update then
+					context:updateOption(old_option_update.id, old_option_update.name, old_option_update.target, ISVehicleMenuForTrailerGenerator.generatorUnplug, playerObj, trailer)
+				end	
 				old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_On"))
-				context:updateOption(old_option_update.id, old_option_update.name, trailer, ISVehicleMenuForTrailerGenerator.onActivateGenerator, true, generator, player)
+				if old_option_update then
+					context:updateOption(old_option_update.id, old_option_update.name, trailer, ISVehicleMenuForTrailerGenerator.onActivateGenerator, true, generator, player)
+				end
+				context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorFix")))
+				context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorAddFuel")))
+				-- else
+					-- old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_On"))
+					-- context:updateOption(old_option_update.id, "ContextMenu_CheckGen", nil, nil)
+				-- end
 			else
 				local old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_Off"))
 				context:updateOption(old_option_update.id, old_option_update.name, trailer, ISVehicleMenuForTrailerGenerator.onActivateGenerator, false, generator, player)
@@ -124,27 +136,29 @@ ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, conte
 			if generator:isActivated() then
 				context:addOptionOnTop(getText("ContextMenu_Turn_Off"), trailer, ISVehicleMenuForTrailerGenerator.onActivateGenerator, false, generator, player);
 			else
-				if generator:getFuel() < 100 and playerInv:containsTypeEvalRecurse("PetrolCan", predicateNotEmpty) then
-					local petrolCan = playerInv:getFirstTypeEvalRecurse("PetrolCan", predicateNotEmpty);
-					context:addOptionOnTop(getText("ContextMenu_GeneratorAddFuel"), worldobjects, ISWorldObjectContextMenu.onAddFuel, petrolCan, generator, player);
-				end
-				if generator:getCondition() < 100 then
-					local option = context:addOptionOnTop(getText("ContextMenu_GeneratorFix"), worldobjects, ISWorldObjectContextMenu.onFixGenerator, generator, player);
-					if not playerObj:isRecipeKnown("Generator") then
-						local tooltip = ISWorldObjectContextMenu.addToolTip();
-						option.notAvailable = true;
-						tooltip.description = getText("ContextMenu_GeneratorPlugTT");
-						option.toolTip = tooltip;
-					end
-					if not playerInv:containsTypeRecurse("ElectronicsScrap") then
-						local tooltip = ISWorldObjectContextMenu.addToolTip();
-						option.notAvailable = true;
-						tooltip.description = getText("ContextMenu_GeneratorFixTT");
-						option.toolTip = tooltip;
-					end
-				end
+				-- if generator:getFuel() < 100 and playerInv:containsTypeEvalRecurse("PetrolCan", predicateNotEmpty) then
+					-- local petrolCan = playerInv:getFirstTypeEvalRecurse("PetrolCan", predicateNotEmpty);
+					-- context:addOptionOnTop(getText("ContextMenu_GeneratorAddFuel"), worldobjects, ISWorldObjectContextMenu.onAddFuel, petrolCan, generator, player);
+				-- end
+				-- if generator:getCondition() < 100 then
+					-- local option = context:addOptionOnTop(getText("ContextMenu_GeneratorFix"), worldobjects, ISWorldObjectContextMenu.onFixGenerator, generator, player);
+					-- if not playerObj:isRecipeKnown("Generator") then
+						-- local tooltip = ISWorldObjectContextMenu.addToolTip();
+						-- option.notAvailable = true;
+						-- tooltip.description = getText("ContextMenu_GeneratorPlugTT");
+						-- option.toolTip = tooltip;
+					-- end
+					-- if not playerInv:containsTypeRecurse("ElectronicsScrap") then
+						-- local tooltip = ISWorldObjectContextMenu.addToolTip();
+						-- option.notAvailable = true;
+						-- tooltip.description = getText("ContextMenu_GeneratorFixTT");
+						-- option.toolTip = tooltip;
+					-- end
+				-- end
 				local option = context:addOptionOnTop(getText("ContextMenu_GeneratorUnplug"), worldobjects, ISVehicleMenuForTrailerGenerator.generatorUnplug, playerObj, trailer);
-				if generator:getFuel() > 0 then
+				
+				-- if generator:getFuel() > 0 and generator:getCondition() > 1 then
+					--print("generator:getCondition() ", generator:getCondition())
 					option = context:addOptionOnTop(getText("ContextMenu_Turn_On"), trailer, ISVehicleMenuForTrailerGenerator.onActivateGenerator, true, generator, player);
 					local doStats = playerObj:DistToSquared(generator:getX() + 0.5, generator:getY() + 0.5) < 2 * 2
 					local description = ISGeneratorInfoWindow.getRichText(generator, doStats)
@@ -154,13 +168,13 @@ ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, conte
 						tooltip.description = description
 						option.toolTip = tooltip
 					end
-				end
+				-- end
 			end
 		end
-		context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleSiphonGas")))
-		context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleRefuelFromPump")))
-		context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleAddGas")))
-		context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleMechanics")))
+		-- context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleSiphonGas")))
+		-- context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleRefuelFromPump")))
+		-- context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleAddGas")))
+		-- context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleMechanics")))
 	else
 		context:addOptionOnTop(getText("ContextMenu_GeneratorPlug"), nil, ISVehicleMenuForTrailerGenerator.generatorPlug, playerObj, trailer)
 	end

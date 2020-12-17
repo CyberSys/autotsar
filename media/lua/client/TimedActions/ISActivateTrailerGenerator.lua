@@ -8,9 +8,7 @@ ISActivateTrailerGenerator = ISBaseTimedAction:derive("ISActivateTrailerGenerato
 
 function ISActivateTrailerGenerator:isValid()
 	if self.activate == self.generator:isActivated() then return false end
-	if self.activate and not self.generator:isConnected() or
-			self.generator:getFuel() <= 0 or
-			self.generator:getCondition() <= 0 then
+	if self.activate and not self.generator:isConnected() then
 		return false
 	end
 	return self.generator:getObjectIndex() ~= -1
@@ -35,7 +33,9 @@ function ISActivateTrailerGenerator:stop()
 end
 
 function ISActivateTrailerGenerator:perform()
-	if self.activate and self.generator:getCondition() <= 50 and ZombRand(2) == 0 then
+	local fuelAmount = self.trailer:getPartById("GasTank"):getContainerContentAmount()/self.trailer:getPartById("GasTank"):getContainerCapacity() * 100
+	self.generator:setFuel(fuelAmount)
+	if self.generator:getCondition() < 1 or self.generator:getFuel() <= 0 or self.activate and self.generator:getCondition() <= 50 and ZombRand(3) == 0 then
 		self.generator:failToStart()
 	else
 		self.generator:setActivated(self.activate)

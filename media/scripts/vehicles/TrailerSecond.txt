@@ -108,7 +108,7 @@ module Base
 		{
 			area = TruckBed,
 			category = bodywork,
-			itemType = Base.TrailerSecondTrunk,
+			itemType = Autotsar.TrailerSecondTrunk,
 			repairMechanic = true,
 			specificItem = false,
 
