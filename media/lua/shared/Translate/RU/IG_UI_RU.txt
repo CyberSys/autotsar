@@ -7,6 +7,7 @@ IG_UI_RU = {
     IGUI_VehiclePartCounter = "Контейнер",
     IGUI_VehiclePartFridge = "Холодильник",
     IGUI_VehiclePartOven = "Плита",
+	IGUI_VehiclePartCatGenerator = "Генератор",
 
     IGUI_VehiclePartfridge = "Холодильник",
     IGUI_VehiclePartstove = "Плита",
@@ -24,5 +25,8 @@ IG_UI_RU = {
 	
 	IGUI_Turn_Oven_On = "Включить плиту", 
 	IGUI_Turn_Oven_Off = "Выключить плиту",
+	
+	IGUI_VehiclePartEarthingOn = "Заземление",
+	IGUI_VehiclePartEarthingOff = "отключенный питающий провод",
 }
 

@@ -30,10 +30,15 @@ function ISUnplugTrailerGenerator:stop()
 end
 
 function ISUnplugTrailerGenerator:perform()
+	local genId = string.format("%05d", self.generator:getX()) .. string.format("%05d", self.generator:getY())
     self.generator:setConnected(false);
 	self.generator:remove()
 	self.trailer:setMass(1000)
 	self.trailer:getModData()["generatorObject"] = nil
+	local item = self.trailer:getPartById("EarthingOn"):getInventoryItem()
+	self.trailer:getPartById("EarthingOff"):setInventoryItem(item)
+	self.trailer:getPartById("EarthingOn"):setInventoryItem(nil)
+	TrailerGeneratorList[self.trailer] = nil
     -- needed to remove from queue / start next.
 	ISBaseTimedAction.perform(self);
 end

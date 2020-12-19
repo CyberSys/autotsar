@@ -14,7 +14,9 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 		SandboxVars.Helicopter = 1;	-- never helicopter
 		SandboxVars.Zombies = 2; -- 5 = no zombies, 1 = insane (then 2 = low, 3 normal, 4 high..)
 		SandboxVars.StarterKit = false;
-		SandboxVars.StartTime = 10;
+		SandboxVars.StartTime = 23;
+		SandboxVars.WaterShutModifier = -1;
+        SandboxVars.ElecShutModifier = -1;
 	end,
 
 	onStart = function()

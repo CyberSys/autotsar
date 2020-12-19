@@ -26,20 +26,23 @@ function ISPlugTrailerGenerator:start()
 	self.generator:setSprite("appliances_misc_01_10")
 	self.generator:setFuel(fuelAmount)
 	self.generator:setCondition(self.trailer:getPartById("Engine"):getCondition())
-	self.trailer:getModData()["generatorObject"] = generator
 	self:setActionAnim("Loot")
 	self.character:SetVariable("LootPosition", "Low")
 end
 
 function ISPlugTrailerGenerator:stop()
 	self.generator:remove()
-	self.trailer:setMass(1000)
     ISBaseTimedAction.stop(self);
 end
 
 function ISPlugTrailerGenerator:perform()
-    self.generator:setConnected(true);
-	self.trailer:getModData()["generatorObject"] = self.generator;
+    self.generator:setConnected(true)
+	self.trailer:getModData()["generatorObject"] = self.generator
+	TrailerGeneratorList[self.trailer] = self.generator
+	local item = self.trailer:getPartById("EarthingOff"):getInventoryItem()
+	self.trailer:getPartById("EarthingOn"):setInventoryItem(item)
+	self.trailer:getPartById("EarthingOff"):setInventoryItem(nil)
+	self.trailer:setMass(10000)
     -- needed to remove from queue / start next.
 	ISBaseTimedAction.perform(self);
 end

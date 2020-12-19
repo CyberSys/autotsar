@@ -127,6 +127,7 @@ module Base
 		template = Tire/part/TireFrontLeft,
 		template = Tire/part/TireFrontRight,
 		
+		
 		part TireFrontLeft
 		{
 			table install
@@ -140,6 +141,25 @@ module Base
 			table install
 			{
 				requireInstalled = SuspensionFrontRight,
+			}
+		}
+		
+		template = Tire/part/TireRearLeft,
+		template = Tire/part/TireRearRight,
+		part TireRearLeft
+		{
+			category = nodisplay,
+			model InflatedTirePlusWheel
+			{
+				file = Null,
+			}
+		}
+		part TireRearRight
+		{
+			category = nodisplay,
+			model InflatedTirePlusWheel
+			{
+				file = Null,
 			}
 		}
 

@@ -8,6 +8,7 @@ IG_UI_DE = {
 	IGUI_VehiclePartCounter = "Theke",
 	IGUI_VehiclePartFridge = "Kuhlschrank",
 	IGUI_VehiclePartOven = "Ofen",
+	IGUI_VehiclePartCatGenerator = "Generator",
 
 	IGUI_VehiclePartfridge = "Kuhlschrank",
 	IGUI_VehiclePartstove = "Herd",
@@ -23,4 +24,7 @@ IG_UI_DE = {
 
 	IGUI_Turn_Oven_On = "Herd EIN",
 	IGUI_Turn_Oven_Off = "Herd AUS",
+	
+	IGUI_VehiclePartEarthingOn = "Erdung",
+	IGUI_VehiclePartEarthingOff = "Netzkabel abgezogen",
 }

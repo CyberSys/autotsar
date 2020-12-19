@@ -14,5 +14,7 @@ ContextMenu_RU = {
 	ContextMenu_Remove_Gasoline_From_Fuel_Truck = "Заправиться из цистерны",
 	
 	ContextMenu_For_get_Gasoline_Need_Gas_Can = "Нужна пустая канистра",
+	ContextMenu_TrailerSpotlightOn = "Включить прожекторы",
+	ContextMenu_TrailerSpotlightOff = "Выключить прожекторы",
 } 
 

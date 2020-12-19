@@ -25,17 +25,4 @@ module Autotsar
         ChanceToSpawnDamaged = 80,
         MechanicsItem = TRUE,
 	}
-	
-	item GeneratorGasTank
-    {
-        Weight	=	5.0,
-        Type	=	Normal,
-        DisplayName	=	Generator Gas Tank,
-        Icon	=	CarGastank,
-        MaxCapacity = 20,
-        ConditionAffectsCapacity = true,
-        ConditionMax = 100,
-        ChanceToSpawnDamaged = 70,
-        MechanicsItem = TRUE,
-    }
 }

@@ -38,6 +38,18 @@ function Trailers.UninstallComplete.GeneratorGasTank(trailer, part, item)
 	end
 end
 
+function Trailers.Create.EarthingOn(vehicle, part)
+	local item = VehicleUtils.createPartInventoryItem(part);
+	part:setInventoryItem(nil)
+end
+
+function Trailers.Create.EarthingOff(vehicle, part)
+	local item = VehicleUtils.createPartInventoryItem(part);
+end
+
+-- function Trailers.Update.Earthing(vehicle, part)
+
+-- end
 
 -- function Trailers.Update.GeneratorEngine(trailer, part, elapsedMinutes)
 -- print("Trailers.Update.GeneratorEngine")

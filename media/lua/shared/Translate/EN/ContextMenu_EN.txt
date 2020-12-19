@@ -13,4 +13,6 @@ ContextMenu_EN = {
 	ContextMenu_Remove_Gasoline_From_Fuel_Truck = "Refuel from the tank",
 	
 	ContextMenu_For_get_Gasoline_Need_Gas_Can = "Need a gas can",
+	ContextMenu_TrailerSpotlightOn = "Turn Spotlights on",
+	ContextMenu_TrailerSpotlightOff = "Turn Spotlights off",
 }

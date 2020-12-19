@@ -420,5 +420,25 @@ module Base
 			offset = 0.0000 -0.2263 1.9053,
 			rotate = 0.0000 0.0000 0.0000,
 		}
+		
+		template = Tire/part/TireRearLeft,
+		template = Tire/part/TireRearRight,
+		part TireRearLeft
+		{
+			category = nodisplay,
+			model InflatedTirePlusWheel
+			{
+				file = Null,
+			}
+		}
+		part TireRearRight
+		{
+			category = nodisplay,
+			model InflatedTirePlusWheel
+			{
+				file = Null,
+			}
+		}
+		
 	}
 }

@@ -1,5 +1,7 @@
 
 ISVehicleMenuForTrailerGenerator = {}
+TrailerGeneratorList = {}
+
 
 local function predicateNotEmpty(item)
 	return item:getUsedDelta() > 0
@@ -102,13 +104,31 @@ function ISContextMenu:removeOption(option)
 	end
 end
 
+ISVehicleMenuForTrailerGenerator.onToggleHeadlights = function(wo, trailer, playerObj)
+-- print("ISVehicleMenuForTrailerGenerator.onToggleHeadlights")
+-- print(wo)
+-- print(trailer)
+-- print(playerObj)
+	sendClientCommand(playerObj, 'trailer', 'setHeadlightsOn', {trailer = trailer:getId(), on = not trailer:getHeadlightsOn() })
+end
+
 
 ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, context, trailer, test)
 	local playerObj = getSpecificPlayer(player)
 	local playerInv = playerObj:getInventory()
 	local generator = trailer:getModData()["generatorObject"]
+	if trailer:hasHeadlights() then
+		if trailer:getHeadlightsOn() then
+			context:addOptionOnTop(getText("ContextMenu_TrailerSpotlightOff"), nil , ISVehicleMenuForTrailerGenerator.onToggleHeadlights, trailer, playerObj)
+			--menu:addSlice(getText("ContextMenu_VehicleHeadlightsOff"), playerObj, ISVehicleMenu.onToggleHeadlights, )
+		else
+			context:addOptionOnTop(getText("ContextMenu_TrailerSpotlightOn"), nil, ISVehicleMenuForTrailerGenerator.onToggleHeadlights, trailer, playerObj)
+			--menu:addSlice(getText("ContextMenu_VehicleHeadlightsOn"), getTexture("media/ui/vehicles/vehicle_lightsON.png"), ISVehicleMenu.onToggleHeadlights, playerObj)
+		end
+	end
 	if generator then
 		local old_options = context:getOptionFromName(getText("ContextMenu_GeneratorInfo"))
+		
 		if old_options then 
 			--print("CLICK on GEN")
 			if not generator:isActivated() then
@@ -187,5 +207,16 @@ ISVehicleMenuForTrailerGenerator.onActivateGenerator = function(trailer, enable,
 	end
 end
 
+ISVehicleMenuForTrailerGenerator.ClearGen = function()
+	print("AUTOTSAR: OnSave")
+	for trailer, generator in pairs(TrailerGeneratorList) do
+		generator:remove()
+		trailer:getPartById("EarthingOn"):setInventoryItem(nil)
+		trailer:getPartById("EarthingOff"):setInventoryItem(VehicleUtils.createPartInventoryItem(trailer:getPartById("EarthingOff")))
+	end
+end
 
 Events.OnFillWorldObjectContextMenu.Add(ISVehicleMenuForTrailerGenerator.OnFillWorldObjectContextMenu);
+
+Events.OnSave.Add(ISVehicleMenuForTrailerGenerator.ClearGen)
+

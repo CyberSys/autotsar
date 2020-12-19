@@ -25,14 +25,16 @@ module Base
 
 		skin
 		{
-			texture = Vehicles/gen,
+			texture = Vehicles/gen_base,
 		}
 
+		textureMask = Vehicles/gen_mask,
+		textureLights = Vehicles/gen_light,
 		textureRust = Vehicles/vehicle_trailer_kbac_rust,
-		extents = 0.6333 0.7000 1.1889,
+		extents = 0.5889 0.7000 1.3444,
 		mass = 1000,
-		physicsChassisShape = 0.6333 0.7000 1.1889,
-		centerOfMassOffset = 0.0000 0.6222 0.0000,
+		physicsChassisShape = 0.5889 0.7000 1.3444,
+		centerOfMassOffset = 0.0000 0.6222 0.0778,
 		engineForce = 3600,
 		engineQuality = 60,
 		engineLoudness = 55,
@@ -52,10 +54,30 @@ module Base
 		rearEndHealth = 150,
 		seats = 2,
 
+		physics box
+		{
+			offset = -0.0778 0.2500 0.8944,
+			extents = 0.0556 0.0556 0.6833,
+			rotate = 0.0000 14.0000 0.0000,
+		}
+
+		physics box
+		{
+			offset = 0.0833 0.2500 0.8944,
+			extents = 0.0556 0.0556 0.6833,
+			rotate = 0.0000 -15.0000 0.0000,
+		}
+
+		physics sphere
+		{
+			offset = -0.0056 0.2667 1.2722,
+			radius = 0.0421,
+		}
+
 		wheel FrontLeft
 		{
 			front = true,
-			offset = 0.3778 -0.1833 -0.3222,
+			offset = 0.3778 -0.2389 -0.3222,
 			radius = 0.15f,
 			width = 0.2f,
 		}
@@ -63,14 +85,9 @@ module Base
 		wheel FrontRight
 		{
 			front = true,
-			offset = -0.3778 -0.1833 -0.3222,
+			offset = -0.3778 -0.2389 -0.3222,
 			radius = 0.15f,
 			width = 0.2f,
-		}
-
-		area TruckBed
-		{
-			xywh = 0.0000 -0.8444 0.5222 0.5556,
 		}
 
 		area TireFrontLeft
@@ -83,8 +100,8 @@ module Base
 			xywh = -0.6667 -0.0222 0.4778 0.4778,
 		}
 
-		template = Suspension/part/SuspensionFrontLeft,
-		template = Suspension/part/SuspensionFrontRight,
+		
+		
 		template = Tire/part/TireFrontLeft,
 		template = Tire/part/TireFrontRight,
 
@@ -92,7 +109,12 @@ module Base
 		{
 			table install
 			{
-				requireInstalled = SuspensionFrontLeft,
+				requireInstalled = SuspensionFrontLeft;EarthingOff,
+			}
+
+			table uninstall
+			{
+				requireUninstalled = EarthingOn,
 			}
 		}
 
@@ -100,29 +122,51 @@ module Base
 		{
 			table install
 			{
-				requireInstalled = SuspensionFrontLeft,
+				requireInstalled = SuspensionFrontLeft;EarthingOff,
+			}
+
+			table uninstall
+			{
+				requireUninstalled = EarthingOn,
 			}
 		}
 
+		template = Earthing,
+		
+		template = Suspension/part/SuspensionFrontLeft,
+		template = Suspension/part/SuspensionFrontRight,
+		
+		part SuspensionFrontLeft
+		{
+			table install
+			{
+				requireInstalled = EarthingOff,
+			}
+		}
+
+		part SuspensionFrontRight
+		{
+			table install
+			{
+				requireInstalled = EarthingOff,
+			}
+		}
+		
 		area GasTank
 		{
-			xywh = 0.0000 -0.8111 1.7556 0.4889,
+			xywh = 0.5389 0.3111 0.4444 0.4778,
 		}
 
 		template = GasTank,
 
-		part GasTank*
+		part GasTank
 		{
 			category = Generator,
-			itemType = Autotsar.GeneratorGasTank,
 			mechanicRequireKey = false,
-			specificItem = false,
-			
+
 			container
 			{
 				capacity = 20,
-				contentType = Gasoline,
-				conditionAffectsCapacity = true,
 			}
 
 			lua
@@ -131,8 +175,10 @@ module Base
 				update = Trailers.Update.GeneratorGasTank,
 				checkEngine = Vehicles.CheckEngine.GasTank,
 			}
-			table uninstall
+			
+			table install
 			{
+				requireInstalled = EarthingOff,
 				items
 				{
 					1
@@ -152,6 +198,34 @@ module Base
 				}
 				time = 500,
 				skills = Mechanics:5,
+				recipes = Basic Mechanics,
+				test = Vehicles.InstallTest.Default,
+			}
+			
+			table uninstall
+			{
+				requireUninstalled = EarthingOn,
+				items
+				{
+					1
+					{
+						type = Base.Screwdriver,
+						count = 1,
+						keep = true,
+						equip = secondary,
+					}
+
+					2
+					{
+						type = Base.Wrench,
+						count = 1,
+						keep = true,
+						equip = primary,
+					}
+				}
+
+				time = 500,
+				skills = Mechanics:5,
 				recipes = Basic Mechanics;Generator,
 				test = Vehicles.UninstallTest.Default,
 				requireEmpty = true,
@@ -161,7 +235,25 @@ module Base
 
 		area Engine
 		{
-			xywh = 0.0000 -0.8056 0.8667 0.4778,
+			xywh = 0.0000 -0.2500 1.5000 0.4778,
+		}
+
+		template = Battery,
+
+		part Battery
+		{
+			category = Generator,
+			mechanicRequireKey = false,
+			
+			table install
+			{
+				requireInstalled = EarthingOff,
+			}
+			
+			table uninstall
+			{
+				requireUninstalled = EarthingOn,
+			}
 		}
 
 		template = Engine,
@@ -170,38 +262,43 @@ module Base
 		{
 			category = Generator,
 			mechanicRequireKey = false,
-			
 		}
 
-		physics box
+		template = Tire/part/TireRearLeft,
+		template = Tire/part/TireRearRight,
+		part TireRearLeft
 		{
-			offset = -0.0944 0.2500 0.7944,
-			extents = 0.0526 0.0526 0.5368,
-			rotate = 0.0000 20.0000 0.0000,
+			category = nodisplay,
+			model InflatedTirePlusWheel
+			{
+				file = Null,
+			}
+		}
+		part TireRearRight
+		{
+			category = nodisplay,
+			model InflatedTirePlusWheel
+			{
+				file = Null,
+			}
 		}
 
-		physics box
+		template = Headlight/part/HeadlightLeft,
+		template = Headlight/part/HeadlightRight,
+
+		part HeadlightLeft
 		{
-			offset = 0.0889 0.2500 0.7833,
-			extents = 0.0526 0.0526 0.5579,
-			rotate = 0.0000 -19.0000 0.0000,
+			category = nodisplay,
 		}
 
-		physics sphere
+		part HeadlightRight
 		{
-			offset = -0.0056 0.2667 1.0778,
-			radius = 0.0421,
+			category = nodisplay,
 		}
 
 		attachment trailer
 		{
-			offset = 0.0000 -0.1167 0.7667,
-			rotate = 0.0000 0.0000 0.0000,
-		}
-
-		attachment controlPanel
-		{
-			offset = 0.0000 0.0000 -0.4889,
+			offset = 0.0000 -0.1167 0.9889,
 			rotate = 0.0000 0.0000 0.0000,
 		}
 	}
