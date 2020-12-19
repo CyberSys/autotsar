@@ -15,4 +15,5 @@ ContextMenu_PL = {
 	ContextMenu_For_get_Gasoline_Need_Gas_Can = "Wymaga kanistra na benzynê",
 	ContextMenu_TrailerSpotlightOff = "Wy³¹cz reflektory",
     ContextMenu_TrailerSpotlightOn = "W³¹cz reflektory",
+	ContextMenu_Turn_On_Generator = "Uruchom generator",
 }

@@ -27,5 +27,6 @@ IG_UI_EN = {
 	
 	IGUI_VehiclePartEarthingOn = "Earthing",
 	IGUI_VehiclePartEarthingOff = "disconnected power cable",
+	IGUI_VehiclePartCatGenerator = "Generator",
 }
 

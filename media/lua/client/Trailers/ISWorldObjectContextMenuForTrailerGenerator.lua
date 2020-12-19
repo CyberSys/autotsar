@@ -1,5 +1,5 @@
 
-ISVehicleMenuForTrailerGenerator = {}
+ISWorldObjectContextMenuForTrailerGenerator = {}
 TrailerGeneratorList = {}
 
 
@@ -7,16 +7,16 @@ local function predicateNotEmpty(item)
 	return item:getUsedDelta() > 0
 end
 
--- function ISVehicleMenuForTrailerGenerator.launchRadialMenu(playerObj, trailer)
+-- function ISWorldObjectContextMenuForTrailerGenerator.launchRadialMenu(playerObj, trailer)
 	-- local menu = getPlayerRadialMenu(playerObj:getPlayerNum())
 	-- if trailer:getMass() > 9000 then
-		-- menu:addSlice(getText("ContextMenu_GeneratorUnplug"), getTexture("media/ui/vehicles/vehicle_repair.png"), ISVehicleMenuForTrailerGenerator.generatorUnplug, nil, playerObj, trailer)
+		-- menu:addSlice(getText("ContextMenu_GeneratorUnplug"), getTexture("media/ui/vehicles/vehicle_repair.png"), ISWorldObjectContextMenuForTrailerGenerator.generatorUnplug, nil, playerObj, trailer)
 	-- else
-		-- menu:addSlice(getText("ContextMenu_GeneratorPlug"), getTexture("media/ui/vehicles/vehicle_repair.png"), ISVehicleMenuForTrailerGenerator.generatorPlug, playerObj, trailer)
+		-- menu:addSlice(getText("ContextMenu_GeneratorPlug"), getTexture("media/ui/vehicles/vehicle_repair.png"), ISWorldObjectContextMenuForTrailerGenerator.generatorPlug, playerObj, trailer)
 	-- end
 -- end
 
--- function ISVehicleMenuForTrailerGenerator.replaceTrailer(trailer, newSriptName)
+-- function ISWorldObjectContextMenuForTrailerGenerator.replaceTrailer(trailer, newSriptName)
 	-- local partsCondition = {}
 	-- for i=1, trailer:getScript():getPartCount() do
 		-- local part = trailer:getPartByIndex(i-1)
@@ -34,19 +34,19 @@ end
 	-- return trailer
 -- end
 
-ISVehicleMenuForTrailerGenerator.generatorPlug = function(worldobjects, playerObj, trailer)
+ISWorldObjectContextMenuForTrailerGenerator.generatorPlug = function(worldobjects, playerObj, trailer)
 	if luautils.walkAdj(playerObj, trailer:getSquare()) then
 		ISTimedActionQueue.add(ISPlugTrailerGenerator:new(playerObj, trailer, 300));
 	end
 end
 
-function ISVehicleMenuForTrailerGenerator.generatorUnplug(worldobjects, playerObj, trailer)
+function ISWorldObjectContextMenuForTrailerGenerator.generatorUnplug(worldobjects, playerObj, trailer)
 	if luautils.walkAdj(playerObj, trailer:getSquare()) then
 		ISTimedActionQueue.add(ISUnplugTrailerGenerator:new(playerObj, trailer, 300));
 	end
 end
 
-ISVehicleMenuForTrailerGenerator.OnFillWorldObjectContextMenu = function(player, context, worldobjects, test)
+ISWorldObjectContextMenuForTrailerGenerator.OnFillWorldObjectContextMenu = function(player, context, worldobjects, test)
 	wo = worldobjects
 	local playerObj = getSpecificPlayer(player)
 	local vehicle = playerObj:getVehicle()
@@ -70,14 +70,14 @@ ISVehicleMenuForTrailerGenerator.OnFillWorldObjectContextMenu = function(player,
 			for _,sq in ipairs(sqs) do
 				vehicle = sq:getVehicleContainer()
 				if vehicle and string.lower(vehicle:getScript():getName()) == "trailergenerator" then
-					return ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle(player, context, vehicle, test)
+					return ISWorldObjectContextMenuForTrailerGenerator.FillMenuOutsideVehicle(player, context, vehicle, test)
 				end
 			end
 			return
 		end
 		vehicle = IsoObjectPicker.Instance:PickVehicle(getMouseXScaled(), getMouseYScaled())
 		if vehicle and string.lower(vehicle:getScript():getName()) == "trailergenerator" then
-			return ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle(player, context, vehicle, test)
+			return ISWorldObjectContextMenuForTrailerGenerator.FillMenuOutsideVehicle(player, context, vehicle, test)
 		end
 		return
 	end
@@ -104,26 +104,21 @@ function ISContextMenu:removeOption(option)
 	end
 end
 
-ISVehicleMenuForTrailerGenerator.onToggleHeadlights = function(wo, trailer, playerObj)
--- print("ISVehicleMenuForTrailerGenerator.onToggleHeadlights")
--- print(wo)
--- print(trailer)
--- print(playerObj)
-	sendClientCommand(playerObj, 'trailer', 'setHeadlightsOn', {trailer = trailer:getId(), on = not trailer:getHeadlightsOn() })
+ISWorldObjectContextMenuForTrailerGenerator.onToggleSpotlights = function(wo, trailer, playerObj)
+    if luautils.walkAdj(playerObj, trailer:getSquare()) then
+        ISTimedActionQueue.add(ISToggleSpotlights:new(playerObj, trailer, 0));
+    end
 end
 
-
-ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, context, trailer, test)
+ISWorldObjectContextMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, context, trailer, test)
 	local playerObj = getSpecificPlayer(player)
 	local playerInv = playerObj:getInventory()
 	local generator = trailer:getModData()["generatorObject"]
 	if trailer:hasHeadlights() then
 		if trailer:getHeadlightsOn() then
-			context:addOptionOnTop(getText("ContextMenu_TrailerSpotlightOff"), nil , ISVehicleMenuForTrailerGenerator.onToggleHeadlights, trailer, playerObj)
-			--menu:addSlice(getText("ContextMenu_VehicleHeadlightsOff"), playerObj, ISVehicleMenu.onToggleHeadlights, )
+			context:addOptionOnTop(getText("ContextMenu_TrailerSpotlightOff"), nil , ISWorldObjectContextMenuForTrailerGenerator.onToggleSpotlights, trailer, playerObj)
 		else
-			context:addOptionOnTop(getText("ContextMenu_TrailerSpotlightOn"), nil, ISVehicleMenuForTrailerGenerator.onToggleHeadlights, trailer, playerObj)
-			--menu:addSlice(getText("ContextMenu_VehicleHeadlightsOn"), getTexture("media/ui/vehicles/vehicle_lightsON.png"), ISVehicleMenu.onToggleHeadlights, playerObj)
+			context:addOptionOnTop(getText("ContextMenu_TrailerSpotlightOn"), nil, ISWorldObjectContextMenuForTrailerGenerator.onToggleSpotlights, trailer, playerObj)
 		end
 	end
 	if generator then
@@ -135,26 +130,26 @@ ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, conte
 				local old_option_update = context:getOptionFromName(getText("ContextMenu_GeneratorUnplug"))
 				-- if generator:getCondition() > 1 then
 				if old_option_update then
-					context:updateOption(old_option_update.id, old_option_update.name, old_option_update.target, ISVehicleMenuForTrailerGenerator.generatorUnplug, playerObj, trailer)
+					context:updateOption(old_option_update.id, old_option_update.name, old_option_update.target, ISWorldObjectContextMenuForTrailerGenerator.generatorUnplug, playerObj, trailer)
 				end	
-				old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_On"))
+				old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_On_Generator"))
 				if old_option_update then
-					context:updateOption(old_option_update.id, old_option_update.name, trailer, ISVehicleMenuForTrailerGenerator.onActivateGenerator, true, generator, player)
+					context:updateOption(old_option_update.id, old_option_update.name, trailer, ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator, true, generator, player)
 				end
 				context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorFix")))
 				context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorAddFuel")))
 				-- else
-					-- old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_On"))
+					-- old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_On_Generator"))
 					-- context:updateOption(old_option_update.id, "ContextMenu_CheckGen", nil, nil)
 				-- end
 			else
 				local old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_Off"))
-				context:updateOption(old_option_update.id, old_option_update.name, trailer, ISVehicleMenuForTrailerGenerator.onActivateGenerator, false, generator, player)
+				context:updateOption(old_option_update.id, old_option_update.name, trailer, ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator, false, generator, player)
 			end
 		else 
 			local option = context:addOptionOnTop(getText("ContextMenu_GeneratorInfo"), worldobjects, ISWorldObjectContextMenu.onInfoGenerator, generator, player);
 			if generator:isActivated() then
-				context:addOptionOnTop(getText("ContextMenu_Turn_Off"), trailer, ISVehicleMenuForTrailerGenerator.onActivateGenerator, false, generator, player);
+				context:addOptionOnTop(getText("ContextMenu_Turn_Off"), trailer, ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator, false, generator, player);
 			else
 				-- if generator:getFuel() < 100 and playerInv:containsTypeEvalRecurse("PetrolCan", predicateNotEmpty) then
 					-- local petrolCan = playerInv:getFirstTypeEvalRecurse("PetrolCan", predicateNotEmpty);
@@ -175,11 +170,11 @@ ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, conte
 						-- option.toolTip = tooltip;
 					-- end
 				-- end
-				local option = context:addOptionOnTop(getText("ContextMenu_GeneratorUnplug"), worldobjects, ISVehicleMenuForTrailerGenerator.generatorUnplug, playerObj, trailer);
+				local option = context:addOptionOnTop(getText("ContextMenu_GeneratorUnplug"), worldobjects, ISWorldObjectContextMenuForTrailerGenerator.generatorUnplug, playerObj, trailer);
 				
 				-- if generator:getFuel() > 0 and generator:getCondition() > 1 then
 					--print("generator:getCondition() ", generator:getCondition())
-					option = context:addOptionOnTop(getText("ContextMenu_Turn_On"), trailer, ISVehicleMenuForTrailerGenerator.onActivateGenerator, true, generator, player);
+					option = context:addOptionOnTop(getText("ContextMenu_Turn_On_Generator"), trailer, ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator, true, generator, player);
 					local doStats = playerObj:DistToSquared(generator:getX() + 0.5, generator:getY() + 0.5) < 2 * 2
 					local description = ISGeneratorInfoWindow.getRichText(generator, doStats)
 					if description ~= "" then
@@ -196,18 +191,18 @@ ISVehicleMenuForTrailerGenerator.FillMenuOutsideVehicle = function(player, conte
 		-- context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleAddGas")))
 		-- context:removeOption(context:getOptionFromName(getText("ContextMenu_VehicleMechanics")))
 	else
-		context:addOptionOnTop(getText("ContextMenu_GeneratorPlug"), nil, ISVehicleMenuForTrailerGenerator.generatorPlug, playerObj, trailer)
+		context:addOptionOnTop(getText("ContextMenu_GeneratorPlug"), nil, ISWorldObjectContextMenuForTrailerGenerator.generatorPlug, playerObj, trailer)
 	end
 end
 
-ISVehicleMenuForTrailerGenerator.onActivateGenerator = function(trailer, enable, generator, player)
+ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator = function(trailer, enable, generator, player)
 	local playerObj = getSpecificPlayer(player)
 	if luautils.walkAdj(playerObj, generator:getSquare()) then
 		ISTimedActionQueue.add(ISActivateTrailerGenerator:new(player, trailer, generator, enable, 30));
 	end
 end
 
-ISVehicleMenuForTrailerGenerator.ClearGen = function()
+ISWorldObjectContextMenuForTrailerGenerator.ClearGen = function()
 	print("AUTOTSAR: OnSave")
 	for trailer, generator in pairs(TrailerGeneratorList) do
 		generator:remove()
@@ -216,7 +211,7 @@ ISVehicleMenuForTrailerGenerator.ClearGen = function()
 	end
 end
 
-Events.OnFillWorldObjectContextMenu.Add(ISVehicleMenuForTrailerGenerator.OnFillWorldObjectContextMenu);
+Events.OnFillWorldObjectContextMenu.Add(ISWorldObjectContextMenuForTrailerGenerator.OnFillWorldObjectContextMenu);
 
-Events.OnSave.Add(ISVehicleMenuForTrailerGenerator.ClearGen)
+Events.OnSave.Add(ISWorldObjectContextMenuForTrailerGenerator.ClearGen)
 
