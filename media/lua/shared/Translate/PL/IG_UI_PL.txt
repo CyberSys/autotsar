@@ -8,6 +8,7 @@ IG_UI_PL = {
 	IGUI_VehiclePartCounter = "Lada",
     IGUI_VehiclePartFridge = "Lodówka",
     IGUI_VehiclePartOven = "Piekarnik",
+	IGUI_VehiclePartCatGenerator = "Generator",
 
     IGUI_VehiclePartfridge = "Lodówka",
     IGUI_VehiclePartstove = "Piekarnik",
@@ -24,6 +25,7 @@ IG_UI_PL = {
 	IGUI_Turn_Oven_On = "W³¹cz piekarnik", 
 	IGUI_Turn_Oven_Off = "Wy³¹cz piekarnik",
 	
-	
+	IGUI_VehiclePartEarthingOn = "Uziemienie",
+	IGUI_VehiclePartEarthingOff = "odlaczony kabel zasilajacy",
 }
 

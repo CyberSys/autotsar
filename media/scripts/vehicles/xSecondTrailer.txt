@@ -32,7 +32,7 @@ module Base
 		textureMask = Vehicles/vehicle_trailer_mask,
 		textureLights = Vehicles/vehicle_trailer_light,
 		extents = 0.9684 0.6842 1.5263,
-		mass = 400,
+		mass = 600,
 		physicsChassisShape = 0.9684 0.6842 1.5263,
 		centerOfMassOffset = 0.0105 0.4947 0.0000,
 		engineForce = 4000,
@@ -108,13 +108,13 @@ module Base
 		{
 			area = TruckBed,
 			category = bodywork,
-			itemType = Base.TrailerSecondTrunk,
+			itemType = Autotsar.TrailerSecondTrunk,
 			repairMechanic = true,
 			specificItem = false,
 
 			container
 			{
-				capacity = 500,
+				capacity = 400,
 				test = Vehicles.ContainerAccess.TruckBedOpen,
 			}
 

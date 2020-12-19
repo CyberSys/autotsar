@@ -1,4 +1,4 @@
-module Base
+module Autotsar
 {
 	item TrailerFirstTrunk 
 	{
@@ -25,5 +25,4 @@ module Base
         ChanceToSpawnDamaged = 80,
         MechanicsItem = TRUE,
 	}
-	
 }

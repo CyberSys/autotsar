@@ -36,7 +36,7 @@ module Base
 		textureDamage1Shell = Vehicles/vehicle_trailer_home_damage1,
 		textureDamage2Shell = Vehicles/vehicle_trailer_home_damage2,
 		extents = 1.0105 1.0842 2.1053,
-		mass = 500,
+		mass = 800,
 		physicsChassisShape = 1.0105 1.1053 2.1053,
 		centerOfMassOffset = 0.0000 0.8000 0.0000,
 		engineForce = 4000,

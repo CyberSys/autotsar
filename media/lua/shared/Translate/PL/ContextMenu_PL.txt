@@ -13,4 +13,7 @@ ContextMenu_PL = {
 	ContextMenu_Remove_Gasoline_From_Fuel_Truck = "Zatankuj ze zbiornika przyczepy",
 	
 	ContextMenu_For_get_Gasoline_Need_Gas_Can = "Wymaga kanistra na benzynê",
+	ContextMenu_TrailerSpotlightOff = "Wy³¹cz reflektory",
+    ContextMenu_TrailerSpotlightOn = "W³¹cz reflektory",
+	ContextMenu_Turn_On_Generator = "Uruchom generator",
 }

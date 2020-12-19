@@ -3,12 +3,13 @@ IG_UI_EN = {
 	IGUI_VehicleNameTrailerSecond = "Autotsar GNV 500",
 	IGUI_VehicleNameTrailerHome = "Autotsar iLYA-1990",
 	IGUI_VehicleNameTrailerKbac = "Autotsar KBAC",
+	IGUI_VehicleNameTrailerGenerator = "Autotsar GENA-220",
+	
 	IGUI_VehiclePart500FuelTruckTank = "Fuel Tank",
 	
 	IGUI_VehiclePartCounter = "Counter",
     IGUI_VehiclePartFridge = "Fridge",
     IGUI_VehiclePartOven = "Oven",
-
     IGUI_VehiclePartfridge = "Fridge",
     IGUI_VehiclePartstove = "Oven",
 
@@ -24,6 +25,8 @@ IG_UI_EN = {
 	IGUI_Turn_Oven_On = "Turn Oven On", 
 	IGUI_Turn_Oven_Off = "Turn Oven Off",
 	
-	
+	IGUI_VehiclePartEarthingOn = "Earthing",
+	IGUI_VehiclePartEarthingOff = "disconnected power cable",
+	IGUI_VehiclePartCatGenerator = "Generator",
 }
 

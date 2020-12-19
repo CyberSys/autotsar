@@ -53,7 +53,7 @@ module Base
 
 		textureRust = Vehicles/vehicle_trailer_kbac_rust,
 		extents = 0.8737 0.6421 0.9368,
-		mass = 400,
+		mass = 600,
 		physicsChassisShape = 0.6316 0.6421 0.9368,
 		centerOfMassOffset = 0.0000 0.7158 -0.0158,
 		engineForce = 3600,

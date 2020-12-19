@@ -1,6 +1,6 @@
-if debugScenarios == nil then
+-- if debugScenarios == nil then
 	debugScenarios = {}
-end
+-- end
 
 
 debugScenarios.IBrRusScenario_TowingTrailer = {
@@ -14,7 +14,9 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 		SandboxVars.Helicopter = 1;	-- never helicopter
 		SandboxVars.Zombies = 2; -- 5 = no zombies, 1 = insane (then 2 = low, 3 normal, 4 high..)
 		SandboxVars.StarterKit = false;
-		SandboxVars.StartTime = 10;
+		SandboxVars.StartTime = 23;
+		SandboxVars.WaterShutModifier = -1;
+        SandboxVars.ElecShutModifier = -1;
 	end,
 
 	onStart = function()
@@ -78,6 +80,7 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 		getPlayer():getKnownRecipes():add("Basic Mechanics");
 		getPlayer():getKnownRecipes():add("Intermediate Mechanics");
 		getPlayer():getKnownRecipes():add("Advanced Mechanics");
+		getPlayer():getKnownRecipes():add("Generator");
 
 		-- Items
 		playerObj:getInventory():AddItem("TowingCar.TowBar");
@@ -85,7 +88,9 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 		playerObj:getInventory():AddItem("Base.LugWrench");
 		playerObj:getInventory():AddItem("Base.Screwdriver");
 		playerObj:getInventory():AddItem("Base.Jack");
+		playerObj:getInventory():AddItem("Base.Generator");
 		playerObj:getInventory():AddItem("Base.EmptyPetrolCan");
+		playerObj:getInventory():AddItem("Base.PetrolCan");
 		playerObj:getInventory():AddItem("Base.PotOfSoupRecipe");
 		playerObj:getInventory():AddItem("Base.PotOfSoupRecipe");
 
@@ -93,7 +98,8 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 		local vehY = 5785.5
 		local vehX = 3671
 		local yShift = 3.2
-
+		
+		addVehicleDebug("Base.TrailerGenerator", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY-yShift*1, 0));
 		addVehicleDebug("Base.TrailerFirst", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY, 0));
 		addVehicleDebug("Base.TrailerSecond", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*1, 0));
 		local car = addVehicleDebug("Base.TrailerHome", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*2, 0));
@@ -104,7 +110,7 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 		addVehicleDebug("Base.TrailerAdvert", IsoDirections.E, nil, getCell():getGridSquare(vehX, vehY + yShift*6, 0));
 	
 		-- Cars
-		car = addVehicleDebug("Base.PickUpTruckMccoy", IsoDirections.W, nil, getCell():getGridSquare(3685.5, 5789, 0));
+		car = addVehicleDebug("Base.PickUpTruckMccoy", IsoDirections.E, nil, getCell():getGridSquare(3685.5, 5789, 0));
 		car:repair();
 		inv:AddItem(car:createVehicleKey());			
 	end

@@ -108,7 +108,7 @@ module Base
 		{
 			area = TruckBed,
 			category = bodywork,
-			itemType = Base.TrailerSecondTrunk,
+			itemType = Autotsar.TrailerSecondTrunk,
 			repairMechanic = true,
 			specificItem = false,
 
@@ -167,5 +167,25 @@ module Base
 			offset = 0.0000 -0.2421 2.1842,
 			rotate = 0.0000 0.0000 0.0000,
 		}
+		
+		template = Tire/part/TireRearLeft,
+		template = Tire/part/TireRearRight,
+		part TireRearLeft
+		{
+			category = nodisplay,
+			model InflatedTirePlusWheel
+			{
+				file = Null,
+			}
+		}
+		part TireRearRight
+		{
+			category = nodisplay,
+			model InflatedTirePlusWheel
+			{
+				file = Null,
+			}
+		}
+		
 	}
 }
