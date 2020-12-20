@@ -38,16 +38,38 @@ function Trailers.UninstallComplete.GeneratorGasTank(trailer, part, item)
 	end
 end
 
-function Trailers.Create.EarthingOn(vehicle, part)
+function Trailers.Create.EarthingOn(trailer, part)
 	local item = VehicleUtils.createPartInventoryItem(part);
 	part:setInventoryItem(nil)
 end
 
-function Trailers.Create.EarthingOff(vehicle, part)
+function Trailers.Create.EarthingOff(trailer, part)
 	local item = VehicleUtils.createPartInventoryItem(part);
 end
 
--- function Trailers.Update.Earthing(vehicle, part)
+function Trailers.Create.BatteryCharger(trailer, part)
+	local item = VehicleUtils.createPartInventoryItem(part);
+	part:setInventoryItem(nil)
+end
+
+function Trailers.Update.BatteryCharger(trailer, part, elapsedMinutes)
+	if part:getInventoryItem() then
+		local chargeOld = part:getInventoryItem():getUsedDelta()
+		local charge = chargeOld
+		-- Running the engine charges the battery
+		if elapsedMinutes > 0 and trailer:isEngineRunning() then
+			charge = math.min(charge + elapsedMinutes * 0.0001, 1.0)
+		end
+		if charge ~= chargeOld then
+			part:getInventoryItem():setUsedDelta(charge)
+			if VehicleUtils.compareFloats(chargeOld, charge, 2) then
+				trailer:transmitPartUsedDelta(part)
+			end
+		end
+	end
+end
+
+-- function Trailers.Update.Earthing(trailer, part)
 
 -- end
 

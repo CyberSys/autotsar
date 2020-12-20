@@ -256,13 +256,13 @@ module Base
 		template = Window/part/WindowRearLeft,
 		template = Window/part/WindowRearRight,
 
-		part WindowFrontLeft*
+		part WindowFrontLeft
 		{
 			area = SeatMiddleLeft,
 			mechanicRequireKey = false,
 			window
 			{
-				openable = false,
+				openable = true,
 			}
 
 			table install
@@ -276,12 +276,12 @@ module Base
 			}
 		}
 
-		part WindowFrontRight*
+		part WindowFrontRight
 		{
 			mechanicRequireKey = false,
 			window
 			{
-				openable = false,
+				openable = true,
 			}
 
 			table install
@@ -295,13 +295,13 @@ module Base
 			}
 		}
 
-		part WindowRearLeft*
+		part WindowRearLeft
 		{
 			area = SeatMiddleLeft,
 			mechanicRequireKey = false,
 			window
 			{
-				openable = false,
+				openable = true,
 			}
 
 			table install
@@ -315,12 +315,12 @@ module Base
 			}
 		}
 
-		part WindowRearRight*
+		part WindowRearRight
 		{
 			mechanicRequireKey = false,
 			window
 			{
-				openable = false,
+				openable = true,
 			}
 
 			table install
@@ -334,9 +334,34 @@ module Base
 			}
 		}
 
+		template = Door/part/DoorFrontRight,
+		template = Door/part/DoorMiddleLeft,
+		template = Door/part/DoorMiddleRight,
+		template = Door/part/DoorRearLeft,
 		template = Door/part/DoorRearRight,
+
+		part DoorFrontRight
+		{
+			category = nodisplay,
+		}
+
+		part DoorMiddleLeft
+		{
+			category = nodisplay,
+		}
+
+		part DoorMiddleRight
+		{
+			category = nodisplay,
+		}
+
+		part DoorRearLeft
+		{
+			category = nodisplay,
+		}
 		
-		part DoorRearRight*
+		
+		part DoorRearRight
 		{
 			table uninstall
 			{
@@ -428,7 +453,7 @@ module Base
 			category = nodisplay,
 			model InflatedTirePlusWheel
 			{
-				file = Null,
+				file = WheelNull,
 			}
 		}
 		part TireRearRight
@@ -436,7 +461,7 @@ module Base
 			category = nodisplay,
 			model InflatedTirePlusWheel
 			{
-				file = Null,
+				file = WheelNull,
 			}
 		}
 		

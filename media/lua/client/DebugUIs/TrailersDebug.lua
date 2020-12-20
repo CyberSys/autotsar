@@ -93,6 +93,9 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 		playerObj:getInventory():AddItem("Base.PetrolCan");
 		playerObj:getInventory():AddItem("Base.PotOfSoupRecipe");
 		playerObj:getInventory():AddItem("Base.PotOfSoupRecipe");
+		playerObj:getInventory():AddItem("Base.Battery");
+		playerObj:getInventory():AddItem("Base.Battery");
+		playerObj:getInventory():AddItem("Base.Battery");
 
 		-- Trailers
 		local vehY = 5785.5

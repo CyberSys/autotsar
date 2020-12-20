@@ -175,7 +175,7 @@ module Base
 			category = nodisplay,
 			model InflatedTirePlusWheel
 			{
-				file = Null,
+				file = WheelNull,
 			}
 		}
 		part TireRearRight
@@ -183,7 +183,7 @@ module Base
 			category = nodisplay,
 			model InflatedTirePlusWheel
 			{
-				file = Null,
+				file = WheelNull,
 			}
 		}
 		

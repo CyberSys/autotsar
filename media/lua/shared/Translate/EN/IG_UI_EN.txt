@@ -25,8 +25,13 @@ IG_UI_EN = {
 	IGUI_Turn_Oven_On = "Turn Oven On", 
 	IGUI_Turn_Oven_Off = "Turn Oven Off",
 	
+	IGUI_VehiclePartCatGenerator = "Generator",
 	IGUI_VehiclePartEarthingOn = "Earthing",
 	IGUI_VehiclePartEarthingOff = "disconnected power cable",
-	IGUI_VehiclePartCatGenerator = "Generator",
+	
+	IGUI_VehiclePartCatBatteryCharger = "Battery Charger",
+	IGUI_VehiclePartBatteryChargerA = "Battery place",
+	IGUI_VehiclePartBatteryChargerB = "Battery place",
+	IGUI_VehiclePartBatteryChargerC = "Battery place",
 }
 

@@ -1,0 +1,7 @@
+module Base
+{
+	model WheelNull
+	{
+		mesh = WheelNull,
+	}
+}
