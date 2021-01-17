@@ -47,7 +47,6 @@ function ISWorldObjectContextMenuForTrailerGenerator.generatorUnplug(worldobject
 end
 
 ISWorldObjectContextMenuForTrailerGenerator.OnFillWorldObjectContextMenu = function(player, context, worldobjects, test)
-	wo = worldobjects
 	local playerObj = getSpecificPlayer(player)
 	local vehicle = playerObj:getVehicle()
 	if not vehicle then

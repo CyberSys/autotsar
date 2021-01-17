@@ -1,7 +1,5 @@
 Recipe_PL = {
-	/* Created by PZTranslationAssistant */
-	/* Datetime: Wed Nov 18 21:44:02 MSK 2020 */
-
-	Recipe_Make_a_oven_for_camper = "Zrób piekarnik do przyczepy",
-	Recipe_Make_a_refrigerator_for_camper = "Zrób lodówkê do przyczepy",
+	Recipe_Make_a_compact_fridge = "Zrob kompaktowa lodowke",
+	Recipe_Make_a_compact_stove = "Zrob kompaktowy piec",
+	Recipe_Make_a_compact_microwave = "Zrob kompaktowa kuchenke mikrofalowa",
 }

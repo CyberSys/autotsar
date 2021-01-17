@@ -3,7 +3,7 @@ module Base
 	model TrailerSecondBase
     {
         mesh = vehicles/Vehicles_btrailer,
-        shader = vehicle_multiuv,
+        shader = vehicle,
         invertX = FALSE,
         scale = 0.003937,
     }
@@ -31,6 +31,10 @@ module Base
 		textureRust = Vehicles/vehicle_trailer_rust,
 		textureMask = Vehicles/vehicle_trailer_mask,
 		textureLights = Vehicles/vehicle_trailer_light,
+		textureDamage1Overlay = Vehicles/vehicle_trailer,
+		textureDamage2Overlay = Vehicles/vehicle_trailer,
+		textureDamage1Shell = Vehicles/vehicle_trailer,
+		textureDamage2Shell = Vehicles/vehicle_trailer,
 		extents = 0.9684 0.6842 1.5263,
 		mass = 400,
 		physicsChassisShape = 0.9684 0.6842 1.5263,
@@ -85,7 +89,7 @@ module Base
 
 		template = Tire/part/TireFrontLeft,
 		template = Tire/part/TireFrontRight,
-		
+
 		part TireFrontLeft
 		{
 			table install
@@ -158,8 +162,31 @@ module Base
 
 		physics sphere
 		{
-			offset = 0.0053 0.2684 1.3421,
+			offset = 0.0053 0.2684 1.3263,
 			radius = 0.0421,
+		}
+
+		template = Tire/part/TireRearLeft,
+		template = Tire/part/TireRearRight,
+
+		part TireRearLeft
+		{
+			category = nodisplay,
+
+			model InflatedTirePlusWheel
+			{
+				file = WheelNull,
+			}
+		}
+
+		part TireRearRight
+		{
+			category = nodisplay,
+
+			model InflatedTirePlusWheel
+			{
+				file = WheelNull,
+			}
 		}
 
 		attachment trailer
@@ -167,25 +194,5 @@ module Base
 			offset = 0.0000 -0.2421 2.1842,
 			rotate = 0.0000 0.0000 0.0000,
 		}
-		
-		template = Tire/part/TireRearLeft,
-		template = Tire/part/TireRearRight,
-		part TireRearLeft
-		{
-			category = nodisplay,
-			model InflatedTirePlusWheel
-			{
-				file = WheelNull,
-			}
-		}
-		part TireRearRight
-		{
-			category = nodisplay,
-			model InflatedTirePlusWheel
-			{
-				file = WheelNull,
-			}
-		}
-		
 	}
 }

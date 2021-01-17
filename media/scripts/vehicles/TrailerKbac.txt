@@ -52,6 +52,7 @@ module Base
 		}
 
 		textureRust = Vehicles/vehicle_trailer_kbac_rust,
+		
 		extents = 0.8737 0.6421 0.9368,
 		mass = 400,
 		physicsChassisShape = 0.6316 0.6421 0.9368,
@@ -135,6 +136,7 @@ module Base
 			{
 				file = KbacWheelR,
 			}
+
 			table install
 			{
 				requireInstalled = SuspensionFrontLeft,
@@ -147,6 +149,7 @@ module Base
 			{
 				file = KbacWheelL,
 			}
+
 			table install
 			{
 				requireInstalled = SuspensionFrontLeft,
@@ -157,6 +160,7 @@ module Base
 		{
 			xywh = 0.0000 -0.8105 1.7474 0.4842,
 		}
+
 		template = GasTank,
 		template = 500FuelTruckTank,
 
@@ -180,29 +184,33 @@ module Base
 			radius = 0.0421,
 		}
 
-		attachment trailer
-		{
-			offset = 0.0000 -0.0316 1.6842,
-			rotate = 0.0000 0.0000 0.0000,
-		}
-		
 		template = Tire/part/TireRearLeft,
 		template = Tire/part/TireRearRight,
+
 		part TireRearLeft
 		{
 			category = nodisplay,
+
 			model InflatedTirePlusWheel
 			{
 				file = WheelNull,
 			}
 		}
+
 		part TireRearRight
 		{
 			category = nodisplay,
+
 			model InflatedTirePlusWheel
 			{
 				file = WheelNull,
 			}
+		}
+
+		attachment trailer
+		{
+			offset = 0.0000 -0.0316 1.7684,
+			rotate = 0.0000 0.0000 0.0000,
 		}
 	}
 }

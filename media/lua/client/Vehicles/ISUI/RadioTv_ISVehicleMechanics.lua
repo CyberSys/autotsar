@@ -9,7 +9,7 @@ ISVehicleMechanics.OnMechanicActionDone = function(chr, success, vehicleId, part
 			
 			local invItem = VehicleUtils.createPartInventoryItem(part)
 			local text2 = invItem:getType()
-			print( text2 )
+			-- print( text2 )
 			--getPlayer():Say( text2, 1.0, 1.0, 0.0, UIFont.Dialogue, 30.0, "radio" )
 			if text2 == "HamRadio1" or text2 == "HamRadio2" or text2 == "RadioRed" or text2 == "RadioBlack" or text2 == "TvAntique" or text2 == "TvWideScreen" or text2 == "TvBlack" then
 				--getPlayer():Say( "Radio!!!!", 1.0, 1.0, 0.0, UIFont.Dialogue, 30.0, "radio" )				

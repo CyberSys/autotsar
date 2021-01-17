@@ -1,5 +1,5 @@
 ContextMenu_DE = {
-	ContextMenu_Close_trunk = "Kofferraum schlie?en",
+   	ContextMenu_Close_trunk = "Kofferraum schlie?en",
 	ContextMenu_Open_trunk = "Kofferraum offnen",
 	ContextMenu_Sleep_Mattress = "Auf der Matratze schlafen",
 	ContextMenu_PainNoSleep_Mattress = "Zu viel Schmerz um auf der zu schlafen"

@@ -1,4 +1,5 @@
 require "Vehicles/VehicleDistributions"
+require "CommonTemplates/CommonDistributions"
 
 VehicleDistributions.AutotsarTrailer = {
 	
@@ -298,9 +299,8 @@ VehicleDistributions.AutotsarKbac = {
 local distributionTable = VehicleDistributions[1]
 
 distributionTable["TrailerHome"] = {
-	Normal = VehicleDistributions.AutotsarTrailer,
-	Specific = { VehicleDistributions.Groceries, VehicleDistributions.Fisherman, VehicleDistributions.Carpenter, VehicleDistributions.Farmer, VehicleDistributions.Electrician, VehicleDistributions.MetalWelder, VehicleDistributions.ConstructionWorker, VehicleDistributions.Painter, VehicleDistributions.TowBar},
-	}
+	Normal = VehicleDistributions.CommonTemplatesDist,
+}
 
 distributionTable["TrailerFirst"] = {
 	Normal = VehicleDistributions.AutotsarTrailer,

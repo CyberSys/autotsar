@@ -4,34 +4,67 @@ IG_UI_EN = {
 	IGUI_VehicleNameTrailerHome = "Autotsar iLYA-1990",
 	IGUI_VehicleNameTrailerKbac = "Autotsar KBAC",
 	IGUI_VehicleNameTrailerGenerator = "Autotsar GENA-220",
-	
 	IGUI_VehiclePart500FuelTruckTank = "Fuel Tank",
-	
 	IGUI_VehiclePartCounter = "Counter",
     IGUI_VehiclePartFridge = "Fridge",
     IGUI_VehiclePartOven = "Oven",
     IGUI_VehiclePartfridge = "Fridge",
     IGUI_VehiclePartstove = "Oven",
-
     IGUI_VehiclePartRoofrack = "Roof Rack",
-
     IGUI_VehiclePartTV = "Television",
     IGUI_VehiclePartMattress = "Mattress",
     IGUI_VehiclePartGunRack = "Gun Rack",
-
     IGUI_PlayerText_CanNotSleepInMovingCar_Mattress = "Stop the car first<br>to sleep in the mattress.",
     IGUI_Sleep_NotTiredEnough_Mattress = "Not tired enough to sleep<br>in the mattress yet.",
-	
 	IGUI_Turn_Oven_On = "Turn Oven On", 
 	IGUI_Turn_Oven_Off = "Turn Oven Off",
-	
 	IGUI_VehiclePartCatGenerator = "Generator",
 	IGUI_VehiclePartEarthingOn = "Earthing",
 	IGUI_VehiclePartEarthingOff = "disconnected power cable",
-	
 	IGUI_VehiclePartCatBatteryCharger = "Battery Charger",
 	IGUI_VehiclePartBatteryChargerA = "Battery place",
 	IGUI_VehiclePartBatteryChargerB = "Battery place",
 	IGUI_VehiclePartBatteryChargerC = "Battery place",
+	
+	
+	
+	
+	/* Common Library */
+	
+	IGUI_VehiclePartshelves = "Shelves",
+	IGUI_VehiclePartstove = "Stove",
+	IGUI_VehiclePartfridge = "Fridge",
+	IGUI_VehiclePartcounter = "Counter",
+	IGUI_VehiclePartportablemicrowave = "Microwave",
+	IGUI_VehiclePartmicrowave = "Microwave",
+	IGUI_VehiclePartfreezer = "Fridge",
+	IGUI_VehiclePartwardrobe = "Cupboard",
+	IGUI_VehiclePartmedicine = "Locker",
+	IGUI_VehiclePartsidetable = "Drawer",
+	IGUI_VehiclePartseatboxwooden = "Seat box",
+	IGUI_UseStove = "Use stove",
+	IGUI_UseMicrowave = "Use microwave",
+	IGUI_Turn_Fridge_On = "Turn on fridge",
+	IGUI_Turn_Fridge_Off = "Turn off fridge",
+	IGUI_Turn_Freezer_On = "Turn on fridge",
+	IGUI_Turn_Freezer_Off = "Turn off fridge",
+	IGUI_VehiclePartFridgeFrontLeft = "Fridge",
+	IGUI_VehiclePartFridgeFrontRight = "Fridge",
+	IGUI_VehiclePartFridgeMiddleLeft = "Fridge",
+	IGUI_VehiclePartFridgeMiddleRight = "Fridge",
+	IGUI_VehiclePartFridgeRearLeft = "Fridge",
+	IGUI_VehiclePartFridgeRearRight = "Fridge",
+	IGUI_VehiclePartOvenFrontLeft = "Stove",
+	IGUI_VehiclePartOvenFrontRight = "Stove",
+	IGUI_VehiclePartOvenMiddleLeft = "Stove",
+	IGUI_VehiclePartOvenMiddleRight = "Stove",
+	IGUI_VehiclePartOvenRearLeft = "Stove",
+	IGUI_VehiclePartOvenRearRight = "Stove",
+	IGUI_VehiclePartMicrowaveFrontLeft = "Microwave",
+	IGUI_VehiclePartMicrowaveFrontRight = "Microwave",
+	IGUI_VehiclePartMicrowaveMiddleLeft = "Microwave",
+	IGUI_VehiclePartMicrowaveMiddleRight = "Microwave",
+	IGUI_VehiclePartMicrowaveRearLeft = "Microwave",
+	IGUI_VehiclePartMicrowaveRearRight = "Microwave",
 }
 

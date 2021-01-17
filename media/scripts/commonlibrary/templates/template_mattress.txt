@@ -1,11 +1,11 @@
 module Base
 {
-    template vehicle TV
+    template vehicle Mattress
     {
-		part TV
+		part Mattress
 		{
-		    area = TruckBed,,
-		    itemType = Radio.TvWideScreen;Radio.TvBlack,
+		    area = TruckBed,
+		    itemType = Base.Mattress,
 		    specificItem = false,
 		    table install
             {
@@ -43,8 +43,7 @@ module Base
             }
 			lua
 			{
-				create = Vehicles.Create.Radio,
-				update = Vehicles.Update.Radio,
+				create = Vehicles.Create.Default,
 			}
 		}
 	}

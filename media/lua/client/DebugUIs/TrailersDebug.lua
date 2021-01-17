@@ -5,6 +5,7 @@
 
 debugScenarios.IBrRusScenario_TowingTrailer = {
 	name = "IBrRus Trailer",
+	isCustom = true,
 --	forceLaunch = true, -- use this to force the launch of THIS scenario right after main menu was loaded, save more clicks! Don't do multiple scenarii with this options
 	startLoc = {x=3685, y=5790, z=0 }, 
 	
@@ -93,9 +94,12 @@ debugScenarios.IBrRusScenario_TowingTrailer = {
 		playerObj:getInventory():AddItem("Base.PetrolCan");
 		playerObj:getInventory():AddItem("Base.PotOfSoupRecipe");
 		playerObj:getInventory():AddItem("Base.PotOfSoupRecipe");
-		playerObj:getInventory():AddItem("Base.Battery");
-		playerObj:getInventory():AddItem("Base.Battery");
-		playerObj:getInventory():AddItem("Base.Battery");
+		itemB = playerObj:getInventory():AddItem("Base.Battery");
+		itemB:setUsedDelta(0)
+		itemB = playerObj:getInventory():AddItem("Base.Battery");
+		itemB:setUsedDelta(0)
+		itemB = playerObj:getInventory():AddItem("Base.Battery");
+		itemB:setUsedDelta(0)
 
 		-- Trailers
 		local vehY = 5785.5

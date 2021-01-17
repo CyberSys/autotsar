@@ -3,7 +3,7 @@ module Base
 	model TrailerFirstBase
     {
         mesh = vehicles/Vehicles_jtrailer,
-        shader = vehicle_multiuv,
+        shader = vehicle,
         invertX = FALSE,
         scale = 0.003937,
     }
@@ -31,6 +31,11 @@ module Base
 		textureRust = Vehicles/vehicle_trailer_rust,
 		textureMask = Vehicles/vehicle_trailer_mask,
 		textureLights = Vehicles/vehicle_trailer_light,
+		textureDamage1Overlay = Vehicles/vehicle_trailer,
+		textureDamage2Overlay = Vehicles/vehicle_trailer,
+		textureDamage1Shell = Vehicles/vehicle_trailer,
+		textureDamage2Shell = Vehicles/vehicle_trailer,
+		
 		extents = 0.8737 0.3158 1.5263,
 		mass = 300,
 		physicsChassisShape = 0.8737 0.3158 1.5263,
@@ -83,9 +88,9 @@ module Base
 		{
 			xywh = -0.6684 0.0000 0.4737 0.4737,
 		}
-		
+
 		template = Trunk/part/TruckBed,
-		
+
 		part TruckBed*
 		{
 			area = TruckBed,
@@ -105,7 +110,7 @@ module Base
 				create = Vehicles.Create.Default,
 			}
 		}
-		
+
 		template = Suspension/part/SuspensionFrontLeft,
 		template = Suspension/part/SuspensionFrontRight,
 
@@ -123,11 +128,10 @@ module Base
 				recipes = Intermediate Mechanics,
 			}
 		}
-		
+
 		template = Tire/part/TireFrontLeft,
 		template = Tire/part/TireFrontRight,
-		
-		
+
 		part TireFrontLeft
 		{
 			table install
@@ -143,20 +147,24 @@ module Base
 				requireInstalled = SuspensionFrontRight,
 			}
 		}
-		
+
 		template = Tire/part/TireRearLeft,
 		template = Tire/part/TireRearRight,
+
 		part TireRearLeft
 		{
 			category = nodisplay,
+
 			model InflatedTirePlusWheel
 			{
 				file = WheelNull,
 			}
 		}
+
 		part TireRearRight
 		{
 			category = nodisplay,
+
 			model InflatedTirePlusWheel
 			{
 				file = WheelNull,
@@ -179,7 +187,7 @@ module Base
 
 		physics sphere
 		{
-			offset = 0.0053 0.2684 1.3421,
+			offset = 0.0053 0.2684 1.3053,
 			radius = 0.0421,
 		}
 

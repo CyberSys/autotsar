@@ -25,6 +25,16 @@ TrailerHomeItems["appliances_cooking_01_21"] = "MovIndustrialOven"
 TrailerHomeItems["appliances_cooking_01_22"] = "MovIndustrialOven"
 TrailerHomeItems["appliances_cooking_01_23"] = "MovIndustrialOven"
 
+TrailerHomeItems["appliances_cooking_01_24"] = "MovWhiteMicrowave"
+TrailerHomeItems["appliances_cooking_01_25"] = "MovWhiteMicrowave"
+TrailerHomeItems["appliances_cooking_01_26"] = "MovWhiteMicrowave"
+TrailerHomeItems["appliances_cooking_01_27"] = "MovWhiteMicrowave"
+TrailerHomeItems["appliances_cooking_01_28"] = "MovChromeMicrowave"
+TrailerHomeItems["appliances_cooking_01_29"] = "MovChromeMicrowave"
+TrailerHomeItems["appliances_cooking_01_30"] = "MovChromeMicrowave"
+TrailerHomeItems["appliances_cooking_01_31"] = "MovChromeMicrowave"
+
+
 TrailerHomeItems["appliances_refrigeration_01_0"] = "MovWhiteFridge"
 TrailerHomeItems["appliances_refrigeration_01_1"] = "MovWhiteFridge"
 TrailerHomeItems["appliances_refrigeration_01_2"] = "MovWhiteFridge"
@@ -41,10 +51,10 @@ TrailerHomeItems["appliances_refrigeration_01_12"] = "MovGreenFridge"
 TrailerHomeItems["appliances_refrigeration_01_13"] = "MovGreenFridge"
 TrailerHomeItems["appliances_refrigeration_01_14"] = "MovGreenFridge"
 TrailerHomeItems["appliances_refrigeration_01_15"] = "MovGreenFridge"
-TrailerHomeItems["appliances_refrigeration_01_28"] = "MovPlaneFridge"
-TrailerHomeItems["appliances_refrigeration_01_29"] = "MovPlaneFridge"
-TrailerHomeItems["appliances_refrigeration_01_30"] = "MovPlaneFridge"
-TrailerHomeItems["appliances_refrigeration_01_31"] = "MovPlaneFridge"
+TrailerHomeItems["appliances_refrigeration_01_28"] = "MovPlainFridge"
+TrailerHomeItems["appliances_refrigeration_01_29"] = "MovPlainFridge"
+TrailerHomeItems["appliances_refrigeration_01_30"] = "MovPlainFridge"
+TrailerHomeItems["appliances_refrigeration_01_31"] = "MovPlainFridge"
 TrailerHomeItems["appliances_refrigeration_01_32"] = "MovRedFridge"
 TrailerHomeItems["appliances_refrigeration_01_33"] = "MovRedFridge"
 TrailerHomeItems["appliances_refrigeration_01_34"] = "MovRedFridge"
@@ -63,8 +73,10 @@ function TCOnObjectAboutToBeRemoved(object)
 				local oldItem = allItems:get(i)
 				if oldItem:getWorldSprite() == worldSpriteName then
 					--print("TC: add")
-					playerInv:Remove(oldItem)
-					playerInv:AddItem("tsarcraft." .. newItem);
+					local newItem = playerInv:AddItem("Base." .. newItem);
+					if newItem then
+						playerInv:Remove(oldItem)
+					end
 					return
 				end
 			end
