@@ -272,6 +272,12 @@ module Base
 		template = Seat/part/SeatMiddleLeft,
 		template = Seat/part/SeatRearLeft,
 		template = Seat/part/SeatRearRight,
+		
+		part Seat*
+		{
+			area = SeatRearRight,
+		}
+		
 		template = Engine,
 		template = EngineDoor,
 		template = Muffler,
