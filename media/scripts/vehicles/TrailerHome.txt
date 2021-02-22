@@ -304,8 +304,9 @@ module Base
 		template = Ovens/part/OvenMiddleLeft,
 		template = Medicines/part/MedicineFrontRight,
 		template = Microwaves/part/MicrowaveMiddleLeft,
-		template = GunRack,
-		template = Mattress,
+		template = Mattresses/part/MattressRearLeft,
+		template = Mattresses/part/MattressRearRight,
+		template = Shelves/part/ShelveFrontRight,
 		template = TV,
 		template = Radio,
 

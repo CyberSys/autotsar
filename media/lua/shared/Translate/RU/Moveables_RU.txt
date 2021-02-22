@@ -1,4 +1,0 @@
-Moveables_RU = {
-	Green_Oven = "Электроплита: зелёная",
-	tsarcraft.Green_Oven = "Электроплита: зелёная",
-}

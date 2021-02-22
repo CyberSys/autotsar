@@ -383,7 +383,6 @@ module Base
 		template = Mattress,
 		template = Fridge/part/Fridge,
 		template = TV,
-		template = GunRack,
 		template = Radio,
 
 		area TruckBed
