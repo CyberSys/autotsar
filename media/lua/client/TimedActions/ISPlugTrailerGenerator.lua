@@ -38,10 +38,8 @@ end
 function ISPlugTrailerGenerator:perform()
     self.generator:setConnected(true)
 	self.trailer:getModData()["generatorObject"] = self.generator
-	TrailerGeneratorList[self.trailer] = self.generator
-	local item = self.trailer:getPartById("EarthingOff"):getInventoryItem()
-	self.trailer:getPartById("EarthingOn"):setInventoryItem(item)
-	self.trailer:getPartById("EarthingOff"):setInventoryItem(nil)
+	self.trailer:getPartById("EarthingOn"):setInventoryItem(InventoryItemFactory.CreateItem("Base.LightBulb"))
+	-- self.trailer:getPartById("EarthingOff"):setInventoryItem(nil)
 	self.trailer:setMass(10000)
     -- needed to remove from queue / start next.
 	ISBaseTimedAction.perform(self);

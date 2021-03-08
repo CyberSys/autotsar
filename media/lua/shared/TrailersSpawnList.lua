@@ -26,25 +26,25 @@ VehicleZoneDistribution.medium.vehicles["Base.TrailerHome"] = {index = -1, spawn
 VehicleZoneDistribution.parkingstall.vehicles["Base.TrailerGenerator"] = {index = -1, spawnChance = 1};
 
 -- good vehicles, used in good looking area, they're meant to spawn only good cars, so they're on every good looking house.
-VehicleZoneDistribution.good.vehicles["Base.TrailerFirst"] = {index = -1, spawnChance = 5};
-VehicleZoneDistribution.good.vehicles["Base.TrailerSecond"] = {index = -1, spawnChance = 10};
-VehicleZoneDistribution.good.vehicles["Base.TrailerHome"] = {index = -1, spawnChance = 5};
-VehicleZoneDistribution.parkingstall.vehicles["Base.TrailerGenerator"] = {index = -1, spawnChance = 1};
+-- VehicleZoneDistribution.good.vehicles["Base.TrailerFirst"] = {index = -1, spawnChance = 5};
+-- VehicleZoneDistribution.good.vehicles["Base.TrailerSecond"] = {index = -1, spawnChance = 10};
+-- VehicleZoneDistribution.good.vehicles["Base.TrailerHome"] = {index = -1, spawnChance = 5};
+-- VehicleZoneDistribution.parkingstall.vehicles["Base.TrailerGenerator"] = {index = -1, spawnChance = 1};
 
 -- junkyard, spawn damaged & burnt vehicles, less chance of finding keys but more cars.
 -- also used for the random car crash.
-VehicleZoneDistribution.junkyard.vehicles["Base.TrailerFirst"] = {index = -1, spawnChance = 0.1};
-VehicleZoneDistribution.junkyard.vehicles["Base.TrailerSecond"] = {index = -1, spawnChance = 0.1};
-VehicleZoneDistribution.junkyard.vehicles["Base.TrailerHome"] = {index = -1, spawnChance = 0.1};
-VehicleZoneDistribution.junkyard.vehicles["Base.TrailerKbac"] = {index = -1, spawnChance = 0.1};
+VehicleZoneDistribution.junkyard.vehicles["Base.TrailerFirst"] = {index = -1, spawnChance = 0.5};
+VehicleZoneDistribution.junkyard.vehicles["Base.TrailerSecond"] = {index = -1, spawnChance = 0.5};
+VehicleZoneDistribution.junkyard.vehicles["Base.TrailerHome"] = {index = -1, spawnChance = 0.5};
+VehicleZoneDistribution.junkyard.vehicles["Base.TrailerKbac"] = {index = -1, spawnChance = 0.5};
 
 
 -- traffic jam, mostly burnt car & damaged ones.
 -- Used either for hard coded big traffic jam or smaller random ones.
-VehicleZoneDistribution.trafficjamw.vehicles["Base.TrailerFirst"] = {index = -1, spawnChance = 0.1};
-VehicleZoneDistribution.trafficjamw.vehicles["Base.TrailerSecond"] = {index = -1, spawnChance = 0.1};
-VehicleZoneDistribution.trafficjamw.vehicles["Base.TrailerHome"] = {index = -1, spawnChance = 0.1};
-VehicleZoneDistribution.trafficjamw.vehicles["Base.TrailerKbac"] = {index = -1, spawnChance = 0.1};
+VehicleZoneDistribution.trafficjamw.vehicles["Base.TrailerFirst"] = {index = -1, spawnChance = 0.5};
+VehicleZoneDistribution.trafficjamw.vehicles["Base.TrailerSecond"] = {index = -1, spawnChance = 0.5};
+VehicleZoneDistribution.trafficjamw.vehicles["Base.TrailerHome"] = {index = -1, spawnChance = 0.5};
+VehicleZoneDistribution.trafficjamw.vehicles["Base.TrailerKbac"] = {index = -1, spawnChance = 0.5};
 
 VehicleZoneDistribution.farm = VehicleZoneDistribution.farm or {}
 VehicleZoneDistribution.farm.vehicles = VehicleZoneDistribution.farm.vehicles or {}

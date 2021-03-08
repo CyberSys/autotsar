@@ -148,29 +148,6 @@ module Base
 			}
 		}
 
-		template = Tire/part/TireRearLeft,
-		template = Tire/part/TireRearRight,
-
-		part TireRearLeft
-		{
-			category = nodisplay,
-
-			model InflatedTirePlusWheel
-			{
-				file = WheelNull,
-			}
-		}
-
-		part TireRearRight
-		{
-			category = nodisplay,
-
-			model InflatedTirePlusWheel
-			{
-				file = WheelNull,
-			}
-		}
-
 		physics box
 		{
 			offset = 0.1632 0.2526 0.8316,

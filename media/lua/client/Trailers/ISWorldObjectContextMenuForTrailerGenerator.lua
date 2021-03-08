@@ -1,6 +1,6 @@
 
 ISWorldObjectContextMenuForTrailerGenerator = {}
-TrailerGeneratorList = {}
+-- TrailerGeneratorList = {}
 
 
 local function predicateNotEmpty(item)
@@ -201,16 +201,46 @@ ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator = function(trail
 	end
 end
 
-ISWorldObjectContextMenuForTrailerGenerator.ClearGen = function()
-	print("AUTOTSAR: OnSave")
-	for trailer, generator in pairs(TrailerGeneratorList) do
-		generator:remove()
-		trailer:getPartById("EarthingOn"):setInventoryItem(nil)
-		trailer:getPartById("EarthingOff"):setInventoryItem(VehicleUtils.createPartInventoryItem(trailer:getPartById("EarthingOff")))
-	end
-end
+-- ISWorldObjectContextMenuForTrailerGenerator.ClearGen = function()
+	-- print("AUTOTSAR: OnSave")
+	-- for trailer, generator in pairs(TrailerGeneratorList) do
+		-- generator:remove()
+		-- trailer:getPartById("EarthingOn"):setInventoryItem(nil)
+		-- trailer:getPartById("EarthingOff"):setInventoryItem(VehicleUtils.createPartInventoryItem(trailer:getPartById("EarthingOff")))
+	-- end
+-- end
+
+-- function ISWorldObjectContextMenuForTrailerGenerator.getGeneratorAroundSquare(dx, dy, square)
+	-- if square == nil then return squares end
+	-- for y=square:getY() - dy, square:getY() + dy do
+		-- for x=square:getX() - dx, square:getX() + dx do
+            -- local square2 = getCell():getGridSquare(x, y, 0)
+			-- if square2 ~= nil then
+				-- local sqGen = square2:getGenerator()
+				-- if sqGen and sqGen:getSprite() == "appliances_misc_01_10" then
+					-- return sqGen
+				-- end
+			-- end
+		-- end
+	-- end
+-- end
+
+-- function ISWorldObjectContextMenuForTrailerGenerator.searchTrailerGenerator()
+	-- local vehicles = getCell():getVehicles()
+	-- for i=0, vehicles:size()-1 do
+		-- local trailer = vehicles:get(i)
+		-- if trailer ~= nil and trailer:getScript():getName() == "TrailerGenerator" then
+			-- local gen = ISWorldObjectContextMenuForTrailerGenerator.getGeneratorAroundSquare(2, 2, trailer:getSquare())
+			-- trailer:getModData()["generatorObject"] = gen
+		-- end
+	-- end
+-- end
+
+-- local function OnGameBoot(object)
+	-- print("OnGameBoot: ", object)
+-- end
 
 Events.OnFillWorldObjectContextMenu.Add(ISWorldObjectContextMenuForTrailerGenerator.OnFillWorldObjectContextMenu);
 
-Events.OnSave.Add(ISWorldObjectContextMenuForTrailerGenerator.ClearGen)
+-- Events.OnSave.Add(ISWorldObjectContextMenuForTrailerGenerator.ClearGen)
 

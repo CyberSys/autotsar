@@ -166,29 +166,6 @@ module Base
 			radius = 0.0421,
 		}
 
-		template = Tire/part/TireRearLeft,
-		template = Tire/part/TireRearRight,
-
-		part TireRearLeft
-		{
-			category = nodisplay,
-
-			model InflatedTirePlusWheel
-			{
-				file = WheelNull,
-			}
-		}
-
-		part TireRearRight
-		{
-			category = nodisplay,
-
-			model InflatedTirePlusWheel
-			{
-				file = WheelNull,
-			}
-		}
-
 		attachment trailer
 		{
 			offset = 0.0000 -0.2421 2.1842,

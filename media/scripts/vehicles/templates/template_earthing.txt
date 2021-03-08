@@ -6,7 +6,9 @@ module Base
 		{
 			lua
 			{
+				init = Trailers.Init.EarthingOn,
 				create = Trailers.Create.EarthingOn,
+				update = Trailers.Update.EarthingOn,
 			}
 		}
 		
@@ -21,11 +23,12 @@ module Base
 		part Earthing*
 		{
 			area = Engine,
+			/**/
 			category = nodisplay,
 			specificItem = false,
 			mechanicRequireKey = false,
 			itemType = Base.LightBulb,
-
+			
 			table install
 			{
 				items

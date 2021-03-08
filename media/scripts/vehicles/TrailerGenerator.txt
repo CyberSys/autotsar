@@ -112,12 +112,7 @@ module Base
 		{
 			table install
 			{
-				requireInstalled = SuspensionFrontLeft;EarthingOff,
-			}
-
-			table uninstall
-			{
-				requireUninstalled = EarthingOn,
+				requireInstalled = SuspensionFrontLeft,
 			}
 		}
 
@@ -125,34 +120,13 @@ module Base
 		{
 			table install
 			{
-				requireInstalled = SuspensionFrontLeft;EarthingOff,
-			}
-
-			table uninstall
-			{
-				requireUninstalled = EarthingOn,
+				requireInstalled = SuspensionFrontLeft,
 			}
 		}
 
-		template = Earthing,
+		template = Earthing/part/EarthingOn,
 		template = Suspension/part/SuspensionFrontLeft,
 		template = Suspension/part/SuspensionFrontRight,
-
-		part SuspensionFrontLeft
-		{
-			table install
-			{
-				requireInstalled = EarthingOff,
-			}
-		}
-
-		part SuspensionFrontRight
-		{
-			table install
-			{
-				requireInstalled = EarthingOff,
-			}
-		}
 
 		area GasTank
 		{
@@ -178,39 +152,8 @@ module Base
 				checkEngine = Vehicles.CheckEngine.GasTank,
 			}
 
-			table install
-			{
-				requireInstalled = EarthingOff,
-
-				items
-				{
-					1
-					{
-						type = Base.Screwdriver,
-						count = 1,
-						keep = true,
-						equip = secondary,
-					}
-
-					2
-					{
-						type = Base.Wrench,
-						count = 1,
-						keep = true,
-						equip = primary,
-					}
-				}
-
-				time = 500,
-				skills = Mechanics:5,
-				recipes = Basic Mechanics,
-				test = Vehicles.InstallTest.Default,
-			}
-
 			table uninstall
 			{
-				requireUninstalled = EarthingOn,
-
 				items
 				{
 					1
@@ -250,16 +193,6 @@ module Base
 		{
 			category = Generator,
 			mechanicRequireKey = false,
-
-			table install
-			{
-				requireInstalled = EarthingOff,
-			}
-
-			table uninstall
-			{
-				requireUninstalled = EarthingOn,
-			}
 		}
 
 		template = Engine,
@@ -271,29 +204,6 @@ module Base
 		}
 
 		template = BatteryCharger,
-		template = Tire/part/TireRearLeft,
-		template = Tire/part/TireRearRight,
-
-		part TireRearLeft
-		{
-			category = nodisplay,
-
-			model InflatedTirePlusWheel
-			{
-				file = WheelNull,
-			}
-		}
-
-		part TireRearRight
-		{
-			category = nodisplay,
-
-			model InflatedTirePlusWheel
-			{
-				file = WheelNull,
-			}
-		}
-
 		template = Headlight/part/HeadlightLeft,
 		template = Headlight/part/HeadlightRight,
 
