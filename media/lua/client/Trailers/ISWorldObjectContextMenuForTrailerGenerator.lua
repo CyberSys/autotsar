@@ -1,3 +1,4 @@
+require "CommonTemplates/ISUI/ISContextMenuExtension"
 
 ISWorldObjectContextMenuForTrailerGenerator = {}
 -- TrailerGeneratorList = {}
@@ -77,30 +78,55 @@ ISWorldObjectContextMenuForTrailerGenerator.OnFillWorldObjectContextMenu = funct
 		vehicle = IsoObjectPicker.Instance:PickVehicle(getMouseXScaled(), getMouseYScaled())
 		if vehicle and string.lower(vehicle:getScript():getName()) == "trailergenerator" then
 			return ISWorldObjectContextMenuForTrailerGenerator.FillMenuOutsideVehicle(player, context, vehicle, test)
-		end
-		return
-	end
-end
-
-function ISContextMenu:updateOption(id, name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)
-	local option = self:allocOption(name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10);
-	self.options[id] = option;
-	return option;
-end
-
-function ISContextMenu:removeOption(option)
-	if option then
-		table.insert(self.optionPool, self.options[option.id])
-		self.options[option.id] =  nil;
-		for i = option.id, self.numOptions - 1 do
-			self.options[i] = self.options[i+1]
-			if self.options[i] then
-				self.options[i].id = i
+		else
+			if context:getOptionFromName(getText("ContextMenu_GeneratorInfo")) then
+				-- print("INFO")
+				local isGen = false
+				for i,v in pairs(worldobjects) do
+					if instanceof(v, "IsoGenerator") then
+						isGen = true
+					end
+				end
+				if not isGen then
+					ISWorldObjectContextMenuForTrailerGenerator.changeGeneratorMenu(context)
+				end
 			end
 		end
-		self.numOptions = self.numOptions - 1;
-		self:calcHeight()
 	end
+end
+
+-- function ISContextMenu:updateOption(id, name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)
+	-- local option = self:allocOption(name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10);
+	-- self.options[id] = option;
+	-- return option;
+-- end
+
+-- function ISContextMenu:removeOption(option)
+	-- if option then
+		-- table.insert(self.optionPool, self.options[option.id])
+		-- self.options[option.id] =  nil;
+		-- for i = option.id, self.numOptions - 1 do
+			-- self.options[i] = self.options[i+1]
+			-- if self.options[i] then
+				-- self.options[i].id = i
+			-- end
+		-- end
+		-- self.numOptions = self.numOptions - 1;
+		-- self:calcHeight()
+	-- end
+-- end
+
+ISWorldObjectContextMenuForTrailerGenerator.changeGeneratorMenu = function(context)
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorInfo")))
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_Turn_On")))
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_Turn_Off")))
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorPlug")))
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorUnplug")))
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorPlugTT")))
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorFixTT")))
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorFix")))
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorAddFuel")))
+	context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorTake")))
 end
 
 ISWorldObjectContextMenuForTrailerGenerator.onToggleSpotlights = function(wo, trailer, playerObj)
@@ -134,7 +160,15 @@ ISWorldObjectContextMenuForTrailerGenerator.FillMenuOutsideVehicle = function(pl
 				old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_On_Generator"))
 				if old_option_update then
 					context:updateOption(old_option_update.id, old_option_update.name, trailer, ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator, true, generator, player)
+				-- else
+					-- context:addOptionOnTop(getText("ContextMenu_Turn_On_Generator"), trailer, ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator, true, generator, player);
 				end
+				old_option_update = context:getOptionFromName(getText("ContextMenu_Turn_On"))
+				if old_option_update then
+					context:removeOption(context:getOptionFromName(getText("ContextMenu_Turn_On")))
+					context:addOption(getText("ContextMenu_Turn_On_Generator"), trailer, ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator, true, generator, player);
+				end
+				
 				context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorFix")))
 				context:removeOption(context:getOptionFromName(getText("ContextMenu_GeneratorAddFuel")))
 				-- else
@@ -173,15 +207,15 @@ ISWorldObjectContextMenuForTrailerGenerator.FillMenuOutsideVehicle = function(pl
 				
 				-- if generator:getFuel() > 0 and generator:getCondition() > 1 then
 					--print("generator:getCondition() ", generator:getCondition())
-					option = context:addOptionOnTop(getText("ContextMenu_Turn_On_Generator"), trailer, ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator, true, generator, player);
-					local doStats = playerObj:DistToSquared(generator:getX() + 0.5, generator:getY() + 0.5) < 2 * 2
-					local description = ISGeneratorInfoWindow.getRichText(generator, doStats)
-					if description ~= "" then
-						local tooltip = ISWorldObjectContextMenu.addToolTip()
-						tooltip:setName(getText("IGUI_Generator_TypeGas"))
-						tooltip.description = description
-						option.toolTip = tooltip
-					end
+				option = context:addOptionOnTop(getText("ContextMenu_Turn_On_Generator"), trailer, ISWorldObjectContextMenuForTrailerGenerator.onActivateGenerator, true, generator, player);
+				local doStats = playerObj:DistToSquared(generator:getX() + 0.5, generator:getY() + 0.5) < 2 * 2
+				local description = ISGeneratorInfoWindow.getRichText(generator, doStats)
+				if description ~= "" then
+					local tooltip = ISWorldObjectContextMenu.addToolTip()
+					tooltip:setName(getText("IGUI_Generator_TypeGas"))
+					tooltip.description = description
+					option.toolTip = tooltip
+				end
 				-- end
 			end
 		end

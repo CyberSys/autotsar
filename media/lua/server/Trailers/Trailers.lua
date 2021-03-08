@@ -48,7 +48,7 @@ function Trailers.SearchGenerator(trailer, dx, dy)
 			if square2 ~= nil then
 				-- print("Square ", x, " ", y)
 				local sqGen = square2:getGenerator()
-				if sqGen then
+				if sqGen and sqGen:isConnected() then
 					-- print(sqGen:getSprite():getName())
 				-- and sqGen:getSprite() == "appliances_misc_01_10" then
 					return sqGen
