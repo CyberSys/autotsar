@@ -79,10 +79,14 @@ ISWorldObjectContextMenuForTrailerGenerator.OnFillWorldObjectContextMenu = funct
 		if vehicle and string.lower(vehicle:getScript():getName()) == "trailergenerator" then
 			return ISWorldObjectContextMenuForTrailerGenerator.FillMenuOutsideVehicle(player, context, vehicle, test)
 		else
-			if context:getOptionFromName(getText("ContextMenu_GeneratorInfo")) then
+			if (context:getOptionFromName(getText("ContextMenu_GeneratorInfo")) and 
+					(context:getOptionFromName(getText("ContextMenu_GeneratorPlug")) 
+					or context:getOptionFromName(getText("ContextMenu_GeneratorUnplug")))) then
 				-- print("INFO")
 				local isGen = false
 				for i,v in pairs(worldobjects) do
+					-- print(i)
+					-- print(v)
 					if instanceof(v, "IsoGenerator") then
 						isGen = true
 					end
