@@ -125,7 +125,7 @@ module Base
 		{
 			xywh = -0.7632 -0.6895 0.4737 0.4737,
 		}
-		
+
 		area Common
 		{
 			xywh = -0.7632 -0.6895 0.4737 0.4737,
@@ -235,6 +235,7 @@ module Base
 		{
 			mechanicRequireKey = false,
 			area = SeatRearRight,
+
 			windows
 			{
 				openable = true,
@@ -250,15 +251,18 @@ module Base
 				requireInstalled =,
 			}
 		}
+
 		template = Door/part/DoorFrontLeft,
 		template = Door/part/DoorFrontRight,
 		template = Door/part/DoorRearLeft,
+
 		part Door*
 		{
 			category = nodisplay,
 		}
 
 		template = Door/part/DoorRearRight,
+
 		part DoorRearRight
 		{
 			table uninstall
@@ -272,12 +276,12 @@ module Base
 		template = Seat/part/SeatMiddleLeft,
 		template = Seat/part/SeatRearLeft,
 		template = Seat/part/SeatRearRight,
-		
+
 		part Seat*
 		{
 			area = SeatRearRight,
 		}
-		
+
 		template = Engine,
 		template = EngineDoor,
 		template = Muffler,
@@ -340,7 +344,7 @@ module Base
 
 		attachment trailer
 		{
-			offset = 0.0000 -0.2263 1.9105,
+			offset = 0.0000 -0.1789 1.9105,
 			rotate = 0.0000 0.0000 0.0000,
 		}
 	}

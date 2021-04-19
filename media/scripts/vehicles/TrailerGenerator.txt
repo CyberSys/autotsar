@@ -35,7 +35,6 @@ module Base
 		textureDamage2Overlay = Vehicles/gen_base,
 		textureDamage1Shell = Vehicles/gen_base,
 		textureDamage2Shell = Vehicles/gen_base,
-		
 		extents = 0.5889 0.7000 1.3444,
 		mass = 1000,
 		physicsChassisShape = 0.5889 0.7000 1.3444,
@@ -219,7 +218,7 @@ module Base
 
 		attachment trailer
 		{
-			offset = 0.0000 -0.1167 0.9889,
+			offset = 0.0000 -0.0889 1.0333,
 			rotate = 0.0000 0.0000 0.0000,
 		}
 	}
